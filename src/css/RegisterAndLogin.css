@@ -1,0 +1,106 @@
+.register {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-page {
+    width: 60%;
+    height: 100vh;
+    background-image: url("/src/images/cinema.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: start;
+}
+
+.info-div {
+    height: auto;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 70px 70px;
+}
+
+.info-title {
+    margin-bottom: 15px;
+}
+
+.right-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 40%;
+    height: 100vh;
+}
+
+.logo-div {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* margin-top: 30px;
+    margin-bottom: 100px; */
+}
+
+.logo {
+    cursor: pointer;
+}
+
+.form-div {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    border-radius: 25px;
+    box-shadow: 1px 3px 10px;
+}
+
+.input-div {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.button-div {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.title {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.check-div {
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    margin-bottom: 15px;
+}
