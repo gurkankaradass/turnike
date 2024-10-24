@@ -1,13 +1,31 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../css/RegisterAndLogin.css"
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import { Button } from '@mui/material';
+import { Button, Checkbox, FormControlLabel } from '@mui/material';
 import Logo from "../images/turnike-logo.png"
+import { useFormik } from 'formik';
+import { schema } from '../schema/Schema';
 
 function RegisterPage() {
+    const { values, handleSubmit, handleChange, errors, resetForm } = useFormik({
+        initialValues: {
+            username: '',
+            password: '',
+            confirmPassword: "",
+            term: ""
+        },
+        onSubmit: values => {
+            alert(JSON.stringify(values, null, 2));
+        },
+        validationSchema: schema
+    });
+
+    const reset = () => {
+        resetForm();
+    }
     return (
         <div className='register'>
             <div className='left-page'>
@@ -27,7 +45,9 @@ function RegisterPage() {
                             <TextField
                                 id="username"
                                 label="Kullanıcı Adı"
-                                sx={{ marginBottom: "20px", width: "100%" }}
+                                value={values.username}
+                                onChange={handleChange}
+                                sx={{ marginBottom: "10px", width: "100%" }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (
@@ -38,12 +58,15 @@ function RegisterPage() {
                                     },
                                 }}
                                 variant="standard"
+                                helperText={errors.username && <span className='error-span'>{errors.username}</span>}
                             />
                             <TextField
                                 id="password"
                                 label="Şifre"
                                 type='password'
-                                sx={{ marginBottom: "20px", width: "100%" }}
+                                value={values.password}
+                                onChange={handleChange}
+                                sx={{ marginBottom: "10px", width: "100%" }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (
@@ -54,15 +77,39 @@ function RegisterPage() {
                                     },
                                 }}
                                 variant="standard"
+                                helperText={errors.password && <span className='error-span'>{errors.password}</span>}
+                            />
+                            <TextField
+                                id="confirmPassword"
+                                label="Şifre (Tekrar)"
+                                type='password'
+                                value={values.confirmPassword}
+                                onChange={handleChange}
+                                sx={{ marginBottom: "10px", width: "100%" }}
+                                slotProps={{
+                                    input: {
+                                        startAdornment: (
+                                            <InputAdornment position="start">
+                                                <FaLock />
+                                            </InputAdornment>
+                                        ),
+                                    },
+                                }}
+                                variant="standard"
+                                helperText={errors.confirmPassword && <span className='error-span'>{errors.confirmPassword}</span>}
                             />
                         </div>
                         <div className='check-div'>
-                            <input style={{ width: "15px", height: "15px", marginRight: "5px" }} type="checkbox" id="term" />
-                            <label>Kullanıcı Sözleşmesini Kabul Ediyorum</label>
+                            <div className='check-input'>
+                                <FormControlLabel control={<Checkbox id='term' onChange={handleChange} value={values.term} />} label="Kullanıcı Sözleşmesini Kabul Ediyorum" />
+                            </div>
+                            <div className='check-error'>
+                                {errors.term && <span className='error-span'>{errors.term}</span>}
+                            </div>
                         </div>
                         <div className='button-div'>
                             <Button color='success' sx={{ width: "150px", borderRadius: "20px", textTransform: "none" }} variant="contained">Hesap Oluştur</Button>
-                            <Button color='secondary' sx={{ width: "120px", borderRadius: "20px", textTransform: "none" }} variant="contained">Temizle</Button>
+                            <Button onClick={reset} color='secondary' sx={{ width: "120px", borderRadius: "20px", textTransform: "none" }} variant="contained">Temizle</Button>
                         </div>
                         <div>
                             <Button size='large' variant='text' sx={{ textTransform: "none" }}>Zaten Bir Hesabım Var</Button>
