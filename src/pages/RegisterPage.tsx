@@ -108,11 +108,14 @@ function RegisterPage() {
                             </div>
                         </div>
                         <div className='button-div'>
-                            <Button color='success' sx={{ width: "150px", borderRadius: "20px", textTransform: "none" }} variant="contained">Hesap Oluştur</Button>
-                            <Button onClick={reset} color='secondary' sx={{ width: "120px", borderRadius: "20px", textTransform: "none" }} variant="contained">Temizle</Button>
+                            {/* <Button color='success' sx={{ width: "150px", borderRadius: "20px", textTransform: "none" }} variant="contained">Hesap Oluştur</Button> */}
+                            {/* <Button onClick={reset} color='secondary' sx={{ width: "120px", borderRadius: "20px", textTransform: "none" }} variant="contained">Temizle</Button> */}
+                            <button type='submit' className='submit'>Hesap Oluştur</button>
+                            <button onClick={reset} type='reset' className='reset'>Temizle</button>
                         </div>
                         <div>
-                            <Button size='large' variant='text' sx={{ textTransform: "none" }}>Zaten Bir Hesabım Var</Button>
+                            {/* <Button size='large' variant='text' sx={{ textTransform: "none" }}>Zaten Bir Hesabım Var</Button> */}
+                            <button type='button' className='login-button'>Zaten Bir Hesabım Var</button>
                         </div>
                     </form>
                 </div>
