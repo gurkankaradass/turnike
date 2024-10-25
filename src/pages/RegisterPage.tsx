@@ -1,10 +1,9 @@
-import React, { useState } from 'react'
 import "../css/RegisterAndLogin.css"
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
-import { Button, Checkbox, FormControlLabel } from '@mui/material';
+import { Checkbox, FormControlLabel } from '@mui/material';
 import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
 import { schema } from '../schema/Schema';
@@ -108,13 +107,10 @@ function RegisterPage() {
                             </div>
                         </div>
                         <div className='button-div'>
-                            {/* <Button color='success' sx={{ width: "150px", borderRadius: "20px", textTransform: "none" }} variant="contained">Hesap Oluştur</Button> */}
-                            {/* <Button onClick={reset} color='secondary' sx={{ width: "120px", borderRadius: "20px", textTransform: "none" }} variant="contained">Temizle</Button> */}
                             <button type='submit' className='submit'>Hesap Oluştur</button>
                             <button onClick={reset} type='reset' className='reset'>Temizle</button>
                         </div>
                         <div>
-                            {/* <Button size='large' variant='text' sx={{ textTransform: "none" }}>Zaten Bir Hesabım Var</Button> */}
                             <button type='button' className='login-button'>Zaten Bir Hesabım Var</button>
                         </div>
                     </form>
