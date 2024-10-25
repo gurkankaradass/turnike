@@ -6,23 +6,29 @@ import { FaLock } from "react-icons/fa";
 import { Checkbox, FormControlLabel } from '@mui/material';
 import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
-import { schema } from '../schema/Schema';
-import RegisterPageServices from "../services/RegisterPageServices";
+import { schemaRegister } from '../schema/Schema';
+import RegisterLoginPageServices from "../services/RegisterLoginServices";
 import { UserType } from "../types/Types";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setLoading } from "../redux/appSlice";
 
 function RegisterPage() {
 
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
-    const submit = async (values: any, actions: any) => {
+    const submit = async (values: any, action: any) => {
         try {
+            dispatch(setLoading(true));
             const payload: UserType = {
+                id: String(Math.floor(Math.random() * 9999999)),
                 username: values.username,
-                password: values.password
+                password: values.password,
+                balance: 1000
             }
-            const response = await RegisterPageServices.register(payload);
+            const response = await RegisterLoginPageServices.register(payload);
             if (response) {
                 toast.success("Kullanıcı Kaydedildi")
                 setTimeout(() => {
@@ -31,6 +37,8 @@ function RegisterPage() {
             }
         } catch (error) {
             toast.success("Kullanıcı Kaydedilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
         }
     }
 
@@ -42,7 +50,7 @@ function RegisterPage() {
             term: ""
         },
         onSubmit: submit,
-        validationSchema: schema
+        validationSchema: schemaRegister
     });
 
     const reset = () => {

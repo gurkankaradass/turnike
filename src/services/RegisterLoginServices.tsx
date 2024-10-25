@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import axiosInstance from "../config/AxiosConfig";
 import { UserType } from "../types/Types";
 
-class RegisterPageService {
+class RegisterLoginPageService {
     register(newUser: UserType): Promise<any> {
         return new Promise((resolve: any, reject: any) => {
             axiosInstance.post(`/users`, newUser)
@@ -10,6 +10,14 @@ class RegisterPageService {
                 .catch((error: any) => reject(error))
         })
     }
+
+    login(): Promise<UserType[]> {
+        return new Promise((resolve: any, reject: any) => {
+            axiosInstance.get("/users")
+                .then((response: AxiosResponse<any, any>) => resolve(response.data))
+                .catch((error: any) => reject(error));
+        })
+    }
 }
 
-export default new RegisterPageService;
+export default new RegisterLoginPageService;

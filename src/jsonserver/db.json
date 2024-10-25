@@ -1,9 +1,16 @@
 {
   "users": [
     {
-      "id": "1",
-      "username": "gurkankaradas",
-      "password": "1905"
+      "id": "5316107",
+      "username": "gurkan",
+      "password": "12345678",
+      "balance": 1000
+    },
+    {
+      "id": "2778036",
+      "username": "gk",
+      "password": "12345678",
+      "balance": 1000
     }
   ],
   "events": [
