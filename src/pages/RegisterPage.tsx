@@ -7,8 +7,33 @@ import { Checkbox, FormControlLabel } from '@mui/material';
 import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
 import { schema } from '../schema/Schema';
+import RegisterPageServices from "../services/RegisterPageServices";
+import { UserType } from "../types/Types";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 function RegisterPage() {
+
+    const navigate = useNavigate();
+
+    const submit = async (values: any, actions: any) => {
+        try {
+            const payload: UserType = {
+                username: values.username,
+                password: values.password
+            }
+            const response = await RegisterPageServices.register(payload);
+            if (response) {
+                toast.success("Kullanıcı Kaydedildi")
+                setTimeout(() => {
+                    navigate("/login");
+                }, 1000);
+            }
+        } catch (error) {
+            toast.success("Kullanıcı Kaydedilirken Hata Oluştu")
+        }
+    }
+
     const { values, handleSubmit, handleChange, errors, resetForm } = useFormik({
         initialValues: {
             username: '',
@@ -16,9 +41,7 @@ function RegisterPage() {
             confirmPassword: "",
             term: ""
         },
-        onSubmit: values => {
-            alert(JSON.stringify(values, null, 2));
-        },
+        onSubmit: submit,
         validationSchema: schema
     });
 
@@ -38,7 +61,7 @@ function RegisterPage() {
                     <img className='logo' src={Logo} width={350} />
                 </div>
                 <div className='form-div'>
-                    <form className='form'>
+                    <form className='form' onSubmit={handleSubmit}>
                         <h2 className='title'>HESAP OLUŞTUR</h2>
                         <div className='input-div'>
                             <TextField
@@ -111,7 +134,7 @@ function RegisterPage() {
                             <button onClick={reset} type='reset' className='reset'>Temizle</button>
                         </div>
                         <div>
-                            <button type='button' className='login-button'>Zaten Bir Hesabım Var</button>
+                            <button onClick={() => navigate("/login")} type='button' className='login-button'>Zaten Bir Hesabım Var</button>
                         </div>
                     </form>
                 </div>

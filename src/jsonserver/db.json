@@ -1,89 +1,95 @@
 {
-    "users": [],
-    "events": [
-        {
-            "id": 1,
-            "name": "MilyonFest Kayseri",
-            "category": "concert",
-            "image": "../images/concert1.jpg",
-            "price": 100
-        },
-        {
-            "id": 2,
-            "name": "Çukurova Rock Festivali",
-            "category": "concert",
-            "image": "../images/concert1.jpg",
-            "price": 150
-        },
-        {
-            "id": 3,
-            "name": "WRC Rally Turkey Marmaris",
-            "category": "spor",
-            "image": "../images/race1.png",
-            "price": 800
-        },
-        {
-            "id": 4,
-            "name": "Formula 1 Turkish GP İstanbul",
-            "category": "spor",
-            "image": "../images/race.jpg",
-            "price": 850
-        },
-        {
-            "id": 5,
-            "name": "Kapadokya Çadır Kampı",
-            "category": "camper",
-            "image": "../images/camper1.jpg",
-            "price": 300
-        },
-        {
-            "id": 6,
-            "name": "PERA Konseri",
-            "category": "music",
-            "image": "../images/singer1.jpg",
-            "price": 350
-        },
-        {
-            "id": 7,
-            "name": "Güldür Güldür Show",
-            "category": "theatre",
-            "image": "../images/theatre1.jpg",
-            "price": 400
-        },
-        {
-            "id": 8,
-            "name": "Çok Güzel Hareketler 2",
-            "category": "theatre",
-            "image": "../images/theatre.jpg",
-            "price": 450
-        },
-        {
-            "id": 9,
-            "name": "90`lar Dans Gecesi",
-            "category": "dance",
-            "image": "../images/dance.jpg",
-            "price": 500
-        },
-        {
-            "id": 10,
-            "name": "Sahne Senin Karaoke Etkinliği",
-            "category": "singer",
-            "image": "../images/singer.jpg",
-            "price": 550
-        },
-        {
-            "id": 11,
-            "name": "Gesi Güzelköy Doğa Yürüyüşü",
-            "category": "camper",
-            "image": "../images/camper1.jpg",
-            "price": 250
-        },
-        {
-            "id": 12,
-            "name": "The Fast And The Furious ",
-            "category": "cinema",
-            "image": "../images/cinema.jpg",
-            "price": 200
-        }
-    ]
+  "users": [
+    {
+      "id": "1",
+      "username": "gurkankaradas",
+      "password": "1905"
+    }
+  ],
+  "events": [
+    {
+      "id": "1",
+      "name": "MilyonFest Kayseri",
+      "category": "concert",
+      "image": "../images/concert1.jpg",
+      "price": 100
+    },
+    {
+      "id": "2",
+      "name": "Çukurova Rock Festivali",
+      "category": "concert",
+      "image": "../images/concert1.jpg",
+      "price": 150
+    },
+    {
+      "id": "3",
+      "name": "WRC Rally Turkey Marmaris",
+      "category": "spor",
+      "image": "../images/race1.png",
+      "price": 800
+    },
+    {
+      "id": "4",
+      "name": "Formula 1 Turkish GP İstanbul",
+      "category": "spor",
+      "image": "../images/race.jpg",
+      "price": 850
+    },
+    {
+      "id": "5",
+      "name": "Kapadokya Çadır Kampı",
+      "category": "camper",
+      "image": "../images/camper1.jpg",
+      "price": 300
+    },
+    {
+      "id": "6",
+      "name": "PERA Konseri",
+      "category": "music",
+      "image": "../images/singer1.jpg",
+      "price": 350
+    },
+    {
+      "id": "7",
+      "name": "Güldür Güldür Show",
+      "category": "theatre",
+      "image": "../images/theatre1.jpg",
+      "price": 400
+    },
+    {
+      "id": "8",
+      "name": "Çok Güzel Hareketler 2",
+      "category": "theatre",
+      "image": "../images/theatre.jpg",
+      "price": 450
+    },
+    {
+      "id": "9",
+      "name": "90`lar Dans Gecesi",
+      "category": "dance",
+      "image": "../images/dance.jpg",
+      "price": 500
+    },
+    {
+      "id": "10",
+      "name": "Sahne Senin Karaoke Etkinliği",
+      "category": "singer",
+      "image": "../images/singer.jpg",
+      "price": 550
+    },
+    {
+      "id": "11",
+      "name": "Gesi Güzelköy Doğa Yürüyüşü",
+      "category": "camper",
+      "image": "../images/camper1.jpg",
+      "price": 250
+    },
+    {
+      "id": "12",
+      "name": "The Fast And The Furious ",
+      "category": "cinema",
+      "image": "../images/cinema.jpg",
+      "price": 200
+    }
+  ]
 }
