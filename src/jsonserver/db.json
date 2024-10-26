@@ -11,13 +11,55 @@
       "username": "gk",
       "password": "12345678",
       "balance": 1000
+    },
+    {
+      "id": "2013781",
+      "username": "a",
+      "password": "asdasdasd",
+      "balance": 1000
+    },
+    {
+      "id": "2159521",
+      "username": "as",
+      "password": "asdasdasd",
+      "balance": 1000
+    },
+    {
+      "id": "3615407",
+      "username": "asd",
+      "password": "asdasdas",
+      "balance": 1000
+    },
+    {
+      "id": "6592505",
+      "username": "asd",
+      "password": "asdasdasd",
+      "balance": 1000
+    },
+    {
+      "id": "5203117",
+      "username": "asd",
+      "password": "asdasdasd",
+      "balance": 1000
+    },
+    {
+      "id": "7026797",
+      "username": "a",
+      "password": "asdasdasdasd",
+      "balance": 1000
+    },
+    {
+      "id": "5850667",
+      "username": "ASD",
+      "password": "ASDASDASD",
+      "balance": 1000
     }
   ],
   "events": [
     {
-      "id": "1",
+      "id": 1,
       "name": "Gazapizm",
-      "image": "../images/music/gazapizm.jpg",
+      "image": "https://ippasso.mediatriple.net/event/18102024171759-eqw.jpg",
       "category": "music",
       "details": "Gazapizm, büyük ses getiren projesi ile 29 Kasım akşamı Turkcell Sahnesi’ne geliyor!  ",
       "adress": "Zorlu Performans Sanatları Merkezi",
@@ -25,9 +67,9 @@
       "price": 150
     },
     {
-      "id": "3",
+      "id": 2,
       "name": "CMXXIV",
-      "image": "../images/music/cmylmz.jpg",
+      "image": "https://ippasso.mediatriple.net/eventgroup/10012024101558-psm_cmxxiv_passo.jpg",
       "category": "sahne",
       "details": "Dünyanın dört bir yanında binlerce kez sahne alan Cem Yılmaz, yepyeni stand-up gösterisiyle Zorlu PSM’ye dönüyor. Cem Yılmaz, 'CMXXIV' adını taşıyan yeni performansı ile, 7 Şubat 2024 tarihinden itibaren Zorlu PSM Turkcell Sahnesi’nde seyircilerle buluşacak. Sezon boyunca Zorlu PSM Turkcell Sahnesi’nde gerçekleştirilecek bu özel gösteri serisi bir kez daha kahkahalara boğacak!",
       "adress": "Zorlu Performans Sanatları Merkezi",
@@ -35,9 +77,9 @@
       "price": 200
     },
     {
-      "id": "3",
+      "id": 3,
       "name": "Miniatürk - Tarihi Yarımada Model Sergisi",
-      "image": "../images/musium/miniaturk.jpg",
+      "image": "https://ippasso.mediatriple.net/event/04042023102116-photo_20.jpg",
       "category": "museium",
       "details": "Büyük ülkenin küçük bir modeli” sloganıyla yola çıkan Miniatürk’te, İstanbul’dan 60 eser, Anadolu’dan 63 eser ve bugün Türkiye sınırları dışında kalan Osmanlı coğrafyasından 13 eser olmak üzere 136 mimari eserin, 1/25 oranına küçültülmüş minyatür modelleri yer alıyor.",
       "visit": "09:00- 19:00",
@@ -46,9 +88,9 @@
       "price": 125
     },
     {
-      "id": "4",
+      "id": 4,
       "name": "Joker",
-      "image": "../images/cinema/joker.jpg",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/joker-2019918165550.jpg",
       "category": "cinema",
       "details": "Kalabalık içinde bile her an yalnız Arthur Fleck bağ kurma arayışındadır. Yine de, Gotham şehrinin isli sokaklarında yürürken; bölünme ve hoşnutsuzluğun düşmanca bir yer hâline getirdiği şehrin, üzeri grafitilerle dolu toplu taşıtlarına binerken, Arthur yüzünde iki maskeyle dolaşır. Bunlardan birincisi gündüz işi için yüzüne çizdiği palyaço suratıdır. Diğeri ise asla silip çıkaramayacağı bir maskedir: Bu, çevresindeki dünyanın bir parçası gibi hissetmek için ortaya koyduğu boş çabayı yansıtan bir maskedir; hayatı tekrar tekrar yerle bir edilmiş, yanlış anlaşılmış bir adamı gizleme çabasıdır. Babasız büyüyen Arthur’ın annesi kırılgan bir kadındır ve belki de Arthur’ın en iyi arkadaşıdır. Annesi onu “Mutlu/Happy” takma adıyla çağırır; bu lakap Arthur’ın yüzüne içindeki yürek acısını gizleyen bir gülümseme yayar. Fakat, sokakta ergenlerin zorbalığına, metroda takım elbiselilerin sataşmalarına ya da işteki diğer palyaçoların şakalarına maruz kaldığında, topluma aykırı bu adam çevresindeki herkesle gitgide daha da uyumsuz hâle gelir.",
       "price": 165

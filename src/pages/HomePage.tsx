@@ -1,11 +1,34 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux"
-import { UserType } from "../types/Types";
-import { setCurrentUser } from "../redux/appSlice";
+import { useDispatch, useSelector } from "react-redux"
+import { EventType, UserType } from "../types/Types";
+import { setCurrentUser, setEvents, setLoading } from "../redux/appSlice";
+import eventService from "../services/EventService";
+import { toast } from "react-toastify";
+import { RootState } from "../redux/store";
+import EventCard from "../components/EventCard";
 
 function HomePage() {
 
     const dispatch = useDispatch();
+    const { events } = useSelector((state: RootState) => state.app);
+
+    const getAllEvents = async () => {
+        try {
+            dispatch(setLoading(true));
+            const response: EventType[] = await eventService.getAllEvents();
+            if (response) {
+                dispatch(setEvents(response));
+            }
+        } catch (error) {
+            toast.error("Etkinlikler Getirilemedi")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    useEffect(() => {
+        getAllEvents();
+    }, [])
 
     useEffect(() => {
         const result = localStorage.getItem("currentUser")
@@ -15,9 +38,16 @@ function HomePage() {
         }
     }, []);
 
+
+
     return (
-        <>
-        </>
+        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+            {
+                events && events.map((event: EventType, index: number) => (
+                    <EventCard key={index} event={event} />
+                ))
+            }
+        </div>
     )
 }
 
