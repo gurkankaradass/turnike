@@ -16,87 +16,42 @@
   "events": [
     {
       "id": "1",
-      "name": "MilyonFest Kayseri",
-      "category": "concert",
-      "image": "../images/concert1.jpg",
-      "price": 100
-    },
-    {
-      "id": "2",
-      "name": "Çukurova Rock Festivali",
-      "category": "concert",
-      "image": "../images/concert1.jpg",
+      "name": "Gazapizm",
+      "image": "../images/music/gazapizm.jpg",
+      "category": "music",
+      "details": "Gazapizm, büyük ses getiren projesi ile 29 Kasım akşamı Turkcell Sahnesi’ne geliyor!  ",
+      "adress": "Zorlu Performans Sanatları Merkezi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
       "price": 150
     },
     {
       "id": "3",
-      "name": "WRC Rally Turkey Marmaris",
-      "category": "spor",
-      "image": "../images/race1.png",
-      "price": 800
+      "name": "CMXXIV",
+      "image": "../images/music/cmylmz.jpg",
+      "category": "sahne",
+      "details": "Dünyanın dört bir yanında binlerce kez sahne alan Cem Yılmaz, yepyeni stand-up gösterisiyle Zorlu PSM’ye dönüyor. Cem Yılmaz, 'CMXXIV' adını taşıyan yeni performansı ile, 7 Şubat 2024 tarihinden itibaren Zorlu PSM Turkcell Sahnesi’nde seyircilerle buluşacak. Sezon boyunca Zorlu PSM Turkcell Sahnesi’nde gerçekleştirilecek bu özel gösteri serisi bir kez daha kahkahalara boğacak!",
+      "adress": "Zorlu Performans Sanatları Merkezi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": "3",
+      "name": "Miniatürk - Tarihi Yarımada Model Sergisi",
+      "image": "../images/musium/miniaturk.jpg",
+      "category": "museium",
+      "details": "Büyük ülkenin küçük bir modeli” sloganıyla yola çıkan Miniatürk’te, İstanbul’dan 60 eser, Anadolu’dan 63 eser ve bugün Türkiye sınırları dışında kalan Osmanlı coğrafyasından 13 eser olmak üzere 136 mimari eserin, 1/25 oranına küçültülmüş minyatür modelleri yer alıyor.",
+      "visit": "09:00- 19:00",
+      "adress": "Miniaturk | İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.601788292734!2d28.95213416699521!3d41.054772647893046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab0ca49006bf5%3A0x3189508ccec2d71c!2sMiniat%C3%BCrk!5e0!3m2!1str!2str!4v1729959997140!5m2!1str!2str",
+      "price": 125
     },
     {
       "id": "4",
-      "name": "Formula 1 Turkish GP İstanbul",
-      "category": "spor",
-      "image": "../images/race.jpg",
-      "price": 850
-    },
-    {
-      "id": "5",
-      "name": "Kapadokya Çadır Kampı",
-      "category": "camper",
-      "image": "../images/camper1.jpg",
-      "price": 300
-    },
-    {
-      "id": "6",
-      "name": "PERA Konseri",
-      "category": "music",
-      "image": "../images/singer1.jpg",
-      "price": 350
-    },
-    {
-      "id": "7",
-      "name": "Güldür Güldür Show",
-      "category": "theatre",
-      "image": "../images/theatre1.jpg",
-      "price": 400
-    },
-    {
-      "id": "8",
-      "name": "Çok Güzel Hareketler 2",
-      "category": "theatre",
-      "image": "../images/theatre.jpg",
-      "price": 450
-    },
-    {
-      "id": "9",
-      "name": "90`lar Dans Gecesi",
-      "category": "dance",
-      "image": "../images/dance.jpg",
-      "price": 500
-    },
-    {
-      "id": "10",
-      "name": "Sahne Senin Karaoke Etkinliği",
-      "category": "singer",
-      "image": "../images/singer.jpg",
-      "price": 550
-    },
-    {
-      "id": "11",
-      "name": "Gesi Güzelköy Doğa Yürüyüşü",
-      "category": "camper",
-      "image": "../images/camper1.jpg",
-      "price": 250
-    },
-    {
-      "id": "12",
-      "name": "The Fast And The Furious ",
+      "name": "Joker",
+      "image": "../images/cinema/joker.jpg",
       "category": "cinema",
-      "image": "../images/cinema.jpg",
-      "price": 200
+      "details": "Kalabalık içinde bile her an yalnız Arthur Fleck bağ kurma arayışındadır. Yine de, Gotham şehrinin isli sokaklarında yürürken; bölünme ve hoşnutsuzluğun düşmanca bir yer hâline getirdiği şehrin, üzeri grafitilerle dolu toplu taşıtlarına binerken, Arthur yüzünde iki maskeyle dolaşır. Bunlardan birincisi gündüz işi için yüzüne çizdiği palyaço suratıdır. Diğeri ise asla silip çıkaramayacağı bir maskedir: Bu, çevresindeki dünyanın bir parçası gibi hissetmek için ortaya koyduğu boş çabayı yansıtan bir maskedir; hayatı tekrar tekrar yerle bir edilmiş, yanlış anlaşılmış bir adamı gizleme çabasıdır. Babasız büyüyen Arthur’ın annesi kırılgan bir kadındır ve belki de Arthur’ın en iyi arkadaşıdır. Annesi onu “Mutlu/Happy” takma adıyla çağırır; bu lakap Arthur’ın yüzüne içindeki yürek acısını gizleyen bir gülümseme yayar. Fakat, sokakta ergenlerin zorbalığına, metroda takım elbiselilerin sataşmalarına ya da işteki diğer palyaçoların şakalarına maruz kaldığında, topluma aykırı bu adam çevresindeki herkesle gitgide daha da uyumsuz hâle gelir.",
+      "price": 165
     }
   ]
 }
