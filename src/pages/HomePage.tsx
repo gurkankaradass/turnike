@@ -6,6 +6,7 @@ import eventService from "../services/EventService";
 import { toast } from "react-toastify";
 import { RootState } from "../redux/store";
 import EventCard from "../components/EventCard";
+import { Container } from "@mui/material";
 
 function HomePage() {
 
@@ -41,13 +42,15 @@ function HomePage() {
 
 
     return (
-        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
-            {
-                events && events.map((event: EventType, index: number) => (
-                    <EventCard key={index} event={event} />
-                ))
-            }
-        </div>
+        <Container>
+            <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>
+                {
+                    events && events.map((event: EventType, index: number) => (
+                        <EventCard key={index} event={event} />
+                    ))
+                }
+            </div>
+        </Container>
     )
 }
 

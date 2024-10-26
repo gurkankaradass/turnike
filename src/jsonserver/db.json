@@ -53,6 +53,12 @@
       "username": "ASD",
       "password": "ASDASDASD",
       "balance": 1000
+    },
+    {
+      "id": "6482506",
+      "username": "begum",
+      "password": "21152115",
+      "balance": 1000
     }
   ],
   "events": [
@@ -62,8 +68,98 @@
       "image": "https://ippasso.mediatriple.net/event/18102024171759-eqw.jpg",
       "category": "music",
       "details": "Gazapizm, büyük ses getiren projesi ile 29 Kasım akşamı Turkcell Sahnesi’ne geliyor!  ",
-      "adress": "Zorlu Performans Sanatları Merkezi",
+      "adress": "Zorlu PSM - Turkcell Sahnesi - İstanbul",
       "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 2,
+      "name": "Hadise",
+      "image": "https://ippasso.mediatriple.net/event/05092024151756-hadise.jpeg",
+      "category": "music",
+      "details": "Performansı, showları ve stili ile fark yaratan Türk pop müziğinin en güçlü kadın temsilcilerinden 14 Aralık 2024 Cumartesi akşamı Ankara Congresium sahnesi'nde müzikseverler ile buluşuyor. Hadise uzun bir aranın ardından, Neredesin Aşkım, Aşk Kaç Beden Giyer, İmdat, Feryat, Sıfır Tolerans gibi hitlerinin de yer aldığı özel repertuvarı ile sürprizlerle dolu bir gecede unutulmaz bir konser yaşatacak.",
+      "adress": "Congresium Ankara",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 3,
+      "name": "Mehmet Erdem",
+      "image": "https://ippasso.mediatriple.net/event/17102024141730-mehmet_erdem.png",
+      "category": "music",
+      "details": "Mehmet Erdem Paysage Sahnesi'nde sevenleriyle buluşuyor.",
+      "adress": "Kalamış Paysage Restaurant",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12048.943943346401!2d29.030387732725494!3d40.97631314358558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab87dcdc0d231%3A0x4b21db200bfa4289!2sKalam%C4%B1%C5%9F%20Paysage%20Restaurant!5e0!3m2!1str!2str!4v1729975152807!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 4,
+      "name": "Gripin",
+      "image": "https://ippasso.mediatriple.net/event/16102024141813-gripin_passo.jpg",
+      "category": "music",
+      "details": "Ünlü grup, hitlerinden ve farklı proje albümleri için yeniden yorumladıkları şarkılarından oluşan repertuarıyla izleyicilere keyifli bir gece yaşatacak. ",
+      "adress": "Selçuklu Kongre Merkezi - Konya",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7637198350963!2d32.51172160000001!3d37.93595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08e4b1ab33bf9%3A0x74cfbb7c9a5fe055!2sSel%C3%A7uklu%20Kongre%20Merkezi!5e0!3m2!1str!2str!4v1729975314049!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 5,
+      "name": "Gülşen",
+      "image": "https://ippasso.mediatriple.net/event/16102024135815-gulsen_passo.jpg",
+      "category": "music",
+      "details": "﻿Gülşen , Bayhan Prodüksiyon organizasyonuyla Ankara Congresium sahnesi'nde",
+      "adress": "Congresium Ankara",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 6,
+      "name": "Buray",
+      "image": "https://ippasso.mediatriple.net/event/14062024163540-buray-1920x1080_1.jpg",
+      "category": "music",
+      "details": "Buray, KerkiSolfej organizasyonu ile sevilen şarkılarını sizlerle buluşturmaya hazırlanıyor.",
+      "adress": "Harbiye Cemil Topuzlu Açık Hava Tiyatrosu",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12036.195411790883!2d28.97975183277049!3d41.04606074342985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab77253099bb5%3A0xa73a3d0b8b295da9!2sHarbiye%20Cemil%20Topuzlu%20A%C3%A7%C4%B1k%20Hava%20Tiyatrosu!5e0!3m2!1str!2str!4v1729975660635!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 7,
+      "name": "Göksel",
+      "image": "https://ippasso.mediatriple.net/event/04102024173326-goksel_passo_gorseli_yeni.jpg",
+      "category": "music",
+      "details": "Türk pop müziğinin en güçlü kadın şarkı yazarı ve yorumcularından Göksel, Bayhan Müzik organizasyonuyla 2024 konserlerinde müzikseverler ile buluşmaya hazırlanıyor. Kendi şarkılarının yanı sıra daha önce çıkardığı proje albümlerden şarkılara da repertuarında yer veren Göksel, yeni konser serisi için hazırladığı sürprizlerle Türkiye genelinde yola çıkıyor.",
+      "adress": "Selçuklu Kongre Merkezi - Konya",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7637198350963!2d32.51172160000001!3d37.93595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08e4b1ab33bf9%3A0x74cfbb7c9a5fe055!2sSel%C3%A7uklu%20Kongre%20Merkezi!5e0!3m2!1str!2str!4v1729975314049!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 8,
+      "name": "Teoman",
+      "image": "https://ippasso.mediatriple.net/event/02092024141402-teoman_grup_guncel.jpg",
+      "category": "music",
+      "details": "Teoman, Bayhan Müzik organizasyonuyla Türkiye turnesine devam ediyor. Sanatçı yoğun talep üzerine Konya Selçuklu Kongre Merkezi Sahnesi'nde dikkat çeken şarkıları ve hitlerinden oluşan repertuarıyla müzik severler ile buluşacak",
+      "adress": "Selçuklu Kongre Merkezi - Konya",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3146.7637198350963!2d32.51172160000001!3d37.93595!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d08e4b1ab33bf9%3A0x74cfbb7c9a5fe055!2sSel%C3%A7uklu%20Kongre%20Merkezi!5e0!3m2!1str!2str!4v1729975314049!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 9,
+      "name": "Melek Mosso",
+      "image": "https://ippasso.mediatriple.net/event/25092024112517-melek-mosso-1920x1080.jpg",
+      "category": "music",
+      "details": "Melek Mosso, KerkiSolfej organizasyonu ile sevilen şarkılarını sizlerle buluşturmaya hazırlanıyor.",
+      "adress": "TED Ankara Koleji Sahne Sanatları ve Gösteri Merkezi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5153.50983645685!2d32.77352401028196!3d39.82279680934723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d341c296506995%3A0xcdf6ef3479c97f7d!2sAta%20Sahne!5e0!3m2!1str!2str!4v1729976227429!5m2!1str!2str",
+      "price": 150
+    },
+    {
+      "id": 10,
+      "name": "Sıla",
+      "image": "https://ippasso.mediatriple.net/event/25092024113358-sila-1920x1080_2.jpg",
+      "category": "music",
+      "details": "Sıla, KerkiSolfej organizasyonu ile sevilen şarkılarını sizlerle buluşturmaya hazırlanıyor.",
+      "adress": "TED Ankara Koleji Sahne Sanatları ve Gösteri Merkezi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5153.50983645685!2d32.77352401028196!3d39.82279680934723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d341c296506995%3A0xcdf6ef3479c97f7d!2sAta%20Sahne!5e0!3m2!1str!2str!4v1729976227429!5m2!1str!2str",
       "price": 150
     },
     {
@@ -72,13 +168,83 @@
       "image": "https://ippasso.mediatriple.net/eventgroup/10012024101558-psm_cmxxiv_passo.jpg",
       "category": "sahne",
       "details": "Dünyanın dört bir yanında binlerce kez sahne alan Cem Yılmaz, yepyeni stand-up gösterisiyle Zorlu PSM’ye dönüyor. Cem Yılmaz, 'CMXXIV' adını taşıyan yeni performansı ile, 7 Şubat 2024 tarihinden itibaren Zorlu PSM Turkcell Sahnesi’nde seyircilerle buluşacak. Sezon boyunca Zorlu PSM Turkcell Sahnesi’nde gerçekleştirilecek bu özel gösteri serisi bir kez daha kahkahalara boğacak!",
-      "adress": "Zorlu Performans Sanatları Merkezi",
+      "adress": "Zorlu PSM - Turkcell Sahnesi - İstanbul",
       "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
       "price": 200
     },
     {
+      "id": 2,
+      "name": "1923",
+      "image": "https://ippasso.mediatriple.net/event/15112023135431-1923_passo.jpg",
+      "category": "sahne",
+      "details": "Cumhuriyetimizin 100. yılında, günümüzden tarihe uzanan büyüleyici bir müzikal yolculuk...",
+      "adress": "Zorlu PSM - Turkcell Sahnesi - İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Amadeus",
+      "image": "https://ippasso.mediatriple.net/event/27032024110738-amadeus_akm.jpg",
+      "category": "sahne",
+      "details": "Peter Shaffer tarafından kaleme alınan, dünya müzik tarihinin unutulmaz bestecileri Wolfgang Amadeus Mozart ile Antonio Salieri’nin eşsiz hikayesi AMADEUS sahnede!",
+      "adress": "Atatürk Kültür Merkezi - Türk Telekom Opera Salonu",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4797794662595!2d28.987796899999996!3d41.036636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab76534821173%3A0x4921da7bada2608!2zQXRhdMO8cmsgS8O8bHTDvHIgTWVya2V6aQ!5e0!3m2!1str!2str!4v1729977198432!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Ata Demirer Gazinosu",
+      "image": "https://ippasso.mediatriple.net/event/07022024161310-ata_demirer_07022024.jpg",
+      "category": "sahne",
+      "details": "Gazino konseptini komedi ile birleştirip, bir komedi gazinosu formatı yaratan,mizahin yıldız ismi Ata Demirer, yeni şarkılar, yeni şakalar ve unutulmayan klasikleri ile “ATA DEMİRER GAZİNOSU” 2.sezonu ile devam ediyor.",
+      "adress": "Bostancı Gösteri Merkezi - İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Drakula",
+      "image": "https://ippasso.mediatriple.net/event/01102024161146-drakula_290924.jpg",
+      "category": "sahne",
+      "details": "Bram Stoker’ın ölümsüz eseri Drakula romanındaki karakterlerden hareketle Okan Bayülgen’in yeniden kaleme aldığı ve yönettiği oyunda, tarihin en ünlü fantastik karakterlerinden biri olan Drakula’ya Okan Bayülgen, vampir avcısı Van Helsing rolüne ise Hayko Cepkin hayat verecek.",
+      "adress": "Congresium Ankara",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Kel Diva",
+      "image": "https://ippasso.mediatriple.net/event/03012024111610-passov3.jpg",
+      "category": "sahne",
+      "details": "Bir İngiliz burjuva ailesinin, İngiliz koltuklarla döşenmiş oturma odası. Bir İngiliz akşamı.",
+      "adress": "Zorlu PSM - Turkcell Platinum Sahnesi - İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12032.316334932297!2d29.007082232784196!3d41.06726394338302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71573562cf9%3A0x66115d32ed7e92bf!2sTurkcell%20platinum%20sahnesi!5e0!3m2!1str!2str!4v1729978285134!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Aşık Shakespeare",
+      "image": "https://ippasso.mediatriple.net/event/16092024125509-asik_shakespeare.jpg",
+      "category": "sahne",
+      "details": "En İyi Film dahil 7 dalda Oscar kazanan kült film Aşık Shakespeare (Shakespeare in Love) Türkiye’de ilk defa tiyatro sahnesinde!",
+      "adress": "Bostancı Gösteri Merkezi - İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
+      "price": 200
+    },
+    {
+      "id": 2,
+      "name": "Afife",
+      "image": "https://ippasso.mediatriple.net/event/18102024121108-afife_en_guncel.png",
+      "category": "sahne",
+      "details": "Kia'nın sunduğu Afife, Afife Tiyatro ve Zorlu PSM ortaklığıyla yeni sezon boyunca Zorlu PSM Turkcell Sahnesi’nde.",
+      "adress": "Zorlu PSM - Turkcell Sahnesi - İstanbul",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12032.316334932297!2d29.007082232784196!3d41.06726394338302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71573562cf9%3A0x66115d32ed7e92bf!2sTurkcell%20platinum%20sahnesi!5e0!3m2!1str!2str!4v1729978483006!5m2!1str!2str",
+      "price": 200
+    },
+    {
       "id": 3,
-      "name": "Miniatürk - Tarihi Yarımada Model Sergisi",
+      "name": "Miniatürk",
       "image": "https://ippasso.mediatriple.net/event/04042023102116-photo_20.jpg",
       "category": "museium",
       "details": "Büyük ülkenin küçük bir modeli” sloganıyla yola çıkan Miniatürk’te, İstanbul’dan 60 eser, Anadolu’dan 63 eser ve bugün Türkiye sınırları dışında kalan Osmanlı coğrafyasından 13 eser olmak üzere 136 mimari eserin, 1/25 oranına küçültülmüş minyatür modelleri yer alıyor.",
@@ -88,11 +254,202 @@
       "price": 125
     },
     {
+      "id": 3,
+      "name": "Yerebatan Sarnıcı",
+      "image": "https://ippasso.mediatriple.net/event/25072022104959-yerebatan_kapak_11.jpg",
+      "category": "museium",
+      "details": "Bizans İmparatoru I. Justinianus (527-565) tarafından yaptırılan sarnıç, suyun içinden yükselen ve sayısız gibi görülen mermer sütunlar sebebiyle halk arasında “Yerebatan Sarayı” olarak biliniyor. Sarnıcın bulunduğu yerde daha önce bir bazilika bulunduğundan, Bazilika Sarnıcı olarak da anılıyor.",
+      "visit": "09:00 - 18:30",
+      "adress": "Yerebatan Sarnıcı",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12043.084301965811!2d28.96759973274616!3d41.00838354351365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9bde0c66ac9%3A0x60c02fe1ee6d8471!2zWWVyZWJhdGFuIFNhcm7EsWPEsQ!5e0!3m2!1str!2str!4v1729979724493!5m2!1str!2str",
+      "price": 125
+    },
+    {
+      "id": 3,
+      "name": "Dijital Deneyim Müzesi",
+      "image": "https://ippasso.mediatriple.net/event/27022024102434-ddm1.jpg",
+      "category": "museium",
+      "details": "Avrupa’nın en büyük ve Türkiye’nin ilk Dijital Deneyim Müzesi’nde deneyime, teknolojiye, geleceğe yeni kapılar aç!",
+      "visit": "09:00-19:00",
+      "adress": "İBB Kültür A.Ş Dijital Deneyim Müzesi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12034.028050497926!2d28.939221732778137!3d41.05790874340365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab113444a8889%3A0xf3424a31c052c237!2zxLBCQiBLw7xsdMO8ciBBxZ4gRGlqaXRhbCBEZW5leWltIE3DvHplc2k!5e0!3m2!1str!2str!4v1729979859079!5m2!1str!2str",
+      "price": 125
+    },
+    {
+      "id": 3,
+      "name": "Panorama 1453 Tarih Müzesi",
+      "image": "https://ippasso.mediatriple.net/event/16122021135440-4.jpeg",
+      "category": "museium",
+      "details": "29 Mayıs 1453 sabahı, dijital bir yorumla yeniden hayat buluyor. Ziyaretçilerine 3 boyutlu bir müzecilik deneyimi yaşatan Sultan Mehmed’in Rüyası mapping gösterisi, çağdaş bir yorumla Panorama 1453 Tarih Müzesi’nde ziyaretçilerle buluşuyor.",
+      "visit": "09:00-18:30",
+      "adress": "Panorama 1453 Tarih Müzesi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12041.275935728618!2d28.910112732752566!3d41.018276743491576!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9c7105a0f71%3A0x56e3e445f89b58c6!2sPanorama%201453%20Tarih%20M%C3%BCzesi!5e0!3m2!1str!2str!4v1729980298369!5m2!1str!2str",
+      "price": 125
+    },
+    {
+      "id": 3,
+      "name": "Binbirdirek Sarnıcı",
+      "image": "https://ippasso.mediatriple.net/event/08052023171417-sarnic_1920x1080.jpg",
+      "category": "museium",
+      "details": "﻿Binbirdirek Sarnıcı, Yerebatan Sarnıcı’ndan sonra İstanbul’daki ikinci büyük su haznesi olan sarnıçtır. Eski Bizans kaynaklarına göre IV. yüzyılda Konstantin (Constantinus) zamanında yaptırılmıştır. Binbirdirek Sarnıcı’nın zamanla kuruması nedeniyle burası 16. yüzyıldan itibaren atölye olarak kullanılmıştır. 3584 metre kare büyüklüğünde olan Binbirdirek Sarnıcı’nın içinde bulunan 224 orijinal sütunundan 212 tanesi günümüze ulaşmıştır.",
+      "visit": "10:00 - 17:00",
+      "adress": "Panorama 1453 Tarih Müzesi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12043.238175286302!2d28.964182732745606!3d41.00754164351553!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab9964ce01685%3A0xafdb7747cb786216!2zQmluYmlyZGlyZWsgU2FybsSxY8Sx!5e0!3m2!1str!2str!4v1729980506922!5m2!1str!2str",
+      "price": 125
+    },
+    {
+      "id": 3,
+      "name": "Özel Doğa Bilim Müzesi",
+      "image": "https://ippasso.mediatriple.net/event/11032024123943-2.png",
+      "category": "museium",
+      "details": "Doğa Bilim Müzesi Türkiye'de ilk ve tek tahnit müzesidir. Müzemizde 600 çeşit ve 100'den fazla tahnit edilmiş hayvan bulunmaktadır. Ayrıca dünyanın her yerinden kelebek ve omurgasızlar müzemizde sergilenmektedir.",
+      "visit": "09:00 - 15:00",
+      "adress": "Panorama 1453 Tarih Müzesi",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12070.62321484943!2d29.269260432648956!3d40.857480143857174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cadc603718ebfd%3A0x7296fb9108b1c3d3!2zRG_En2EgQmlsaW0gTcO8emVzaQ!5e0!3m2!1str!2str!4v1729980683748!5m2!1str!2str",
+      "price": 125
+    },
+    {
       "id": 4,
       "name": "Joker",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/joker-2019918165550.jpg",
       "category": "cinema",
       "details": "Kalabalık içinde bile her an yalnız Arthur Fleck bağ kurma arayışındadır. Yine de, Gotham şehrinin isli sokaklarında yürürken; bölünme ve hoşnutsuzluğun düşmanca bir yer hâline getirdiği şehrin, üzeri grafitilerle dolu toplu taşıtlarına binerken, Arthur yüzünde iki maskeyle dolaşır. Bunlardan birincisi gündüz işi için yüzüne çizdiği palyaço suratıdır. Diğeri ise asla silip çıkaramayacağı bir maskedir: Bu, çevresindeki dünyanın bir parçası gibi hissetmek için ortaya koyduğu boş çabayı yansıtan bir maskedir; hayatı tekrar tekrar yerle bir edilmiş, yanlış anlaşılmış bir adamı gizleme çabasıdır. Babasız büyüyen Arthur’ın annesi kırılgan bir kadındır ve belki de Arthur’ın en iyi arkadaşıdır. Annesi onu “Mutlu/Happy” takma adıyla çağırır; bu lakap Arthur’ın yüzüne içindeki yürek acısını gizleyen bir gülümseme yayar. Fakat, sokakta ergenlerin zorbalığına, metroda takım elbiselilerin sataşmalarına ya da işteki diğer palyaçoların şakalarına maruz kaldığında, topluma aykırı bu adam çevresindeki herkesle gitgide daha da uyumsuz hâle gelir.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Bir Cumhuriyet Şarkısı",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/bir-cumhuriyet-sarkisi-2024101512243900d7bc2545c24fff90a7b149a4d4515c.jpg",
+      "category": "cinema",
+      "details": "Bir Cumhuriyet Şarkısı, 1930'lu yıllarda genç bir cumhuriyet olan Türkiye'nin girdiği modernleşme sürecini konu ediniyor.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Köprü",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/kopru-202410161259337733b32bae2d447694c1e98735079d78.jpg",
+      "category": "cinema",
+      "details": "Başarılı bir Türk iş insanı olan Davut, hiç bilmediği bir gerçeği öğrenir: Gürcistan’da bir kardeşi vardır. Gürcistan’a doğru yola çıkan Davut, hem üvey kardeşini bulmaya çalışırken hem de babasının ölümüne dair gizemli bilgilere ulaşır. Soru işaretleri birer birer aydınlanırken Davut, beklenmedik şekilde kendini bir dedektiflik hikayesinin içinde bulur. Aynı zamanda aşk hayatı da bu süreçte bambaşka bir boyut kazanır.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Venom: Son Dans",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/venom-son-dans-20249416241257c2bd4dd2543118e6ddef78df59cac.jpg",
+      "category": "cinema",
+      "details": "Eddie Brock/Venom üçlemesinin final filmi Venom: Son Dans'ta, artık tek vücutta yaşamaya alışmış Eddie Brock ile Venom'u bu kez kendi dünyaları tarafından aranan birer kaçak olarak izleyeceğiz.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Dedemin Gözyaşları",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/dedemin-gozyaslari-2024921557165fa71957579a49deaa2fa4b420a9ae76.jpg",
+      "category": "cinema",
+      "details": "Lösemiyle mücadele eden torunu Mustafa'yı büyük bir sevgiyle büyüten Kemal'in hayatı, hiç beklemediği bir anda, bambaşka bir yöne savrulur. Küçük bir sahil kasabasında, dedesinin yanında mutlu bir çocukluk geçiren Mustafa'nın 10 yaşında yakalandığı amansız hastalık hem Kemal'i hem de tüm mahalleyi derinden etkiler. Bu zorlu süreçte, dede Kemal ile tanışan bir muhabirin gerçek kimliğini saklayarak haber peşinde koşması, beklenmedik olayların fitilini ateşler.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Bir Zamanlar Gelecek : 2121",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/bir-zamanlar-gelecek-2121-20231017133138bbc64bbcdb6f45228b283e29841bb35c.jpg",
+      "category": "cinema",
+      "details": "21. yüzyılın sonlarında iklim krizi ve kıtlık sebebiyle yeryüzü yaşanılmaz hale gelir. Hayatta kalabilen az sayıda insan koloni halinde yerin altına kurdukları bloklarda yaşar. Gelecekte koloni sistemini kontrol eden Genç Yönetim’in aldığı “Kıtlık Kanunları” gereği sisteme getirilen yeni hayat karşılığında, yaşlı neslin yok edilmesi zorunludur. Yer altındaki evlerinde kadın, adam, çocuk ve büyükanne olarak yaşayan dört kişilik bir ailenin hayatı yeni doğacak bebek yüzünden değişir.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Köylüler",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/acikhava-koyluler-202466125331d8402f7ceb564046a91e5f6d56fdc55d.jpg",
+      "category": "cinema",
+      "details": "Köylüler, bir köylü kızı olan Jagna’nın oğlu Antek’e olan sevgisine rağmen kendisinden çok daha yaşlı ve varlıklı bir çiftçi olan Maciej ile evlenmeye zorlanmasının trajik hikayesidir. Zamanla Jagna, köylülerin kıskançlık ve nefret nesnesi haline gelir ve bağımsızlığını korumak için savaşmak zorunda kalır. 19. ve 20.  Yüzyıl Polonya kırsalında geçen hikayenin dramatik kırılmaları, değişen mevsimlere, tarlalardaki ağır işlere ve geleneksel bayramlara bağlanıyor.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "En Sevdiğim Pastam",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/my-favourite-cake-20245515048e5c5a1a3b56b4ce48f38a56ed8355d28.jpg",
+      "category": "cinema",
+      "details": "Tahran’da yalnız başına yaşayan yetmiş yaşındaki Mahin çoğunlukla dört duvar arasında tekdüze bir hayat sürer, arada bir kadın arkadaşlarıyla görüşür. Kocası otuz yıl önce ölen, kızı Avrupa’ya taşınan Mahin yurt dışında yaşayan çocukları ve çevresindeki dünya için görünmez olmaya başladığını hissetmektedir. Bir öğleden sonra arkadaşlarıyla buluşup çay içerken konuşulanların ardından yalnızlığından kurtulmaya, gençliğinin kaybolan özgürlüğüyle yeniden buluşmaya ve aşk hayatını canlandırmaya karar verir. Fakat yeni bir romantik ilişkinin peşine düşen Mahin’in hoşlandığı biriyle güzel bir akşam geçirme planı çok geçmeden sonu belirsiz, unutulmaz bir maceraya dönüşür.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Megalopolis",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/megalopolis-202492704029dd1d6b8a2e614558be2feb443a324561.jpg",
+      "category": "cinema",
+      "details": "Megalopolis, yıkıcı bir felaketin ardından New York'u bir ütopya olarak yeniden inşa etmek isteyen bir mimarın hikayesini konu ediyor. Ancak onun isteklerini gerçekleştirmesi, belediye başkanının planlarıyla çeliştiği için pek de kolay olmayacaktır.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Karanlığın Öfkesi",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/karanligin-ofkesi-2024961426241dca93409b114b09a4f199df11341869.jpg",
+      "category": "cinema",
+      "details": "Eski arkadaşlar tatil için önceden planladıkları yerde belirlenen tarihte Antalya’da buluşurlar. Birbirlerini çok özlemişlerdir ve hasret giderirler. Servis gelir ve oteller bölgesine doğru hareket ederler. Yolculuk boyunca çok keyif alırlar. Otele yerleşirler ve daha sonra tatil bölgesini gezmek için dışarı çıkarlar. ",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "İllegal Hayatlar: Meclis",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/illegal-hayatlar-meclis-20241023152858df83c1bb7b1444d5807b348eab5878bf.jpg",
+      "category": "cinema",
+      "details": "Mahsun, Şahin ve Mehmet, kurdukları LMKP adlı siyasi partinin yanlışlıkla meclise girmesi sonucu kendilerini yepyeni ve fırsatlarla dolu bir dünyanın içinde bulurlar. Kaçak kumarhane işletmeciliği ile başlayan hikaye, meclise taşınır.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Cine-Club: Delicieux",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/cine-club-delicieux-20249617542122da0cc4669049f585c7511c368a7265.jpg",
+      "category": "cinema",
+      "details": "18. yüzyıl Fransa'sı. Bir soylu evinin prestiji her şeyden önce masasının kalitesine bağlıdır. Fransız Devrimi'nin eşiğinde, gastronomi hâlâ aristokratların ayrıcalığıdır. Yetenekli aşçı Manceron, Chamfort Dükü tarafından işten çıkarıldığında yemek yapma isteğini kaybeder. Kırsal evine döndüğünde, gizemli Louise ile tanışması onu yeniden ayağa kaldırır. İkisi de Dük’e karşı intikam arzusu beslerken, Fransa’nın ilk restoranını kurmaya karar verirler.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Usta ile Margarita",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/usta-ile-margarita-2024108113521f6c7d3dd266f4052933239356e797263.png",
+      "category": "cinema",
+      "details": "1930'ların Moskova'sı. Kariyerinin zirvesinde olan ünlü bir yazar, aniden kendini edebi bir skandalın ortasında bulur. Yazdığı oyunun repertuvardan çıkarılmasıyla meslektaşları ondan uzaklaşır ve kısa sürede bir dışlanmışa dönüşür. Bu zor zamanların ardından, yazar Margarita ile tanışır; Margarita onun sevgilisi ve ilham perisi olur. Onun sevgisi ve desteğiyle, yazar çevresindeki insanların karakterlerinden esinlenerek yeni bir romana başlar. Romandaki başkahraman ise, kısa bir süre önce tanıştığı gizemli bir yabancıdan esinlenilen Voland'dır. Yazar, romanının dünyasına kendini öylesine kaptırır ki, gerçeklik ile hayal gücü birbirine karışmaya başlar.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Gün Doğarken",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/gun-dogarken-202410259334835f0e527d52648b5bc4bd091b2212879.jpg",
+      "category": "cinema",
+      "details": "Una, bir sır saklarken ve duygularını tam olarak ifade edemediğinde acısıyla boğuşmaktadır. Çevresindeki zorlu olaylar karşısında cesurca manevralar yaparak yoluna devam eder. Bu onun ilk acı deneyimidir ve kahkahanın ağlamaya dönüştüğünde üzüntü ve güzelliğin bir arada var olduğunu yavaş yavaş fark eder. Ve kötü olmadan iyinin var olamayacağını.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Hayat",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/hayat-2023116112758c538d000908439d919b9723b7a02015.jpg",
+      "category": "cinema",
+      "details": "Genç bir kadın olan Hicran, babasının zoruyla nişanlanmak zorunda kalınca çareyi kaçmakta bulur. Hicran'ın zaten onunla evlenmeyi istemediğini düşünen Rıza, başlarda bu durumu önemsemez. Ancak zaman geçtikçe Hicran tarafından istenmemek zoruna gitmeye başlar ve onunla yüzleşmeye karar verir. Rıza, sadece bir kere gördüğü nişanlısını bulmak için İstanbul'a gider.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Mutfak",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/mutfak-20241016143712038df8ee9a71459395f4fe15ef89fe85.jpg",
+      "category": "cinema",
+      "details": "La cocina, Manhattan’daki The Grill’de öğle yemeği telaşı tam da zirvedeyken kasadan para kaybolduğu anlaşılır. Kayıtsız aşçıların hepsi zan altındayken Pedro baş şüphelidir. Hayalperest ve haşarı Pedro, Amerikalı garson Julia’ya aşıktır. Mekânın sahibi Rashid, Pedro’ya “yasal olabilmesi” için evraklarında yardımcı olacağına söz vermiştir. Ancak Julia hakkında ortaya çıkanlar herkesi şoke edecek, Pedro da bunun üzerine kentin bu en işlek mutfağının ocağını sonsuza dek söndürecektir. Arnold Wesker’ın aynı adlı tiyatro oyunundan uyarlanan “yemek pornosu karşıtı” Mutfak, lokantaların işlemesini ve midelerimizin dolmasını sağlayan o görünmeyen insanlara trajikomik bir övgü niteliğinde. Prömiyeri Berlin Film Festivali’nde yapılan Mutfak, Gueros ve Museo / Müze’nin yanı sıra Narcos: Mexico dizisini de yöneten Alonzo Ruizpalacios’un son filmi.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "Tereddüt Çizgisi",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/tereddut-cizgisi-20244181028129c88738aea98409f9d5abcc996ea6341.jpg ",
+      "category": "cinema",
+      "details": "Tereddüt Çizgisi, Avukat Canan’ın masum olduğuna inandığı ve uzun süredir savunduğu bir cinayet zanlısının hüküm duruşması gününde kendi vicdanıyla yüzleşmek zorunda kalmasının hikâyesini anlatıyor.",
+      "price": 165
+    },
+    {
+      "id": 4,
+      "name": "The Crow: Ölümsüz",
+      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/olumsuz-202481912336099c813d20b24a2c8c2db9e45bec0e09.jpg",
+      "category": "cinema",
+      "details": "Genç aşıklar Eric ve Shelly, vahşi bir cinayete kurban gider. Gerçek aşkını kurtarmak için kendini feda etme şansı verildiğinde Eric, yanlışları düzeltmek için yaşayanlar ve ölülerin dünyaları arasında gidip geleceği kanlı bir intikam yolculuğuna çıkar.",
       "price": 165
     }
   ]
