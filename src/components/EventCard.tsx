@@ -1,8 +1,9 @@
-import { Container } from '@mui/material';
+import { CardMedia, Container } from '@mui/material';
 import { EventType } from '../types/Types'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
+import "../css/Events.css"
 
 interface EventCardProps {
     event: EventType
@@ -11,7 +12,7 @@ interface EventCardProps {
 function EventCard(props: EventCardProps) {
     const { name, image, category } = props.event;
     return (
-        <div>
+        <div className='main-div'>
             {/* {
                 category === "cinema" ? <img src={image} alt="" width={155} /> : <img src={image} alt="" width={545} />
             }
