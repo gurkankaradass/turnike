@@ -20,7 +20,7 @@ export const appSlice = createSlice({
         setLoading: (state: AppSliceType, action: PayloadAction<boolean>) => {
             state.loading = action.payload;
         },
-        setCurrentUser: (state: AppSliceType, action: PayloadAction<UserType>) => {
+        setCurrentUser: (state: AppSliceType, action: PayloadAction<UserType | null>) => {
             state.currentUser = action.payload;
         },
         setEvents: (state: AppSliceType, action: PayloadAction<EventType[]>) => {

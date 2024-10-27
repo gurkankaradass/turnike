@@ -1,4 +1,3 @@
-import { CardMedia, Container } from '@mui/material';
 import { EventType } from '../types/Types'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -42,7 +41,7 @@ function EventCard(props: EventCardProps) {
                         </CardContent>
                 } */}
                 <img src={image} alt="" width={200} height={266} />
-                <CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center", height: "35px", backgroundColor: "rgb(225, 225, 255)" }}>
+                <CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center", height: "35px", backgroundColor: "lightgray" }}>
                     <Typography sx={{ fontWeight: "bolder", fontSize: "15px", textAlign: "center" }} variant="body2" component="div">
                         {name}
                     </Typography>

@@ -81,7 +81,7 @@ function LoginPage() {
             </div>
             <div className='right-page'>
                 <div className='logo-div'>
-                    <img className='logo' src={Logo} width={350} />
+                    <img onClick={() => navigate("/")} className='logo' src={Logo} width={350} />
                 </div>
                 <div className='form-div'>
                     <form className='form' onSubmit={handleSubmit}>
