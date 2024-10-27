@@ -25,10 +25,19 @@ export const appSlice = createSlice({
         },
         setEvents: (state: AppSliceType, action: PayloadAction<EventType[]>) => {
             state.events = action.payload;
+        },
+        searchEvents: (state: AppSliceType, action: PayloadAction<string>) => {
+            const tempList: EventType[] = []
+            state.events.map((event: EventType) => {
+                if (event.name.toLowerCase().includes(action.payload.toLowerCase())) {
+                    tempList.push(event);
+                }
+            })
+            state.events = [...tempList];
         }
     }
 })
 
-export const { setLoading, setCurrentUser, setEvents } = appSlice.actions
+export const { setLoading, setCurrentUser, setEvents, searchEvents } = appSlice.actions
 
 export default appSlice.reducer

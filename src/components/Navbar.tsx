@@ -16,11 +16,13 @@ import { FaMusic } from "react-icons/fa";
 import { GiDramaMasks } from "react-icons/gi";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentUser } from '../redux/appSlice';
+import { searchEvents, setCurrentUser, setEvents } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
+import eventService from '../services/EventService';
+import { EventType } from '../types/Types';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -32,6 +34,19 @@ function Navbar() {
         dispatch(setCurrentUser(null))
         navigate("/")
         toast.success("Çıkış Yapıldı");
+    }
+
+    const handleFilter = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        try {
+            if (e.target.value) {
+                dispatch(searchEvents(e.target.value));
+            } else {
+                const events: EventType[] = await eventService.getAllEvents();
+                dispatch(setEvents(events))
+            }
+        } catch (error) {
+            toast.error("Filtreleme Yaparken Hata Oluştu")
+        }
     }
     return (
         <Box sx={{ flexGrow: 1, }}>
@@ -84,6 +99,7 @@ function Navbar() {
                                 sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', height: 30, width: 250, borderRadius: "20px" }}
                             >
                                 <InputBase
+                                    onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFilter(e)}
                                     sx={{ ml: 1, flex: 1 }}
                                     id='searchInput'
                                     placeholder="Etkinlik Arayınız..."
