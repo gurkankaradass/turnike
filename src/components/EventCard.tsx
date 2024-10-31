@@ -9,7 +9,7 @@ interface EventCardProps {
 }
 
 function EventCard(props: EventCardProps) {
-    const { name, image, category } = props.event;
+    const { name, image } = props.event;
     return (
         <div className='main-div'>
             {/* {

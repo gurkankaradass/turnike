@@ -16,24 +16,70 @@ import { FaMusic } from "react-icons/fa";
 import { GiDramaMasks } from "react-icons/gi";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { searchEvents, setCurrentUser, setEvents } from '../redux/appSlice';
+import { searchEvents, setCurrentUser, setEvents, setLoading } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import eventService from '../services/EventService';
 import { EventType } from '../types/Types';
+import { useEffect, useState } from 'react';
+import categoryService from '../services/CategoryService';
 
 function Navbar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state: RootState) => state.app);
+    const [categories, setCategories] = useState<string[]>();
+
+    const getAllCategories = async () => {
+        try {
+            dispatch(setLoading(true));
+            const categories: string[] = await categoryService.gettAllCategories();
+            setCategories(categories);
+        } catch (error) {
+            toast.error("Kategoriler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    const handleCategory = async (e: React.FormEvent<HTMLLIElement>, categoryName: string) => {
+        try {
+            dispatch(setLoading(true));
+            const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
+            dispatch(setEvents(events));
+        } catch (error) {
+            toast.error("Etkinlikler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    const logoButton = async () => {
+        try {
+            dispatch(setLoading(true));
+            const events: EventType[] = await eventService.getAllEvents();
+            dispatch(setEvents(events));
+        } catch (error) {
+            toast.error("Etkinlikler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false))
+        }
+    }
 
     const logout = () => {
-        localStorage.removeItem("currentUser");
-        dispatch(setCurrentUser(null))
-        navigate("/")
-        toast.success("Çıkış Yapıldı");
+        try {
+            dispatch(setLoading(true));
+            localStorage.removeItem("currentUser");
+            dispatch(setCurrentUser(null))
+            navigate("/")
+            toast.success("Çıkış Yapıldı");
+        } catch (error) {
+            toast.error("Çıkış Yapılamadı");
+        } finally {
+            dispatch(setLoading(false));
+        }
     }
 
     const handleFilter = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -48,6 +94,10 @@ function Navbar() {
             toast.error("Filtreleme Yaparken Hata Oluştu")
         }
     }
+
+    useEffect(() => {
+        getAllCategories();
+    }, [])
     return (
         <Box sx={{ flexGrow: 1, }}>
             <AppBar position="fixed" color='default'
@@ -64,11 +114,28 @@ function Navbar() {
                                 size="large"
                                 edge="start"
                                 aria-label="logo"
-                                onClick={() => navigate("/")}
+                                onClick={logoButton}
                             >
                                 <img src={turnike} width={200} height={80} />
                             </IconButton>
-                            <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
+                            {
+                                categories && categories.map((category: string, index: number) => (
+                                    <MenuItem onClick={(e: React.FormEvent<HTMLLIElement>) => handleCategory(e, category)} key={index} className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
+                                        {category == "cinema" && <LuPopcorn size={30} />}
+                                        {category == "concert" && <FaMusic size={30} />}
+                                        {category == "theatre" && <GiDramaMasks size={30} />}
+                                        {category == "standup" && <PiMicrophoneStageFill size={30} />}
+                                        <Typography
+                                            sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}>
+                                            {category == "cinema" && "Sinema"}
+                                            {category == "concert" && "Konser"}
+                                            {category == "theatre" && "Tiyatro"}
+                                            {category == "standup" && "Stand Up"}
+                                        </Typography>
+                                    </MenuItem>
+                                ))
+                            }
+                            {/* <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
                                 <LuPopcorn size={30} />
                                 <Typography
                                     sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}>
@@ -92,7 +159,7 @@ function Navbar() {
                                 <Typography
                                     sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}
                                 >Stand Up</Typography>
-                            </MenuItem>
+                            </MenuItem> */}
                         </Box>
                         <Box>
                             <Paper
