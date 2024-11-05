@@ -22,7 +22,7 @@ import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { Badge } from '@mui/material';
 import eventService from '../services/EventService';
-import { EventType } from '../types/Types';
+import { CategoryType, EventType } from '../types/Types';
 import { useEffect, useState } from 'react';
 import categoryService from '../services/CategoryService';
 
@@ -30,12 +30,12 @@ function Navbar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state: RootState) => state.app);
-    const [categories, setCategories] = useState<string[]>();
+    const [categories, setCategories] = useState<CategoryType[]>();
 
     const getAllCategories = async () => {
         try {
             dispatch(setLoading(true));
-            const categories: string[] = await categoryService.gettAllCategories();
+            const categories: CategoryType[] = await categoryService.gettAllCategories();
             setCategories(categories);
         } catch (error) {
             toast.error("Kategoriler Getirilirken Hata Oluştu")
@@ -119,18 +119,18 @@ function Navbar() {
                                 <img src={turnike} width={200} height={80} />
                             </IconButton>
                             {
-                                categories && categories.map((category: string, index: number) => (
-                                    <MenuItem onClick={(e: React.FormEvent<HTMLLIElement>) => handleCategory(e, category)} key={index} className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                        {category == "cinema" && <LuPopcorn size={30} />}
-                                        {category == "concert" && <FaMusic size={30} />}
-                                        {category == "theatre" && <GiDramaMasks size={30} />}
-                                        {category == "standup" && <PiMicrophoneStageFill size={30} />}
+                                categories && categories.map((category: CategoryType, index: number) => (
+                                    <MenuItem onClick={(e: React.FormEvent<HTMLLIElement>) => handleCategory(e, category.name)} key={index} className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
+                                        {category.name == "cinema" && <LuPopcorn size={30} />}
+                                        {category.name == "concert" && <FaMusic size={30} />}
+                                        {category.name == "theatre" && <GiDramaMasks size={30} />}
+                                        {category.name == "standup" && <PiMicrophoneStageFill size={30} />}
                                         <Typography
                                             sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}>
-                                            {category == "cinema" && "Sinema"}
-                                            {category == "concert" && "Konser"}
-                                            {category == "theatre" && "Tiyatro"}
-                                            {category == "standup" && "Stand Up"}
+                                            {category.name == "cinema" && "Sinema"}
+                                            {category.name == "concert" && "Konser"}
+                                            {category.name == "theatre" && "Tiyatro"}
+                                            {category.name == "standup" && "Stand Up"}
                                         </Typography>
                                     </MenuItem>
                                 ))

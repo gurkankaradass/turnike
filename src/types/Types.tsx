@@ -16,3 +16,8 @@ export interface EventType {
     map?: string,
     price: number
 }
+
+export interface CategoryType {
+    id: number,
+    name: string
+}

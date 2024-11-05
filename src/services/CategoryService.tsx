@@ -1,10 +1,10 @@
 import { AxiosResponse } from "axios"
 import axiosInstance from "../config/AxiosConfig"
-import { EventType } from "../types/Types"
+import { CategoryType, EventType } from "../types/Types"
 
 class CategoryService {
 
-    gettAllCategories(): Promise<string[]> {
+    gettAllCategories(): Promise<CategoryType[]> {
         return new Promise((resolve: any, reject: any) => {
             axiosInstance.get("/categories")
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))

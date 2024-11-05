@@ -80,10 +80,22 @@
     }
   ],
   "categories": [
-    "cinema",
-    "concert",
-    "theatre",
-    "standup"
+    {
+      "id": 1,
+      "name": "cinema"
+    },
+    {
+      "id": 2,
+      "name": "concert"
+    },
+    {
+      "id": 3,
+      "name": "theatre"
+    },
+    {
+      "id": 4,
+      "name": "standup"
+    }
   ],
   "events": [
     {
