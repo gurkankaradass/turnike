@@ -122,7 +122,6 @@ button:hover {
 
 .login-button,
 .register-button {
-    background-color: #fff;
     border: none;
     color: #000000;
 }

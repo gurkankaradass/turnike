@@ -48,6 +48,7 @@ function Navbar() {
         try {
             dispatch(setLoading(true));
             const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
+            navigate("/")
             dispatch(setEvents(events));
         } catch (error) {
             toast.error("Etkinlikler Getirilirken Hata Oluştu")
@@ -61,6 +62,7 @@ function Navbar() {
             dispatch(setLoading(true));
             const events: EventType[] = await eventService.getAllEvents();
             dispatch(setEvents(events));
+            navigate("/")
         } catch (error) {
             toast.error("Etkinlikler Getirilirken Hata Oluştu")
         } finally {
@@ -68,11 +70,13 @@ function Navbar() {
         }
     }
 
-    const logout = () => {
+    const logout = async () => {
         try {
             dispatch(setLoading(true));
             localStorage.removeItem("currentUser");
             dispatch(setCurrentUser(null))
+            const events: EventType[] = await eventService.getAllEvents();
+            dispatch(setEvents(events));
             navigate("/")
             toast.success("Çıkış Yapıldı");
         } catch (error) {
@@ -167,7 +171,7 @@ function Navbar() {
                             >
                                 <InputBase
                                     onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => handleFilter(e)}
-                                    sx={{ ml: 1, flex: 1 }}
+                                    sx={{ ml: 1, flex: 1, cursor: "text" }}
                                     id='searchInput'
                                     placeholder="Etkinlik Arayınız..."
                                 />

@@ -29,7 +29,9 @@ function HomePage() {
     }
 
     useEffect(() => {
-        getAllEvents();
+        if (events.length === 0) {
+            getAllEvents();
+        }
     }, [])
 
     useEffect(() => {

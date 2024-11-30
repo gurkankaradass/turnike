@@ -11,6 +11,14 @@ class EventServices {
                 .catch((error: any) => reject(error))
         })
     }
+
+    getEventById(eventId: string): Promise<EventType> {
+        return new Promise((resolve: any, reject: any) => {
+            axiosInstance.get("events/" + eventId)
+                .then((response: AxiosResponse<any, any>) => resolve(response.data))
+                .catch((error: any) => reject(error))
+        })
+    }
 }
 
 export default new EventServices

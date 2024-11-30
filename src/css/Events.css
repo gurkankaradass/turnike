@@ -7,3 +7,59 @@
     transition: transform 0.2s steps(10, end);
     transform: scale(1.03);
 }
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-top: 150px;
+}
+
+.image {
+    border-radius: 20px;
+}
+
+.detail-div {
+    margin-left: 20px;
+    height: 750px;
+    display: flex;
+    flex-direction: column;
+}
+
+.detail,
+.title-div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px 25px;
+    margin-bottom: 15px;
+}
+
+h1,
+p {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.category,
+.location {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 15px;
+}
+
+.detail-text {
+    font-size: 17px;
+    line-height: 1.4;
+}
