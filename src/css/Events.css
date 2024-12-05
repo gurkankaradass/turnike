@@ -18,9 +18,19 @@
 
 .image {
     border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.image-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-bottom: 15px;
 }
 
 .detail-div {
+    width: 100%;
     margin-left: 20px;
     height: 750px;
     display: flex;
@@ -40,8 +50,13 @@
 }
 
 h1,
-p {
+h2,
+p,
+span {
     font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .info {
@@ -51,8 +66,13 @@ p {
     margin-top: 15px;
 }
 
+.price {
+    font-size: xx-large;
+}
+
 .category,
-.location {
+.location,
+.date {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -62,4 +82,27 @@ p {
 .detail-text {
     font-size: 17px;
     line-height: 1.4;
+}
+
+.buy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: bolder;
+    width: 35%;
+}
+
+.count-div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+.ticket-div {
+    margin-top: "25px";
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }

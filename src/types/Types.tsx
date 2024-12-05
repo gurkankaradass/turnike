@@ -10,9 +10,10 @@ export interface EventType {
     name: string,
     image: string,
     category: string,
+    date: string,
     details: string,
     visit?: string,
-    adress?: string,
+    address?: string,
     map?: string,
     price: number
 }
