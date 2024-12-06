@@ -48,8 +48,9 @@ function Navbar() {
         try {
             dispatch(setLoading(true));
             const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
-            navigate("/")
+            navigate("/category/" + categoryName)
             dispatch(setEvents(events));
+            localStorage.setItem("categoryEvent", JSON.stringify(events))
         } catch (error) {
             toast.error("Etkinlikler Getirilirken Hata Oluştu")
         } finally {
@@ -77,7 +78,6 @@ function Navbar() {
             dispatch(setCurrentUser(null))
             const events: EventType[] = await eventService.getAllEvents();
             dispatch(setEvents(events));
-            navigate("/")
             toast.success("Çıkış Yapıldı");
         } catch (error) {
             toast.error("Çıkış Yapılamadı");
@@ -139,31 +139,6 @@ function Navbar() {
                                     </MenuItem>
                                 ))
                             }
-                            {/* <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                <LuPopcorn size={30} />
-                                <Typography
-                                    sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}>
-                                    Sinema
-                                </Typography>
-                            </MenuItem>|
-                            <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                <GiDramaMasks size={30} />
-                                <Typography
-                                    sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}
-                                >Tiyatro</Typography>
-                            </MenuItem>|
-                            <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                <FaMusic size={30} />
-                                <Typography
-                                    sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}
-                                >Konser</Typography>
-                            </MenuItem>|
-                            <MenuItem className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                <PiMicrophoneStageFill size={30} />
-                                <Typography
-                                    sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}
-                                >Stand Up</Typography>
-                            </MenuItem> */}
                         </Box>
                         <Box>
                             <Paper

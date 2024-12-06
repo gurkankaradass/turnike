@@ -14,10 +14,12 @@ import "slick-carousel/slick/slick-theme.css";
 import "../css/HomePage.css"
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import categoryService from "../services/CategoryService";
+import { useNavigate } from "react-router-dom";
 
 function HomePage() {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const { events } = useSelector((state: RootState) => state.app);
     const [categories, setCategories] = useState<CategoryType[]>();
 
@@ -28,6 +30,20 @@ function HomePage() {
             setCategories(categories);
         } catch (error) {
             toast.error("Kategoriler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    const handleCategory = async (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, categoryName: string) => {
+        try {
+            dispatch(setLoading(true));
+            const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
+            navigate("/category/" + categoryName)
+            dispatch(setEvents(events));
+            localStorage.setItem("categoryEvent", JSON.stringify(events))
+        } catch (error) {
+            toast.error("Etkinlikler Getirilirken Hata Oluştu")
         } finally {
             dispatch(setLoading(false));
         }
@@ -92,7 +108,7 @@ function HomePage() {
                                 {category.name == "concert" && "Konserler"}
                                 {category.name == "theatre" && "Tiyatro Oyunları"}
                                 {category.name == "standup" && "Stand Up Gösterileri"}</h1>
-                            <button className="discover-button">Tümünü Keşfet<ArrowRightIcon sx={{ marginLeft: "8px" }} /></button>
+                            <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleCategory(e, category.name)} className="discover-button">Tümünü Keşfet<ArrowRightIcon sx={{ marginLeft: "8px" }} /></button>
                         </div>
                         <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginBottom: "25px" }}>
                             <Container>

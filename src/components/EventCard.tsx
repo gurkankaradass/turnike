@@ -25,7 +25,7 @@ function EventCard(props: EventCardProps) {
             {
                 visit && visit
             } */}
-            <Card onClick={() => navigate("event-detail/" + id)} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", maxWidth: 200, margin: "15px", cursor: "pointer", borderRadius: "10px" }}>
+            <Card onClick={() => navigate("/event-detail/" + id)} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", maxWidth: 200, margin: "15px", cursor: "pointer", borderRadius: "10px" }}>
                 {/* {
                     category === "cinema" ? <img src={image} alt="" width={160} height={200} /> : <img src={image} alt="" width={350} height={200} />
                 }
