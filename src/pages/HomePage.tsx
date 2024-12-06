@@ -1,6 +1,6 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux"
-import { EventType, UserType } from "../types/Types";
+import { CategoryType, EventType, UserType } from "../types/Types";
 import { setCurrentUser, setEvents, setLoading } from "../redux/appSlice";
 import eventService from "../services/EventService";
 import { toast } from "react-toastify";
@@ -8,11 +8,30 @@ import { RootState } from "../redux/store";
 import EventCard from "../components/EventCard";
 import { Container } from "@mui/material";
 import Navbar from "../components/Navbar";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import "../css/HomePage.css"
+import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import categoryService from "../services/CategoryService";
 
 function HomePage() {
 
     const dispatch = useDispatch();
     const { events } = useSelector((state: RootState) => state.app);
+    const [categories, setCategories] = useState<CategoryType[]>();
+
+    const getAllCategories = async () => {
+        try {
+            dispatch(setLoading(true));
+            const categories: CategoryType[] = await categoryService.gettAllCategories();
+            setCategories(categories);
+        } catch (error) {
+            toast.error("Kategoriler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
 
     const getAllEvents = async () => {
         try {
@@ -32,6 +51,7 @@ function HomePage() {
         if (events.length === 0) {
             getAllEvents();
         }
+        getAllCategories();
     }, [])
 
     useEffect(() => {
@@ -42,19 +62,56 @@ function HomePage() {
         }
     }, []);
 
-
+    const CustomArrow = (props: any) => {
+        const { className, onClick } = props;
+        return (
+            <div
+                className={className}
+                onClick={onClick}
+            />
+        );
+    };
+    const settings = {
+        infinite: true, // Sonsuz kaydırma
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        speed: 200,
+        cssEase: "linear",
+        nextArrow: <CustomArrow />, // Sağ ok
+        prevArrow: <CustomArrow />, // Sol ok
+    };
 
     return (
         <div>
             <Navbar />
             <Container>
-                <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginTop: "120px" }}>
-                    {
-                        events && events.map((event: EventType, index: number) => (
-                            <EventCard key={index} event={event} />
-                        ))
-                    }
-                </div>
+                {categories?.map((category) => (
+                    <div key={category.id} style={{ margin: "25px 0px" }}>
+                        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: category.name === "cinema" ? "125px" : "0" }}>
+                            <h1 className="slider-title">{category.name == "cinema" && "Sinema Filmleri"}
+                                {category.name == "concert" && "Konserler"}
+                                {category.name == "theatre" && "Tiyatro Oyunları"}
+                                {category.name == "standup" && "Stand Up Gösterileri"}</h1>
+                            <button className="discover-button">Tümünü Keşfet<ArrowRightIcon sx={{ marginLeft: "8px" }} /></button>
+                        </div>
+                        <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginBottom: "25px" }}>
+                            <Container>
+                                <div className="slider-container">
+                                    <Slider {...settings}>
+                                        {events &&
+                                            events
+                                                .filter((event: EventType) => event.category === category.name)
+                                                .slice(0, 8) // İlk 8 öğeyi al
+                                                .map((event: EventType, index: number) => (
+                                                    <EventCard key={index} event={event} />
+                                                ))}
+                                    </Slider>
+                                </div>
+                            </Container>
+                        </div>
+                        <hr />
+                    </div>
+                ))}
             </Container>
         </div>
     )

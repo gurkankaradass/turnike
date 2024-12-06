@@ -1,0 +1,28 @@
+.slick-prev::before,
+.slick-next::before {
+    color: black;
+    font-size: 40px;
+}
+
+.slick-prev {
+    left: -50px;
+    /* Sol okun pozisyonu */
+}
+
+.slider-title {
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.discover-button {
+    /* font-size: larger; */
+    /* width: 200px; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: inherit;
+    margin-right: 40px;
+    margin-bottom: 10px;
+}
