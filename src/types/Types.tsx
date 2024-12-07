@@ -9,12 +9,13 @@ export interface EventType {
     id: number,
     name: string,
     image: string,
+    sliderImage?: string,
     category: string,
     date: string,
     details: string,
     visit?: string,
-    address?: string,
-    map?: string,
+    address: string,
+    map: string,
     price: number
 }
 

@@ -97,14 +97,40 @@ function HomePage() {
         prevArrow: <CustomArrow />, // Sol ok
     };
 
+    const mainSettings = {
+        dots: true,
+        infinite: true, // Sonsuz kaydırma
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 4000,
+        cssEase: "linear"
+    };
+
     return (
         <div>
             <Navbar />
             <Container>
+                <div className='mainSlider' style={{ marginTop: "120px" }} >
+                    <Slider {...mainSettings}>
+                        {
+                            events.filter((sliderEvent: EventType) => sliderEvent.sliderImage)
+                                .map((sliderEvent: EventType, index: number) => (
+                                    <div key={index}>
+                                        <img onClick={() => navigate("/event-detail/" + sliderEvent.id)} src={sliderEvent.sliderImage} width={"100%"} height={"600px"} style={{ cursor: "pointer" }} />
+                                    </div>
+                                ))
+                        }
+                    </Slider>
+                </div>
+            </Container>
+            <Container>
                 {categories?.map((category) => (
                     <div key={category.id} style={{ margin: "25px 0px" }}>
-                        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: category.name === "cinema" ? "125px" : "0" }}>
-                            <h1 className="slider-title">{category.name == "cinema" && "Sinema Filmleri"}
+                        <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: category.name === "cinema" ? "50px" : "0" }}>
+                            <h1 className="slider-title">
+                                {category.name == "cinema" && "Sinema Filmleri"}
                                 {category.name == "concert" && "Konserler"}
                                 {category.name == "theatre" && "Tiyatro Oyunları"}
                                 {category.name == "standup" && "Stand Up Gösterileri"}</h1>
