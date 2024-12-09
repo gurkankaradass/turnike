@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../redux/store";
 import { useEffect } from "react";
 import { setEvents } from "../redux/appSlice";
+import Footer from "../components/Footer";
 
 
 function CategoryPage() {
@@ -41,6 +42,7 @@ function CategoryPage() {
 
                 </div>
             </Container>
+            <Footer />
         </div>
     )
 }

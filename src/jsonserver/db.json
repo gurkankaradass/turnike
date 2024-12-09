@@ -161,7 +161,7 @@
       "date": "28 Temmuz 2025",
       "details": "Pop ve arabesk müziğin usta ismi Hakan Altun, duygusal şarkıları ve etkileyici sahne performanslarıyla hayranlarıyla buluşmaya hazırlanıyor!",
       "address": "Congresium Ankara",
-      "map": "https://yandex.com.tr/map-widget/v1/?indoorLevel=1&ll=32.803420%2C39.910893&mode=search&oid=1111330183&ol=biz&z=17.06",
+      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
       "price": 150
     },
     {
@@ -300,7 +300,7 @@
       "id": "18",
       "name": "Şanışer & Sokrat ST Konseri",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/saniser-sokrat-st-202452410458033d1d8036f14abc9a4cb1f160622723.jpg",
-      "sliderImage": "https://www.biletix.com/static/images/live/event/eventimages/2SF00_img.jpg",
+      "sliderImage": "https://resources-biletino.s3-external-3.amazonaws.com/content/event/22689/960x540.jpg",
       "category": "concert",
       "date": "28 Temmuz 2025",
       "details": "Müziği ana akım anlatılarından ibaret görmeyi reddeden Şanışer, dünyayı, sistemi, insanı ve insani duyguları klasikleşmiş çizgiden uzak; kendine has tarzıyla anlatmayı tercih etmiştir. Müziğini problemler üzerine kurmuş; maddesel ve varoluşsal problemleri kendi vücudu ve beyninde vuku bulduğu biçimde, mahremiyetinden ödün vererek, kendi hayatındaki formlarıyla anlatmıştır.",
@@ -345,7 +345,6 @@
       "id": "22",
       "name": "Özgür Turhan - Yenisi Stand Up",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/ozgur-turhan-hagb-2024961822399f1224657f5c47f3ad7b7ae9e8401a26.jpg",
-      "sliderImage": "https://www.biletix.com/static/images/live/event/eventimages/336850186-ozgurtuhan.jpg",
       "category": "standup",
       "date": "28 Temmuz 2025",
       "details": "Özgür Turhan yeni gösterisi “Yenisi” ile sezona başlıyor.",

@@ -15,6 +15,7 @@ import "../css/HomePage.css"
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
 import categoryService from "../services/CategoryService";
 import { useNavigate } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function HomePage() {
 
@@ -155,6 +156,7 @@ function HomePage() {
                     </div>
                 ))}
             </Container>
+            <Footer />
         </div>
     )
 }

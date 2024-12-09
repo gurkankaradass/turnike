@@ -14,6 +14,7 @@ import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
+import Footer from '../components/Footer';
 
 function EventDetail() {
     const { eventId } = useParams();
@@ -136,6 +137,7 @@ function EventDetail() {
                 }
 
             </Container>
+            <Footer />
         </>
 
     )
