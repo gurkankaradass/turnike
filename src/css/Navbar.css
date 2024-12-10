@@ -1,0 +1,45 @@
+.main-search {
+    display: flex;
+    flex-direction: column;
+    width: 280px;
+    border-radius: 20px;
+    overflow: auto;
+    height: 550px;
+    margin-top: 600px;
+    position: absolute;
+}
+
+.main-search::-webkit-scrollbar {
+    display: none;
+    /* Kaydırma çubuğunu gizler */
+}
+
+.search-item {
+    width: 240px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    background-color: white;
+    cursor: pointer;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.search-foto {
+    width: 25%;
+    border-radius: 10px;
+}
+
+.search-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.search-title h3 {
+    text-align: center;
+}

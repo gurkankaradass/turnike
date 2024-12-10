@@ -48,9 +48,9 @@ function EventDetail() {
         getEventById(String(eventId));
     }, [])
     return (
-        <>
+        <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
             <Navbar />
-            <Container maxWidth="lg" sx={{ marginTop: "120px" }}>
+            <Container maxWidth="lg">
                 {
                     event && <>
                         <div className='main'>
@@ -138,7 +138,7 @@ function EventDetail() {
 
             </Container>
             <Footer />
-        </>
+        </div>
 
     )
 }

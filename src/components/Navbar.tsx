@@ -16,7 +16,7 @@ import { FaMusic } from "react-icons/fa";
 import { GiDramaMasks } from "react-icons/gi";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { searchEvents, setCurrentUser, setEvents, setLoading } from '../redux/appSlice';
+import { setCurrentUser, setEvents, setLoading, setSearchEvents } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -25,12 +25,16 @@ import eventService from '../services/EventService';
 import { CategoryType, EventType } from '../types/Types';
 import { useEffect, useState } from 'react';
 import categoryService from '../services/CategoryService';
+import "../css/Navbar.css"
 
 function Navbar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state: RootState) => state.app);
+    const { searchEvents } = useSelector((state: RootState) => state.app);
     const [categories, setCategories] = useState<CategoryType[]>();
+    const [visible, setVisible] = useState<boolean>();
+
 
     const getAllCategories = async () => {
         try {
@@ -89,10 +93,10 @@ function Navbar() {
     const handleFilter = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         try {
             if (e.target.value) {
-                dispatch(searchEvents(e.target.value));
+                dispatch(setSearchEvents(e.target.value));
+                setVisible(true)
             } else {
-                const events: EventType[] = await eventService.getAllEvents();
-                dispatch(setEvents(events))
+                setVisible(false);
             }
         } catch (error) {
             toast.error("Filtreleme Yaparken Hata Oluştu")
@@ -105,7 +109,7 @@ function Navbar() {
     return (
         <Box sx={{ flexGrow: 1, }}>
             <AppBar position="fixed" color='default'
-                sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "100px" }}
+                sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "100px", zIndex: "1" }}
             >
                 <Container maxWidth="xl">
                     <Toolbar
@@ -140,7 +144,7 @@ function Navbar() {
                                 ))
                             }
                         </Box>
-                        <Box>
+                        <Box sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center" }}>
                             <Paper
                                 sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', height: 30, width: 250, borderRadius: "20px" }}
                             >
@@ -154,6 +158,18 @@ function Navbar() {
                                     sx={{ marginRight: "5px" }}
                                 />
                             </Paper>
+                            <div className='main-search' style={{ visibility: visible ? "visible" : "hidden" }}>
+                                {
+                                    searchEvents && searchEvents.map((event: EventType, index: number) => (
+                                        <div className='search-item' onClick={() => navigate("/event-detail/" + event.id)} key={index}>
+                                            <img className='search-foto' src={event.image} width={60} />
+                                            <div className='search-title'>
+                                                <h3>{event.name}</h3>
+                                            </div>
+                                        </div>
+                                    ))
+                                }
+                            </div>
                         </Box>
                         <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
                             <PersonIcon />
@@ -170,7 +186,6 @@ function Navbar() {
                                     </>
                             }
                         </Box>
-
                     </Toolbar>
                 </Container>
             </AppBar>

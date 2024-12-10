@@ -20,7 +20,7 @@ function CategoryPage() {
         }
     }, [])
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
             <Navbar />
             <Container>
                 <div style={{ marginTop: "120px" }}>

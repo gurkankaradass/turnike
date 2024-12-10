@@ -110,7 +110,7 @@ function HomePage() {
     };
 
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
             <Navbar />
             <Container>
                 <div className='mainSlider' style={{ marginTop: "120px" }} >

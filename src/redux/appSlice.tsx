@@ -4,13 +4,15 @@ import { EventType, UserType } from '../types/Types'
 export interface AppSliceType {
     currentUser: UserType | null,
     loading: boolean,
-    events: EventType[]
+    events: EventType[],
+    searchEvents: EventType[]
 }
 
 const initialState: AppSliceType = {
     currentUser: null,
     loading: false,
-    events: []
+    events: [],
+    searchEvents: []
 }
 
 export const appSlice = createSlice({
@@ -26,18 +28,18 @@ export const appSlice = createSlice({
         setEvents: (state: AppSliceType, action: PayloadAction<EventType[]>) => {
             state.events = action.payload;
         },
-        searchEvents: (state: AppSliceType, action: PayloadAction<string>) => {
+        setSearchEvents: (state: AppSliceType, action: PayloadAction<string>) => {
             const tempList: EventType[] = []
             state.events.map((event: EventType) => {
                 if (event.name.toLowerCase().includes(action.payload.toLowerCase())) {
                     tempList.push(event);
                 }
             })
-            state.events = [...tempList];
+            state.searchEvents = [...tempList];
         }
     }
 })
 
-export const { setLoading, setCurrentUser, setEvents, searchEvents } = appSlice.actions
+export const { setLoading, setCurrentUser, setEvents, setSearchEvents } = appSlice.actions
 
 export default appSlice.reducer
