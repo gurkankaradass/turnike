@@ -16,7 +16,7 @@ import { FaMusic } from "react-icons/fa";
 import { GiDramaMasks } from "react-icons/gi";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentUser, setEvents, setLoading, setSearchEvents } from '../redux/appSlice';
+import { setCurrentUser, setDrawer, setEvents, setLoading, setSearchEvents } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -32,6 +32,7 @@ function Navbar() {
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state: RootState) => state.app);
     const { searchEvents } = useSelector((state: RootState) => state.app);
+    const { basket } = useSelector((state: RootState) => state.basket);
     const [categories, setCategories] = useState<CategoryType[]>();
     const [visible, setVisible] = useState<boolean>();
 
@@ -82,6 +83,7 @@ function Navbar() {
             dispatch(setCurrentUser(null))
             const events: EventType[] = await eventService.getAllEvents();
             dispatch(setEvents(events));
+            dispatch(setDrawer(false))
             toast.success("Çıkış Yapıldı");
         } catch (error) {
             toast.error("Çıkış Yapılamadı");
@@ -101,6 +103,10 @@ function Navbar() {
         } catch (error) {
             toast.error("Filtreleme Yaparken Hata Oluştu")
         }
+    }
+
+    const openDrawer = () => {
+        dispatch(setDrawer(true))
     }
 
     useEffect(() => {
@@ -175,12 +181,12 @@ function Navbar() {
                             <PersonIcon />
                             {
                                 currentUser ?
-                                    <>
-                                        <Badge color='error' sx={{ margin: "0px 10px", cursor: "pointer" }} >
+                                    <div onClick={openDrawer} style={{ cursor: "pointer" }}>
+                                        <Badge badgeContent={basket.length} color='error' sx={{ margin: "0px 10px" }} >
                                             <ShoppingCartIcon sx={{ marginRight: "10px" }} />
                                         </Badge>
                                         <Button onClick={logout} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Çıkış Yap</Button>
-                                    </> : <>
+                                    </div> : <>
                                         <Button onClick={() => navigate("/login")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Giriş Yap</Button> /
                                         <Button onClick={() => navigate("/register")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Hesap Oluştur</Button>
                                     </>

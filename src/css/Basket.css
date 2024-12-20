@@ -1,0 +1,81 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.basket-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 15px 0px;
+}
+
+.mainBasket {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 5px 20px;
+}
+
+.basketImg {
+    margin-right: 10px;
+}
+
+.basket-image {
+    border-radius: 5px;
+}
+
+.productTitle-div {
+    width: 250px;
+    padding: 10px;
+}
+
+.productTitle {
+    padding-right: 30px;
+}
+
+.productCount-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+}
+
+.productPrice-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.removeEvent-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+}
+
+.basketAmount-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    margin-right: 30px;
+    margin-bottom: 30px;
+}
+
+.basketAmount {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.basketAmount-title {
+    margin-right: 10px;
+}

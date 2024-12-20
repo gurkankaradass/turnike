@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import Navbar from '../components/Navbar'
 import { Container } from '@mui/material'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setLoading } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import eventService from '../services/EventService';
@@ -15,12 +15,17 @@ import DialogContent from '@mui/material/DialogContent';
 import AddCircleIcon from '@mui/icons-material/AddCircle';
 import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import Footer from '../components/Footer';
+import { addEventToBasket } from '../redux/basketSlice';
+import { RootState } from '../redux/store';
 
 function EventDetail() {
     const { eventId } = useParams();
     const dispatch = useDispatch();
     const [event, setEvent] = useState<EventType | null>()
     const [count, setCount] = useState(0)
+    const navigate = useNavigate();
+
+    const { currentUser } = useSelector((state: RootState) => state.app);
 
     const [open, setOpen] = useState(false);
 
@@ -42,6 +47,33 @@ function EventDetail() {
         } finally {
             dispatch(setLoading(false))
         }
+    }
+
+    const addBasket = () => {
+        if (currentUser) {
+            try {
+                dispatch(setLoading(true))
+                if (event && count) {
+                    const payload: EventType = {
+                        ...event,
+                        count: count,
+                        totalPrice: (count * event.price)
+                    }
+                    dispatch(addEventToBasket(payload))
+                    setOpen(false);
+                    toast.success("Ürün Sepete Eklendi")
+                    setCount(0);
+                }
+            } catch (error) {
+                toast.error("Etkinlik Sepete Eklenemedi")
+            } finally {
+                dispatch(setLoading(false))
+            }
+        } else {
+            navigate("/login")
+            toast.warning("Bilet Alabilmek için Giriş Yapmalısınız")
+        }
+
     }
 
     useEffect(() => {
@@ -89,7 +121,7 @@ function EventDetail() {
                                                             }
                                                         }} sx={{ margin: "0px 5px", cursor: "pointer" }} /> <p style={{ fontSize: "25px" }}>{count}</p> <AddCircleIcon onClick={() => setCount(count + 1)} sx={{ margin: "0px 5px", cursor: "pointer" }} />
                                                     </div>
-                                                    <button onClick={handleClose} style={{ width: "150px" }}>Sepete Ekle</button>
+                                                    <button onClick={addBasket} style={{ width: "150px" }}>Sepete Ekle</button>
                                                 </div>
                                             </div>
                                         </DialogContent>

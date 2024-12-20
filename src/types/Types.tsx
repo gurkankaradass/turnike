@@ -16,7 +16,9 @@ export interface EventType {
     visit?: string,
     address: string,
     map: string,
-    price: number
+    price: number,
+    count?: number,
+    totalPrice?: number
 }
 
 export interface CategoryType {
