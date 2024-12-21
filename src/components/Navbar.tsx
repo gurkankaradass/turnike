@@ -26,6 +26,7 @@ import { CategoryType, EventType } from '../types/Types';
 import { useEffect, useState } from 'react';
 import categoryService from '../services/CategoryService';
 import "../css/Navbar.css"
+import { setBasket } from '../redux/basketSlice';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -84,6 +85,7 @@ function Navbar() {
             const events: EventType[] = await eventService.getAllEvents();
             dispatch(setEvents(events));
             dispatch(setDrawer(false))
+            dispatch(setBasket([]))
             toast.success("Çıkış Yapıldı");
         } catch (error) {
             toast.error("Çıkış Yapılamadı");

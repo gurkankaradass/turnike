@@ -12,6 +12,8 @@ import ClearIcon from '@mui/icons-material/Clear';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import { useNavigate } from 'react-router-dom';
 import eventService from '../services/EventService';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
+import WatchLaterIcon from '@mui/icons-material/WatchLater';
 
 function BasketDetail() {
 
@@ -26,6 +28,7 @@ function BasketDetail() {
 
     const removeEvent = (eventId: number) => {
         dispatch(removeEventFromBasket(eventId));
+        toast.success("Etkinlik Sepetten Çıkarıldı");
     }
 
     const clear = () => {
@@ -83,40 +86,61 @@ function BasketDetail() {
             </div>
             {
                 basket.length === 0 ?
-                    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
+                    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "50px" }}>
                         <ShoppingCartOutlinedIcon sx={{ fontSize: "150px" }} />
                         <p style={{ margin: "15px 20px", fontWeight: "bolder" }}>Sepetinizde Etkinlik Bulunmamaktadır...</p>
                         <button onClick={lookEvents}>Etkinliklere Göz At</button>
                     </div>
-                    :
-                    basket.map((event: EventType) => (
-                        <div className='mainBasket'>
-                            <div className='basketImg'>
-                                <img className='basket-image' src={event.image} width={60} height={70} />
-                            </div>
-                            <div className='productTitle-div'>
-                                <h3 className='productTitle'>{event.name}</h3>
-                            </div>
-                            <div className='productCount-div'>
-                                <span>x{event.count}</span>
-                            </div>
-                            <div className='productPrice-div'>
-                                <span>
-                                    {event.totalPrice}₺
-                                </span>
-                            </div>
-                            <div className='removeEvent-div'>
-                                <Button sx={{ textTransform: "none" }} variant='text' size='small' color='error' onClick={() => removeEvent(event.id)}><ClearIcon /></Button>
-
-                            </div>
+                    : <>
+                        <div className='titleDiv'>
+                            <h4 className='eventName'>Etkinlik</h4><hr />
+                            <h4 className='personCount'>Bilet Sayısı</h4><hr />
+                            <h4 className='priceDiv'>Fiyat</h4><hr />
+                            <h4 className='deleteEvent'>Çıkar</h4>
                         </div>
-                    ))
+                        <hr />
+                        {
+                            basket.map((event: EventType, index: number) => (
+                                <div key={index}>
+                                    <div className='mainBasket'>
+                                        <div className='eventImgAndTitleDiv'>
+                                            <div className='basketImg'>
+                                                <img className='basket-image' src={event.image} width={100} height={133} />
+                                            </div>
+                                            <div className='eventInfo-div'>
+                                                <h3 className='eventTitle'>{event.name}</h3>
+                                                <div className='location' style={{ marginBottom: "5px" }}>
+                                                    <LocationOnIcon sx={{ color: "black", fontSize: "20px", marginRight: "3px" }} />
+                                                    <span>{event.address}</span>
+                                                </div>
+                                                <div className='date'>
+                                                    <WatchLaterIcon sx={{ color: "black", fontSize: "20px", marginRight: "3px" }} />
+                                                    <span>{event.date}</span>
+                                                </div>
+                                            </div>
+                                        </div><hr />
+                                        <div className='eventCount-div'>
+                                            <span>x{event.count}</span>
+                                        </div><hr />
+                                        <div className='eventPrice-div'>
+                                            <h4>
+                                                {event.totalPrice}₺
+                                            </h4>
+                                        </div><hr />
+                                        <div className='removeEvent-div'>
+                                            <Button sx={{ textTransform: "none" }} variant='text' size='small' color='error' onClick={() => removeEvent(event.id)}><ClearIcon /></Button>
+                                        </div>
+                                    </div>
+                                    <hr />
+                                </div>
+                            ))}
+                    </>
             }
             <div className='basketAmount-div'>
                 {
                     basket.length !== 0 ? <>
                         <div className='basketAmount'>
-                            <h3 className='basketAmount-title'>Sepet Tutarı:</h3><h3>{totalAmount.toFixed(2)} ₺</h3>
+                            <h3 className='basketAmount-title'>Sepet Tutarı:</h3><h3>{totalAmount.toFixed(2)}₺</h3>
                         </div>
                         <div>
                             <button onClick={clear} style={{ textTransform: "none", marginRight: "15px" }} color='error'>Sepeti Temizle</button>

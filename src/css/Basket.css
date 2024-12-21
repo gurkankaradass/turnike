@@ -6,7 +6,11 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    margin: 15px 0px;
+    margin: 25px 0px;
+}
+
+.mainBasket * {
+    box-sizing: border-box;
 }
 
 .mainBasket {
@@ -14,10 +18,47 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    margin: 5px 20px;
 }
 
-.basketImg {
+.titleDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+.eventName,
+.personCount,
+.priceDiv,
+.deleteEvent {
+    text-align: center;
+}
+
+.eventName {
+    width: 450px;
+    display: block;
+}
+
+.personCount {
+    width: 100px;
+}
+
+.priceDiv,
+.deleteEvent {
+    width: 75px;
+}
+
+.eventImgAndTitleDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    padding: 25px;
+}
+
+.basketImg,
+.basketAmount-title {
     margin-right: 10px;
 }
 
@@ -25,36 +66,31 @@
     border-radius: 5px;
 }
 
-.productTitle-div {
-    width: 250px;
+.eventInfo-div {
+    width: 350px;
     padding: 10px;
+
 }
 
-.productTitle {
-    padding-right: 30px;
+.eventTitle {
+    margin-bottom: 15px;
 }
 
-.productCount-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 25px;
-}
-
-.productPrice-div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100px;
-}
-
+.eventCount-div,
+.eventPrice-div,
 .removeEvent-div {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.eventCount-div {
+    width: 100px;
+}
+
+.eventPrice-div,
+.removeEvent-div {
     width: 75px;
 }
 
@@ -74,8 +110,4 @@
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
-}
-
-.basketAmount-title {
-    margin-right: 10px;
 }
