@@ -14,6 +14,7 @@ import { useNavigate } from 'react-router-dom';
 import eventService from '../services/EventService';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
+import { addEventToTickets } from '../redux/ticketSlice';
 
 function BasketDetail() {
 
@@ -48,8 +49,10 @@ function BasketDetail() {
                 }
                 dispatch(updateBalance(payload));
             }
+            dispatch(addEventToTickets(basket))
             dispatch(setBasket([]))
             localStorage.removeItem("basket");
+            closeDrawer();
             toast.success("Satın Alma İşlemi Tamamlandı")
         } else {
             toast.error("Yetersiz Bakiye")
@@ -86,7 +89,7 @@ function BasketDetail() {
             </div>
             {
                 basket.length === 0 ?
-                    <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", margin: "50px" }}>
+                    <div className='emptyBasketDiv'>
                         <ShoppingCartOutlinedIcon sx={{ fontSize: "150px" }} />
                         <p style={{ margin: "15px 20px", fontWeight: "bolder" }}>Sepetinizde Etkinlik Bulunmamaktadır...</p>
                         <button onClick={lookEvents}>Etkinliklere Göz At</button>
@@ -103,7 +106,12 @@ function BasketDetail() {
                             basket.map((event: EventType, index: number) => (
                                 <div key={index}>
                                     <div className='mainBasket'>
-                                        <div className='eventImgAndTitleDiv'>
+                                        <div
+                                            onClick={() => {
+                                                navigate("/event-detail/" + event.id);
+                                                dispatch(setDrawer(false));
+                                            }}
+                                            className='eventImgAndTitleDiv'>
                                             <div className='basketImg'>
                                                 <img className='basket-image' src={event.image} width={100} height={133} />
                                             </div>
@@ -140,9 +148,10 @@ function BasketDetail() {
                 {
                     basket.length !== 0 ? <>
                         <div className='basketAmount'>
-                            <h3 className='basketAmount-title'>Sepet Tutarı:</h3><h3>{totalAmount.toFixed(2)}₺</h3>
+                            <h3 className='balance' style={{ marginRight: "300px" }}>Bakiyeniz: {currentUser?.balance.toFixed(2)}₺</h3>
+                            <h3 className='basketAmount-title'>Sepet Tutarı: {totalAmount.toFixed(2)}₺</h3>
                         </div>
-                        <div>
+                        <div style={{ width: "100%", textAlign: "end", marginRight: "50px" }}>
                             <button onClick={clear} style={{ textTransform: "none", marginRight: "15px" }} color='error'>Sepeti Temizle</button>
                             <button
                                 onClick={buy}

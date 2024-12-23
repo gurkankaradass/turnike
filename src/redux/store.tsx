@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit'
 import appReducer from './appSlice'
 import basketReducer from "./basketSlice"
+import ticketReducer from "./ticketSlice"
 
 export const store = configureStore({
     reducer: {
         app: appReducer,
-        basket: basketReducer
+        basket: basketReducer,
+        ticket: ticketReducer
     },
 })
 

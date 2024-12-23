@@ -1,0 +1,77 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.ticketTitle-div {
+    margin-top: 120px;
+}
+
+.tickets-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 25px 0px;
+}
+
+.emptyTickets-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
+.mainTicket * {
+    box-sizing: border-box;
+}
+
+.mainTicket {
+    background-color: white;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px black;
+    cursor: pointer;
+}
+
+.eventImgAndTitleDiv-ticket {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 25px;
+}
+
+.ticketImg-div {
+    margin-right: 10px;
+}
+
+.ticket-image {
+    border-radius: 5px;
+}
+
+.ticket {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.ticketInfo {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ticketCount-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+
+.ticketTitle {
+    margin: 20px 0px 25px 0px;
+}

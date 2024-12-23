@@ -4,6 +4,7 @@ import RegisterPage from '../pages/RegisterPage'
 import LoginPage from '../pages/LoginPage'
 import EventDetail from '../pages/EventDetail'
 import CategoryPage from '../pages/CategoryPage'
+import MyTicketsPage from '../pages/MyTicketsPage'
 
 function RouterConfig() {
     return (
@@ -13,6 +14,7 @@ function RouterConfig() {
             <Route path='/register' element={<RegisterPage />} />
             <Route path='/event-detail/:eventId' element={<EventDetail />} />
             <Route path='/category/:categoryName' element={<CategoryPage />} />
+            <Route path='/tickets' element={<MyTicketsPage />} />
         </Routes>
     )
 }

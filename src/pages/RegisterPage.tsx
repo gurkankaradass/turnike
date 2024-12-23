@@ -31,9 +31,7 @@ function RegisterPage() {
             const response = await RegisterLoginPageServices.register(payload);
             if (response) {
                 toast.success("Kullanıcı Kaydedildi")
-                setTimeout(() => {
-                    navigate("/login");
-                }, 1000);
+                navigate("/login");
             }
         } catch (error) {
             toast.success("Kullanıcı Kaydedilirken Hata Oluştu")

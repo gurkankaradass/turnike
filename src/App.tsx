@@ -10,6 +10,7 @@ import { setCurrentUser, setEvents } from './redux/appSlice';
 import { useEffect } from 'react';
 import { setBasket } from './redux/basketSlice';
 import BasketDetail from './components/BasketDetail';
+import { setTicket } from './redux/ticketSlice';
 
 function App() {
 
@@ -38,7 +39,15 @@ function App() {
       const basket: EventType[] = JSON.parse(basketString) as EventType[];
       dispatch(setBasket(basket))
     }
-  })
+  }, [])
+
+  useEffect(() => {
+    const ticketString: string | null = localStorage.getItem("ticket")
+    if (ticketString) {
+      const ticket: EventType[] = JSON.parse(ticketString) as EventType[];
+      dispatch(setTicket(ticket))
+    }
+  }, [])
 
   return (
     <>

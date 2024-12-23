@@ -9,6 +9,14 @@
     margin: 25px 0px;
 }
 
+.emptyBasketDiv {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px;
+}
+
 .mainBasket * {
     box-sizing: border-box;
 }
@@ -52,9 +60,10 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    width: 450px;
     padding: 25px;
+    width: 450px;
+    align-items: center;
+    cursor: pointer;
 }
 
 .basketImg,
@@ -69,7 +78,6 @@
 .eventInfo-div {
     width: 350px;
     padding: 10px;
-
 }
 
 .eventTitle {
@@ -98,16 +106,18 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     margin-right: 30px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
 .basketAmount {
     display: flex;
     flex-direction: row;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     margin-top: 20px;
     margin-bottom: 10px;
+    width: 100%;
 }

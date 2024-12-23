@@ -3,7 +3,7 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Container, IconButton } from '@mui/material';
+import { Container, IconButton, Menu } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
@@ -27,6 +27,7 @@ import { useEffect, useState } from 'react';
 import categoryService from '../services/CategoryService';
 import "../css/Navbar.css"
 import { setBasket } from '../redux/basketSlice';
+import { setTicket } from '../redux/ticketSlice';
 
 function Navbar() {
     const navigate = useNavigate();
@@ -36,6 +37,15 @@ function Navbar() {
     const { basket } = useSelector((state: RootState) => state.basket);
     const [categories, setCategories] = useState<CategoryType[]>();
     const [visible, setVisible] = useState<boolean>();
+
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
 
 
     const getAllCategories = async () => {
@@ -86,6 +96,11 @@ function Navbar() {
             dispatch(setEvents(events));
             dispatch(setDrawer(false))
             dispatch(setBasket([]))
+            localStorage.removeItem("basket")
+            dispatch(setTicket([]))
+            localStorage.removeItem("ticket")
+            handleClose();
+            navigate("/")
             toast.success("Çıkış Yapıldı");
         } catch (error) {
             toast.error("Çıkış Yapılamadı");
@@ -105,6 +120,11 @@ function Navbar() {
         } catch (error) {
             toast.error("Filtreleme Yaparken Hata Oluştu")
         }
+    }
+
+    const myTickets = () => {
+        navigate("/tickets")
+        handleClose();
     }
 
     const openDrawer = () => {
@@ -180,15 +200,48 @@ function Navbar() {
                             </div>
                         </Box>
                         <Box sx={{ display: "flex", flexDirection: "row", alignItems: "center" }}>
-                            <PersonIcon />
                             {
                                 currentUser ?
-                                    <div onClick={openDrawer} style={{ cursor: "pointer" }}>
-                                        <Badge badgeContent={basket.length} color='error' sx={{ margin: "0px 10px" }} >
-                                            <ShoppingCartIcon sx={{ marginRight: "10px" }} />
-                                        </Badge>
-                                        <Button onClick={logout} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Çıkış Yap</Button>
-                                    </div> : <>
+                                    <>
+                                        <div>
+                                            <Button
+                                                id="basic-button"
+                                                aria-controls={open ? 'basic-menu' : undefined}
+                                                aria-haspopup="true"
+                                                aria-expanded={open ? 'true' : undefined}
+                                                onClick={handleClick}
+                                                color='inherit'
+                                            >
+                                                <PersonIcon sx={{ marginRight: "5px" }} />
+                                                <h4>
+                                                    {currentUser?.username}
+                                                </h4>
+                                            </Button>
+                                            <Menu
+                                                id="basic-menu"
+                                                anchorEl={anchorEl}
+                                                open={open}
+                                                onClose={handleClose}
+                                                MenuListProps={{
+                                                    'aria-labelledby': 'basic-button',
+                                                }}
+                                            >
+                                                <MenuItem onClick={myTickets} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
+                                                    Biletlerim
+                                                </MenuItem>
+                                                <MenuItem onClick={logout} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
+                                                    Çıkış Yap
+                                                </MenuItem>
+                                            </Menu>
+                                        </div>
+                                        <div onClick={openDrawer} style={{ cursor: "pointer" }}>
+                                            <Button color='inherit'>
+                                                <Badge badgeContent={basket.length} color='error' sx={{ margin: "0px 10px" }} >
+                                                    <ShoppingCartIcon />
+                                                </Badge>
+                                            </Button>
+                                        </div>
+                                    </> : <>
                                         <Button onClick={() => navigate("/login")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Giriş Yap</Button> /
                                         <Button onClick={() => navigate("/register")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Hesap Oluştur</Button>
                                     </>

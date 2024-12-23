@@ -65,9 +65,7 @@ function HomePage() {
     }
 
     useEffect(() => {
-        if (events.length === 0) {
-            getAllEvents();
-        }
+        getAllEvents();
         getAllCategories();
     }, [])
 
