@@ -15,6 +15,7 @@ import eventService from '../services/EventService';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import { addEventToTickets } from '../redux/ticketSlice';
+import RegisterLoginServices from '../services/RegisterLoginServices';
 
 function BasketDetail() {
 
@@ -48,12 +49,15 @@ function BasketDetail() {
                     balance: remaningTotal
                 }
                 dispatch(updateBalance(payload));
+                const response = await RegisterLoginServices.update(currentUser.id, remaningTotal)
+                if (response) {
+                    dispatch(addEventToTickets(basket))
+                    dispatch(setBasket([]))
+                    localStorage.removeItem("basket");
+                    closeDrawer();
+                    toast.success("Satın Alma İşlemi Tamamlandı")
+                }
             }
-            dispatch(addEventToTickets(basket))
-            dispatch(setBasket([]))
-            localStorage.removeItem("basket");
-            closeDrawer();
-            toast.success("Satın Alma İşlemi Tamamlandı")
         } else {
             toast.error("Yetersiz Bakiye")
         }
