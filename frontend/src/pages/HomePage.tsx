@@ -42,6 +42,7 @@ function HomePage() {
             const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
             navigate("/category/" + categoryName)
             dispatch(setEvents(events));
+            console.log(events)
             localStorage.setItem("categoryEvent", JSON.stringify(events))
         } catch (error) {
             toast.error("Etkinlikler Getirilirken Hata Oluştu")
@@ -56,6 +57,7 @@ function HomePage() {
             const response: EventType[] = await eventService.getAllEvents();
             if (response) {
                 dispatch(setEvents(response));
+                console.log(response)
             }
         } catch (error) {
             toast.error("Etkinlikler Getirilemedi")
@@ -129,10 +131,10 @@ function HomePage() {
                     <div key={category.id} style={{ margin: "25px 0px" }}>
                         <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", marginTop: category.name === "cinema" ? "50px" : "0" }}>
                             <h1 className="slider-title">
-                                {category.name == "cinema" && "Sinema Filmleri"}
-                                {category.name == "concert" && "Konserler"}
-                                {category.name == "theatre" && "Tiyatro Oyunları"}
-                                {category.name == "standup" && "Stand Up Gösterileri"}</h1>
+                                {category.name == "Sinema" && "Sinema Filmleri"}
+                                {category.name == "Konser" && "Konserler"}
+                                {category.name == "Tiyatro" && "Tiyatro Oyunları"}
+                                {category.name == "Stand Up" && "Stand Up Gösterileri"}</h1>
                             <button onClick={(e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => handleCategory(e, category.name)} className="discover-button">Tümünü Keşfet<ArrowRightIcon sx={{ marginLeft: "8px" }} /></button>
                         </div>
                         <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", marginBottom: "25px" }}>

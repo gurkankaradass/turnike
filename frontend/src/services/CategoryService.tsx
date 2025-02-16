@@ -6,7 +6,7 @@ class CategoryService {
 
     gettAllCategories(): Promise<CategoryType[]> {
         return new Promise((resolve: any, reject: any) => {
-            axiosInstance.get("/categories")
+            axiosInstance.get("/api/categories")
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error))
         })
@@ -14,7 +14,7 @@ class CategoryService {
 
     getEventsByCategoryName(categoryName: string): Promise<EventType[]> {
         return new Promise((resolve: any, reject: any) => {
-            axiosInstance.get(`events?category=${categoryName}`)
+            axiosInstance.get(`/api/events/category/${categoryName}`)
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error))
         })

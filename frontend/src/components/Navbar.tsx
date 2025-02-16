@@ -157,16 +157,13 @@ function Navbar() {
                             {
                                 categories && categories.map((category: CategoryType, index: number) => (
                                     <MenuItem onClick={(e: React.FormEvent<HTMLLIElement>) => handleCategory(e, category.name)} key={index} className='menu-item' sx={{ display: "flex", flexDirection: "column", justifyContent: "center", borderRadius: "25px" }}>
-                                        {category.name == "cinema" && <LuPopcorn size={30} />}
-                                        {category.name == "concert" && <FaMusic size={30} />}
-                                        {category.name == "theatre" && <GiDramaMasks size={30} />}
-                                        {category.name == "standup" && <PiMicrophoneStageFill size={30} />}
+                                        {category.name == "Sinema" && <LuPopcorn size={30} />}
+                                        {category.name == "Konser" && <FaMusic size={30} />}
+                                        {category.name == "Tiyatro" && <GiDramaMasks size={30} />}
+                                        {category.name == "Stand Up" && <PiMicrophoneStageFill size={30} />}
                                         <Typography
                                             sx={{ textAlign: 'center', fontWeight: "", fontSize: "15px", fontFamily: "inherit" }}>
-                                            {category.name == "cinema" && "Sinema"}
-                                            {category.name == "concert" && "Konser"}
-                                            {category.name == "theatre" && "Tiyatro"}
-                                            {category.name == "standup" && "Stand Up"}
+                                            {category.name}
                                         </Typography>
                                     </MenuItem>
                                 ))

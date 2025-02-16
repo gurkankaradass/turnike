@@ -18,6 +18,7 @@ function CategoryPage() {
             const currentEvents: EventType[] = JSON.parse(result) as EventType[];
             dispatch(setEvents(currentEvents))
         }
+        console.log(events)
     }, [])
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -26,10 +27,10 @@ function CategoryPage() {
                 <div style={{ marginTop: "120px" }}>
                     <div>
                         <h1 style={{ display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", margin: "15px" }}>
-                            {events && events[0]?.category === "cinema" && "Sinema Filmleri"}
-                            {events && events[0]?.category === "concert" && "Konserler"}
-                            {events && events[0]?.category === "theatre" && "Tiyatro Oyunları"}
-                            {events && events[0]?.category === "standup" && "Stand Up Gösterileri"}
+                            {events && events[0]?.category === "Sinema" && "Sinema Filmleri"}
+                            {events && events[0]?.category === "Konser" && "Konserler"}
+                            {events && events[0]?.category === "Tiyatro" && "Tiyatro Oyunları"}
+                            {events && events[0]?.category === "Stand Up" && "Stand Up Gösterileri"}
                         </h1>
                     </div>
                     <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap" }}>

@@ -6,7 +6,7 @@ class EventServices {
 
     getAllEvents(): Promise<EventType[]> {
         return new Promise((resolve: any, reject: any) => {
-            axiosInstance.get("/events")
+            axiosInstance.get("/api/events")
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error))
         })
@@ -14,7 +14,7 @@ class EventServices {
 
     getEventById(eventId: string): Promise<EventType> {
         return new Promise((resolve: any, reject: any) => {
-            axiosInstance.get("events/" + eventId)
+            axiosInstance.get(`/api/events/id/${eventId}`)
                 .then((response: AxiosResponse<any, any>) => resolve(response.data))
                 .catch((error: any) => reject(error))
         })

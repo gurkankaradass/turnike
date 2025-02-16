@@ -78,6 +78,7 @@ function Footer() {
             const events: EventType[] = await categoryService.getEventsByCategoryName(categoryName);
             navigate("/category/" + categoryName)
             dispatch(setEvents(events));
+            localStorage.setItem("categoryEvent", JSON.stringify(events))
         } catch (error) {
 
         } finally {
@@ -465,10 +466,7 @@ function Footer() {
                             <h3>KATEGORİLER</h3>
                             {
                                 categories && categories.map((category: CategoryType, index: number) => (
-                                    <li className="category-list" onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => handleCategory(e, category.name)} key={index}>{category.name == "cinema" && "Sinema"}
-                                        {category.name == "concert" && "Konser"}
-                                        {category.name == "theatre" && "Tiyatro"}
-                                        {category.name == "standup" && "Stand Up"}</li>
+                                    <li className="category-list" onClick={(e: React.MouseEvent<HTMLLIElement, MouseEvent>) => handleCategory(e, category.name)} key={index}>{category.name}</li>
                                 ))
                             }
                         </ul>

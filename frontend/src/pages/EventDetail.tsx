@@ -39,15 +39,15 @@ function EventDetail() {
 
     const getEventById = async (eventId: string) => {
         try {
-            dispatch(setLoading(true))
-            const event: EventType = await eventService.getEventById(eventId)
+            dispatch(setLoading(true));
+            const event: EventType = await eventService.getEventById(eventId);
             setEvent(event);
-        } catch (error) {
-            toast.error("Etkinlik Getirilemedi")
+        } catch (error: any) {
+            toast.error("Etkinlik Getirilemedi");
         } finally {
-            dispatch(setLoading(false))
+            dispatch(setLoading(false));
         }
-    }
+    };
 
     const addBasket = () => {
         if (currentUser) {
@@ -135,10 +135,7 @@ function EventDetail() {
                                     <div className="info">
                                         <p className='category'>
                                             <LocalOfferIcon sx={{ color: "black", fontSize: "20px", marginRight: "5px" }} />
-                                            {event.category == "cinema" && "Sinema"}
-                                            {event.category == "concert" && "Konser"}
-                                            {event.category == "theatre" && "Tiyatro"}
-                                            {event.category == "standup" && "Stand Up"}</p>
+                                            {event.category}</p>
                                         {
                                             event.address && <p className='location'>
                                                 <LocationOnIcon sx={{ color: "black", fontSize: "20px", marginRight: "3px" }} />

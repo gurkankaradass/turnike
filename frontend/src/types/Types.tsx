@@ -6,17 +6,17 @@ export interface UserType {
 }
 
 export interface EventType {
-    id: number,
-    name: string,
-    image: string,
-    sliderImage?: string,
-    category: string,
-    date: string,
-    details: string,
-    visit?: string,
-    address: string,
-    map: string,
-    price: number,
+    id: number;
+    name: string;
+    image: string;
+    sliderImage?: string;
+    category: string;
+    date: string;
+    details: string;
+    address: string;
+    city: string;
+    price: number;
+    map: string;
     count?: number,
     totalPrice?: number
 }
