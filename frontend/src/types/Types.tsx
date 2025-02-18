@@ -1,8 +1,11 @@
 export interface UserType {
-    id: string,
-    username: string,
+    id?: string,
+    name: string,
+    surname: string,
+    email: string,
+    phone: number,
     password: string,
-    balance: number
+    balance?: number
 }
 
 export interface EventType {

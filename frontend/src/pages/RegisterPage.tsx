@@ -1,6 +1,8 @@
 import "../css/RegisterAndLogin.css"
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
+import EmailIcon from '@mui/icons-material/Email';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 import { FaUser } from "react-icons/fa";
 import { FaLock } from "react-icons/fa";
 import { Checkbox, FormControlLabel } from '@mui/material';
@@ -13,6 +15,7 @@ import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../redux/appSlice";
+import { useState } from "react";
 
 function RegisterPage() {
 
@@ -23,18 +26,19 @@ function RegisterPage() {
         try {
             dispatch(setLoading(true));
             const payload: UserType = {
-                id: String(Math.floor(Math.random() * 9999999)),
-                username: values.username,
-                password: values.password,
-                balance: 1000
+                name: values.name,
+                surname: values.surname,
+                email: values.email,
+                phone: values.phone,
+                password: values.password
             }
             const response = await RegisterLoginPageServices.register(payload);
             if (response) {
-                toast.success("Kullanıcı Kaydedildi")
+                toast.success(response.message)
                 navigate("/login");
             }
-        } catch (error) {
-            toast.success("Kullanıcı Kaydedilirken Hata Oluştu")
+        } catch (error: any) {
+            toast.error(error)
         } finally {
             dispatch(setLoading(false));
         }
@@ -42,7 +46,10 @@ function RegisterPage() {
 
     const { values, handleSubmit, handleChange, errors, resetForm } = useFormik({
         initialValues: {
-            username: '',
+            name: '',
+            surname: '',
+            email: '',
+            phone: '',
             password: '',
             confirmPassword: "",
             term: ""
@@ -70,62 +77,120 @@ function RegisterPage() {
                     <form className='form' onSubmit={handleSubmit}>
                         <h2 className='title'>HESAP OLUŞTUR</h2>
                         <div className='input-div'>
+                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <TextField
+                                    id="name"
+                                    label="İsim"
+                                    value={values.name}
+                                    onChange={handleChange}
+                                    sx={{ marginBottom: "10px", width: "47%" }}
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FaUser />
+                                                </InputAdornment>
+                                            ),
+                                        },
+                                    }}
+                                    variant="standard"
+                                    helperText={errors.name && <span className='error-span'>{errors.name}</span>}
+                                />
+                                <TextField
+                                    id="surname"
+                                    label="Soy İsim"
+                                    value={values.surname}
+                                    onChange={handleChange}
+                                    sx={{ marginBottom: "10px", width: "47%" }}
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FaUser />
+                                                </InputAdornment>
+                                            ),
+                                        },
+                                    }}
+                                    variant="standard"
+                                    helperText={errors.surname && <span className='error-span'>{errors.surname}</span>}
+                                />
+                            </div>
                             <TextField
-                                id="username"
-                                label="Kullanıcı Adı"
-                                value={values.username}
+                                id="email"
+                                label="E-Posta"
+                                value={values.email}
                                 onChange={handleChange}
                                 sx={{ marginBottom: "10px", width: "100%" }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (
                                             <InputAdornment position="start">
-                                                <FaUser />
+                                                <EmailIcon />
                                             </InputAdornment>
                                         ),
                                     },
                                 }}
                                 variant="standard"
-                                helperText={errors.username && <span className='error-span'>{errors.username}</span>}
+                                helperText={errors.email && <span className='error-span'>{errors.email}</span>}
                             />
                             <TextField
-                                id="password"
-                                label="Şifre"
-                                type='password'
-                                value={values.password}
+                                id="phone"
+                                label="Telefon"
+                                value={values.phone}
                                 onChange={handleChange}
                                 sx={{ marginBottom: "10px", width: "100%" }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (
                                             <InputAdornment position="start">
-                                                <FaLock />
+                                                <LocalPhoneIcon />
                                             </InputAdornment>
                                         ),
                                     },
                                 }}
                                 variant="standard"
-                                helperText={errors.password && <span className='error-span'>{errors.password}</span>}
+                                helperText={errors.phone && <span className='error-span'>{errors.phone}</span>}
                             />
-                            <TextField
-                                id="confirmPassword"
-                                label="Şifre (Tekrar)"
-                                type='password'
-                                value={values.confirmPassword}
-                                onChange={handleChange}
-                                sx={{ marginBottom: "10px", width: "100%" }}
-                                slotProps={{
-                                    input: {
-                                        startAdornment: (
-                                            <InputAdornment position="start">
-                                                <FaLock />
-                                            </InputAdornment>
-                                        ),
-                                    },
-                                }}
-                                variant="standard"
-                                helperText={errors.confirmPassword && <span className='error-span'>{errors.confirmPassword}</span>}
-                            />
+                            <div style={{ display: "flex", flexDirection: "row", justifyContent: "space-between" }}>
+                                <TextField
+                                    id="password"
+                                    label="Şifre"
+                                    type='password'
+                                    value={values.password}
+                                    onChange={handleChange}
+                                    sx={{ marginBottom: "10px", width: "47%" }}
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FaLock />
+                                                </InputAdornment>
+                                            ),
+                                        },
+                                    }}
+                                    variant="standard"
+                                    helperText={errors.password && <span className='error-span'>{errors.password}</span>}
+                                />
+                                <TextField
+                                    id="confirmPassword"
+                                    label="Şifre (Tekrar)"
+                                    type='password'
+                                    value={values.confirmPassword}
+                                    onChange={handleChange}
+                                    sx={{ marginBottom: "10px", width: "47%" }}
+                                    slotProps={{
+                                        input: {
+                                            startAdornment: (
+                                                <InputAdornment position="start">
+                                                    <FaLock />
+                                                </InputAdornment>
+                                            ),
+                                        },
+                                    }}
+                                    variant="standard"
+                                    helperText={errors.confirmPassword && <span className='error-span'>{errors.confirmPassword}</span>}
+                                />
+                            </div>
                         </div>
                         <div className='check-div'>
                             <div className='check-input'>

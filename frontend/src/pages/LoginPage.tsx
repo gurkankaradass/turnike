@@ -1,7 +1,7 @@
 import "../css/RegisterAndLogin.css"
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
-import { FaUser } from "react-icons/fa";
+import EmailIcon from '@mui/icons-material/Email';
 import { FaLock } from "react-icons/fa";
 import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
@@ -14,8 +14,8 @@ import { UserType } from "../types/Types";
 import { toast } from "react-toastify";
 
 interface CheckUserType {
-    result: boolean,
-    currentUser: UserType | null
+    user: UserType;
+    message: string
 }
 
 function LoginPage() {
@@ -23,37 +23,21 @@ function LoginPage() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const checkUser = (userList: UserType[], username: string, password: string): CheckUserType => {
-        const response: CheckUserType = { result: false, currentUser: null }
-
-        userList.forEach((user: UserType) => {
-            if (user.username === username && user.password === password) {
-                response.result = true;
-                response.currentUser = user;
-            }
-        })
-        return response;
-    }
-
     const submit = async (values: any, action: any) => {
         try {
             dispatch(setLoading(true))
-            const response: UserType[] = await RegisterLoginServices.login();
+            const response: CheckUserType = await RegisterLoginServices.login(values.email, values.password);
             if (response) {
-                const checkUserResponse: CheckUserType = checkUser(response, values.username, values.password);
-                if (checkUserResponse.result && checkUserResponse.currentUser) {
-                    //Kullanıcı adı ve şifre doğru
-                    dispatch(setCurrentUser(checkUserResponse.currentUser));
-                    localStorage.setItem("currentUser", JSON.stringify(checkUserResponse.currentUser))
-                    toast.success("Giriş Başarılı")
-                    navigate("/")
-                } else {
-                    //Kullanıcı adı ve şifre yanlış
-                    toast.error("Kullanıcı Adı veya Şifre Hatalı")
-                }
+                toast.success(response.message)
+                dispatch(setCurrentUser(response.user))
+                localStorage.setItem("currentUser", JSON.stringify(response.user))
+                navigate("/")
             }
-        } catch (error) {
-            toast.error("Giriş Yapılamadı")
+            else {
+                toast.error("Kullanıcı Adı veya Şifre Hatalı")
+            }
+        } catch (error: any) {
+            toast.error(error)
         } finally {
             dispatch(setLoading(false))
         }
@@ -61,7 +45,7 @@ function LoginPage() {
 
     const { values, handleSubmit, handleChange, errors, resetForm } = useFormik({
         initialValues: {
-            username: '',
+            email: '',
             password: ''
         },
         onSubmit: submit,
@@ -88,22 +72,22 @@ function LoginPage() {
                         <h2 className='title'>GİRİŞ YAP</h2>
                         <div className='input-div'>
                             <TextField
-                                id="username"
-                                label="Kullanıcı Adı"
-                                value={values.username}
+                                id="email"
+                                label="E-Posta"
+                                value={values.email}
                                 onChange={handleChange}
                                 sx={{ marginBottom: "10px", width: "100%" }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (
                                             <InputAdornment position="start">
-                                                <FaUser />
+                                                <EmailIcon />
                                             </InputAdornment>
                                         ),
                                     },
                                 }}
                                 variant="standard"
-                                helperText={errors.username && <span className='error-span'>{errors.username}</span>}
+                                helperText={errors.email && <span className='error-span'>{errors.email}</span>}
                             />
                             <TextField
                                 id="password"

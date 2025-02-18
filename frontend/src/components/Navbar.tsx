@@ -211,7 +211,7 @@ function Navbar() {
                                             >
                                                 <PersonIcon sx={{ marginRight: "5px" }} />
                                                 <h4>
-                                                    {currentUser?.username}
+                                                    {currentUser?.name} {currentUser?.surname}
                                                 </h4>
                                             </Button>
                                             <Menu
