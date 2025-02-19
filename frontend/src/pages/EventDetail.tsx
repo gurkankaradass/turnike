@@ -17,6 +17,10 @@ import RemoveCircleIcon from '@mui/icons-material/RemoveCircle';
 import Footer from '../components/Footer';
 import { addEventToBasket } from '../redux/basketSlice';
 import { RootState } from '../redux/store';
+import EventCard from '../components/EventCard';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 function EventDetail() {
     const { eventId } = useParams();
@@ -25,7 +29,7 @@ function EventDetail() {
     const [count, setCount] = useState(0)
     const navigate = useNavigate();
 
-    const { currentUser } = useSelector((state: RootState) => state.app);
+    const { currentUser, events } = useSelector((state: RootState) => state.app);
 
     const [open, setOpen] = useState(false);
 
@@ -42,6 +46,7 @@ function EventDetail() {
             dispatch(setLoading(true));
             const event: EventType = await eventService.getEventById(eventId);
             setEvent(event);
+            console.log(event)
         } catch (error: any) {
             toast.error("Etkinlik Getirilemedi");
         } finally {
@@ -75,6 +80,17 @@ function EventDetail() {
         }
 
     }
+
+    const settings = {
+        dots: true,
+        infinite: true, // Sonsuz kaydırma
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 900,
+        speed: 1000,
+        cssEase: "linear",
+    };
 
     useEffect(() => {
         getEventById(String(eventId));
@@ -161,10 +177,31 @@ function EventDetail() {
                                     </div>
                                 }
                             </div>
+
                         </div>
                     </>
                 }
-
+                <hr />
+                <div style={{ display: "flex", flexDirection: "row", alignItems: "center", justifyContent: "center", flexWrap: "wrap", margin: "25px 0px" }}>
+                    <Container>
+                        <div style={{ display: "flex", flexDirection: "row", justifyContent: "left" }}>
+                            <h1 className='slider-title' style={{ marginLeft: "10px" }}>
+                                Benzer Etkinlikler
+                            </h1>
+                        </div>
+                        <div className="mainSlider">
+                            <Slider {...settings}>
+                                {events &&
+                                    events
+                                        .filter((sliderEvent: EventType) => sliderEvent.category === event?.category && sliderEvent.id !== event.id)
+                                        .slice(0, 8) // İlk 8 öğeyi al
+                                        .map((event: EventType, index: number) => (
+                                            < EventCard key={index} event={event} />
+                                        ))}
+                            </Slider>
+                        </div>
+                    </Container>
+                </div>
             </Container>
             <Footer />
         </div>

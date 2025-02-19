@@ -14,7 +14,10 @@ function EventCard(props: EventCardProps) {
     const navigate = useNavigate();
     return (
         <div className='main-div'>
-            <Card onClick={() => navigate("/event-detail/" + id)} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", maxWidth: 200, margin: "15px", cursor: "pointer", borderRadius: "10px" }}>
+            <Card onClick={() => {
+                navigate("/event-detail/" + id)
+                window.location.reload();
+            }} sx={{ display: "flex", flexDirection: "column", justifyContent: "space-between", maxWidth: 200, margin: "15px", cursor: "pointer", borderRadius: "10px" }}>
                 <img src={image} alt="" width={200} height={266} />
                 <CardContent sx={{ display: "flex", flexDirection: "column", justifyContent: "center", alignContent: "center", height: "35px", backgroundColor: "white" }}>
                     <Typography sx={{ fontWeight: "bolder", fontSize: "15px", textAlign: "center" }} variant="body2" component="div">

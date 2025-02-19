@@ -186,7 +186,10 @@ function Navbar() {
                             <div className='main-search' style={{ visibility: visible ? "visible" : "hidden" }}>
                                 {
                                     searchEvents && searchEvents.map((event: EventType, index: number) => (
-                                        <div className='search-item' onClick={() => navigate("/event-detail/" + event.id)} key={index}>
+                                        <div className='search-item' onClick={() => {
+                                            navigate("/event-detail/" + event.id)
+                                            window.location.reload();
+                                        }} key={index}>
                                             <img className='search-foto' src={event.image} width={60} />
                                             <div className='search-title'>
                                                 <h3>{event.name}</h3>
