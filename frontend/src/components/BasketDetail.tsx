@@ -15,7 +15,7 @@ import eventService from '../services/EventService';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import { addEventToTickets } from '../redux/ticketSlice';
-import RegisterLoginServices from '../services/RegisterLoginServices';
+import RegisterLoginServices from '../services/UserServices';
 
 function BasketDetail() {
 

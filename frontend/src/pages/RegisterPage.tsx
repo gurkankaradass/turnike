@@ -9,13 +9,12 @@ import { Checkbox, FormControlLabel } from '@mui/material';
 import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
 import { schemaRegister } from '../schema/Schema';
-import RegisterLoginPageServices from "../services/RegisterLoginServices";
+import UserServices from "../services/UserServices";
 import { UserType } from "../types/Types";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setLoading } from "../redux/appSlice";
-import { useState } from "react";
 
 function RegisterPage() {
 
@@ -32,7 +31,7 @@ function RegisterPage() {
                 phone: values.phone,
                 password: values.password
             }
-            const response = await RegisterLoginPageServices.register(payload);
+            const response = await UserServices.register(payload);
             if (response) {
                 toast.success(response.message)
                 navigate("/login");
@@ -98,7 +97,7 @@ function RegisterPage() {
                                 />
                                 <TextField
                                     id="surname"
-                                    label="Soy İsim"
+                                    label="Soyisim"
                                     value={values.surname}
                                     onChange={handleChange}
                                     sx={{ marginBottom: "10px", width: "47%" }}
@@ -136,9 +135,18 @@ function RegisterPage() {
                             <TextField
                                 id="phone"
                                 label="Telefon"
+                                type="number"
                                 value={values.phone}
                                 onChange={handleChange}
-                                sx={{ marginBottom: "10px", width: "100%" }}
+                                sx={{
+                                    "& input::-webkit-outer-spin-button, & input::-webkit-inner-spin-button": {
+                                        display: "none",
+                                    },
+                                    "& input[type=number]": {
+                                        MozAppearance: "textfield",
+                                    },
+                                    marginBottom: "10px", width: "100%"
+                                }}
                                 slotProps={{
                                     input: {
                                         startAdornment: (

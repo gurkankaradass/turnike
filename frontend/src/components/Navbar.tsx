@@ -127,6 +127,11 @@ function Navbar() {
         handleClose();
     }
 
+    const myAccount = () => {
+        navigate("/account")
+        handleClose();
+    }
+
     const openDrawer = () => {
         dispatch(setDrawer(true))
     }
@@ -226,6 +231,9 @@ function Navbar() {
                                                     'aria-labelledby': 'basic-button',
                                                 }}
                                             >
+                                                <MenuItem onClick={myAccount} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
+                                                    Hesabım
+                                                </MenuItem>
                                                 <MenuItem onClick={myTickets} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
                                                     Biletlerim
                                                 </MenuItem>

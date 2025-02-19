@@ -5,6 +5,7 @@ import LoginPage from '../pages/LoginPage'
 import EventDetail from '../pages/EventDetail'
 import CategoryPage from '../pages/CategoryPage'
 import MyTicketsPage from '../pages/MyTicketsPage'
+import AccountSettingsPage from '../pages/AccountSettingsPage'
 
 function RouterConfig() {
     return (
@@ -15,6 +16,7 @@ function RouterConfig() {
             <Route path='/event-detail/:eventId' element={<EventDetail />} />
             <Route path='/category/:categoryName' element={<CategoryPage />} />
             <Route path='/tickets' element={<MyTicketsPage />} />
+            <Route path='/account' element={<AccountSettingsPage />} />
         </Routes>
     )
 }

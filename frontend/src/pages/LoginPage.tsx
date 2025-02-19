@@ -7,7 +7,7 @@ import Logo from "../images/turnike-logo.png"
 import { useFormik } from 'formik';
 import { schemaLogin } from '../schema/Schema';
 import { useNavigate } from "react-router-dom";
-import RegisterLoginServices from "../services/RegisterLoginServices";
+import UserServices from "../services/UserServices";
 import { useDispatch } from "react-redux";
 import { setCurrentUser, setLoading } from "../redux/appSlice";
 import { UserType } from "../types/Types";
@@ -26,7 +26,7 @@ function LoginPage() {
     const submit = async (values: any, action: any) => {
         try {
             dispatch(setLoading(true))
-            const response: CheckUserType = await RegisterLoginServices.login(values.email, values.password);
+            const response: CheckUserType = await UserServices.login(values.email, values.password);
             if (response) {
                 toast.success(response.message)
                 dispatch(setCurrentUser(response.user))

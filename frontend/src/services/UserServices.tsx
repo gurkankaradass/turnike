@@ -2,7 +2,7 @@ import { AxiosResponse } from "axios";
 import axiosInstance from "../config/AxiosConfig";
 import { UserType } from "../types/Types";
 
-class RegisterLoginPageService {
+class UserService {
 
     async register(newUser: UserType): Promise<any> {
         try {
@@ -28,13 +28,30 @@ class RegisterLoginPageService {
         }
     }
 
-    update(id: string, balance: number): Promise<any> {
-        return new Promise((resolve: any, reject: any) => {
-            axiosInstance.patch(`/users/${id}`, { balance: balance })
-                .then((response: AxiosResponse<any, any>) => resolve(response.data))
-                .catch((error: any) => reject(error));
-        });
+    async changePassword(userId: string, newPassword: string): Promise<any> {
+        try {
+            const response = await axiosInstance.post("/api/users/change-password", { userId, newPassword });
+            return {
+                message: response.data.message,
+                success: true
+            };
+        } catch (error: any) {
+            throw error.response?.data?.message || "Şifre değiştirilemedi.";
+        }
+    }
+
+    async deleteUser(email: string): Promise<any> {
+        try {
+            const response = await axiosInstance.delete(`/api/users/${email}`);
+            return {
+                message: response.data.message,
+                success: true
+            };
+        } catch (error: any) {
+            throw error.response?.data?.message || "Kullanıcı silinemedi.";
+        }
     }
 }
 
-export default new RegisterLoginPageService;
+
+export default new UserService;
