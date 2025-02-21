@@ -98,7 +98,6 @@ function Navbar() {
             dispatch(setBasket([]))
             localStorage.removeItem("basket")
             dispatch(setTicket([]))
-            localStorage.removeItem("ticket")
             handleClose();
             navigate("/")
             toast.success("Çıkış Yapıldı");

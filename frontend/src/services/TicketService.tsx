@@ -1,5 +1,6 @@
+import { AxiosResponse } from "axios";
 import axiosInstance from "../config/AxiosConfig";
-import { EventType } from "../types/Types";
+import { EventType, TicketType } from "../types/Types";
 
 class TicketService {
     async buyTickets(userId: string, basket: EventType[]): Promise<any> {
@@ -39,6 +40,33 @@ class TicketService {
             };
         }
     }
+
+    async getUserTickets(userId: string): Promise<any> {
+        try {
+            const response = await axiosInstance.get(`/api/tickets/${userId}`);
+
+            if (response.data && Array.isArray(response.data)) {
+                return {
+                    success: true,
+                    message: "Biletler başarıyla getirildi.",
+                    tickets: response.data,
+                };
+            } else {
+                return {
+                    success: false
+                };
+            }
+        } catch (error: any) {
+            console.error("Bilet getirme hatası:", error);
+            return {
+                success: false,
+                message: error?.response?.data?.message || error.message || "Biletler getirilirken bir hata oluştu.",
+            };
+        }
+    }
+
+
+
 }
 
 export default new TicketService();

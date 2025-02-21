@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import "../css/MyTickets.css"
 import { RootState } from "../redux/store";
 import { useNavigate } from "react-router-dom";
-import { EventType } from "../types/Types";
+import { EventType, TicketType } from "../types/Types";
 import { setEvents, setLoading } from "../redux/appSlice";
 import { toast } from "react-toastify";
 import eventService from '../services/EventService';
@@ -12,11 +12,15 @@ import { Container } from "@mui/material";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { IoTicket } from "react-icons/io5";
+import TicketService from "../services/TicketService";
+import { setTicket } from "../redux/ticketSlice";
+import { useEffect } from "react";
 
 
 
 function MyTicketsPage() {
     const { ticket } = useSelector((state: RootState) => state.ticket);
+    const { currentUser } = useSelector((state: RootState) => state.app);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
@@ -34,10 +38,45 @@ function MyTicketsPage() {
         }
     }
 
+
+    const getTickets = async () => {
+        try {
+            dispatch(setLoading(true));
+            if (currentUser?.id) {
+                const response = await TicketService.getUserTickets(currentUser?.id);
+
+                if (response?.success && Array.isArray(response.tickets)) {
+                    // const tickets = response.tickets.map((ticket: any) => ({
+                    //     id: ticket.id,
+                    //     event_name: ticket.event_name,
+                    //     image: ticket.image,
+                    //     address: ticket.address,
+                    //     date: ticket.date,
+                    //     quantity: ticket.quantity,
+                    // }));
+
+                    dispatch(setTicket(response.tickets));
+                }
+            }
+        } catch (error) {
+            console.error("Bilet getirme hatası:", error);
+            toast.error("Biletler Getirilemedi");
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
     const lookEvents = () => {
         navigate("/")
         getAllEvents();
     }
+
+    useEffect(() => {
+        if (currentUser?.id) {
+            getTickets();
+        }
+    }, [currentUser]);
+
     return (
         <div>
             <Navbar />
@@ -55,8 +94,8 @@ function MyTicketsPage() {
                         </div>
                         : <>
                             {
-                                ticket.map((event: EventType, index: number) => (
-                                    <div key={index}>
+                                ticket.map((event: TicketType) => (
+                                    <div key={event.id}>
                                         <div className='mainTicket' onClick={() => navigate("/event-detail/" + event.id)}>
                                             <div className='eventImgAndTitleDiv-ticket'>
                                                 <div className='ticketImg-div'>
@@ -64,7 +103,7 @@ function MyTicketsPage() {
                                                 </div>
                                                 <div className='ticket'>
                                                     <div>
-                                                        <h2 className='ticketTitle'>{event.name}</h2>
+                                                        <h2 className='ticketTitle'>{event.event_name}</h2>
                                                     </div>
                                                     <div className="ticketInfo">
                                                         <div className='location' style={{ width: "50%" }}>
@@ -76,14 +115,15 @@ function MyTicketsPage() {
                                                             <span>{event.date}</span>
                                                         </div>
                                                         <div className='ticketCount-div'>
-                                                            <span><IoTicket style={{ color: "black", fontSize: "20px", marginRight: "3px" }} />{event.count}</span>
+                                                            <span><IoTicket style={{ color: "black", fontSize: "20px", marginRight: "3px" }} />{event.quantity}</span>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                ))}
+                                ))
+                            }
                         </>
                 }
             </Container>

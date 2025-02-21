@@ -98,5 +98,51 @@ const buyTicket = async (req, res) => {
     }
 };
 
-module.exports = { buyTicket };
+const getUserTickets = async (req, res) => {
+    const userId = Number(req.params.userId);
+
+    if (!Number.isInteger(userId)) {
+        return res.status(400).json({ message: "Geçersiz kullanıcı ID" });
+    }
+
+    try {
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input('userId', sql.Int, userId)
+            .query(`
+            SELECT 
+                e.image, e.name AS event_name, e.id, e.date, e.address, 
+                t.quantity 
+            FROM tickets t
+            JOIN events e ON t.event_id = e.id
+            WHERE t.user_id = @userId
+            ORDER BY e.date DESC
+            `);
+
+        if (result.recordset.length === 0) {
+            return res.status(404).json({ message: "Kullanıcının herhangi bir bileti bulunamadı" });
+        }
+
+        const tickets = result.recordset.map(ticket => ({
+            ...ticket,
+            date: formatDate(ticket.date) // Tarihi uygun formata çevir
+        }));
+
+        console.log(tickets)
+        res.json(tickets);
+    } catch (error) {
+        console.error("API Hatası: ", error);
+        res.status(500).json({ message: "Sunucu hatası" });
+    }
+};
+
+const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;
+};
+
+module.exports = { buyTicket, getUserTickets };
 

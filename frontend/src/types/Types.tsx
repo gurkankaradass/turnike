@@ -24,6 +24,15 @@ export interface EventType {
     totalPrice?: number
 }
 
+export interface TicketType {
+    id: number;
+    event_name: string;
+    image: string;
+    address: string;
+    date: string;
+    quantity: number;
+}
+
 export interface CategoryType {
     id: number,
     name: string
