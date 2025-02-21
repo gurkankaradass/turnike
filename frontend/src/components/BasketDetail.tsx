@@ -1,7 +1,7 @@
 import Drawer from '@mui/material/Drawer';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux/store';
-import { setDrawer, setEvents, setLoading, updateBalance } from '../redux/appSlice';
+import { setCurrentUser, setDrawer, setEvents, setLoading, updateBalance } from '../redux/appSlice';
 import { EventType, UserType } from '../types/Types';
 import { Button } from '@mui/material';
 import { toast } from 'react-toastify';
@@ -16,6 +16,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 import WatchLaterIcon from '@mui/icons-material/WatchLater';
 import { addEventToTickets } from '../redux/ticketSlice';
 import RegisterLoginServices from '../services/UserServices';
+import TicketService from '../services/TicketService';
 
 function BasketDetail() {
 
@@ -40,26 +41,40 @@ function BasketDetail() {
     }
 
     const buy = async () => {
-        if (currentUser?.balance && currentUser?.balance >= totalAmount) {
-            if (currentUser.balance) {
-                const remaningTotal = currentUser.balance - totalAmount;
 
-                const payload: UserType = {
-                    ...currentUser,
-                    balance: remaningTotal
-                }
-                dispatch(updateBalance(payload));
-                const response = await RegisterLoginServices.update(currentUser.id, remaningTotal)
-                if (response) {
-                    dispatch(addEventToTickets(basket))
-                    dispatch(setBasket([]))
+        if (currentUser && currentUser.id) {
+            try {
+                // Bilet satın alma işlemini başlat
+                const response = await TicketService.buyTickets(currentUser.id, basket);
+
+                if (response.success) {
+                    // Sepeti temizle ve yerel depolamayı güncelle
+                    dispatch(setBasket([]));
                     localStorage.removeItem("basket");
-                    closeDrawer();
-                    toast.success("Satın Alma İşlemi Tamamlandı")
+
+                    // Çekilen bakiye varsa, onu kullanıcıya bildir
+                    if (response.new_balance !== undefined) {
+                        const updatedUser = { ...currentUser, balance: response.new_balance };
+                        localStorage.setItem("currentUser", JSON.stringify(updatedUser)); // Local storage güncelleme
+                        dispatch(setCurrentUser(updatedUser))
+                        toast.success(`Satın alma başarılı. Yeni bakiyeniz: ${response.new_balance} TL`);
+                    } else {
+                        toast.success(response.message);  // Sadece message dönerse
+                    }
+
+                    closeDrawer();  // Sepet kapanacak
+                } else {
+                    // Başarısız satın alma işlemi
+                    toast.error(response.message);
                 }
+
+            } catch (error: any) {
+                // API isteği sırasında oluşan hata
+                toast.error("Bir hata oluştu. Lütfen tekrar deneyin.");
+                console.error("Satın alma hatası:", error);
             }
         } else {
-            toast.error("Yetersiz Bakiye")
+            toast.error("Önce giriş yapmalısınız.");
         }
     }
 
@@ -152,7 +167,10 @@ function BasketDetail() {
                 {
                     basket.length !== 0 ? <>
                         <div className='basketAmount'>
-                            <h3 className='balance' style={{ marginRight: "300px" }}>Bakiyeniz: {currentUser?.balance.toFixed(2)}₺</h3>
+                            <h3 className='balance' style={{ marginRight: "300px" }}>Bakiyeniz: {
+                                currentUser?.balance &&
+                                currentUser?.balance.toFixed(2)
+                            }₺</h3>
                             <h3 className='basketAmount-title'>Sepet Tutarı: {totalAmount.toFixed(2)}₺</h3>
                         </div>
                         <div style={{ width: "100%", textAlign: "end", marginRight: "50px" }}>

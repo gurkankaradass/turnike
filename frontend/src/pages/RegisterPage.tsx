@@ -135,7 +135,6 @@ function RegisterPage() {
                             <TextField
                                 id="phone"
                                 label="Telefon"
-                                type="number"
                                 value={values.phone}
                                 onChange={handleChange}
                                 sx={{
