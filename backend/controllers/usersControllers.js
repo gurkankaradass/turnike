@@ -88,6 +88,42 @@ const loginUser = async (req, res) => {
     }
 };
 
+const loginAdmin = async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+        // Veritabanından admini kullanıcı adı ile bulma
+        const pool = await poolPromise;
+        const result = await pool.request()
+            .input('username', sql.NVarChar, username)
+            .query('SELECT * FROM admin WHERE username = @username');
+
+        if (result.recordset.length === 0) {
+            return res.status(400).json({ message: "E-posta  Hatalı." });
+        }
+
+        const admin = result.recordset[0];  // Kullanıcıyı al
+
+        // Şifreyi kontrol et
+        if (password !== admin.password) {
+            return res.status(400).json({ message: "Şifre Hatalı." });
+        }
+
+        return res.json({
+            message: "Giriş başarılı!",
+            admin: {
+                id: admin.id,
+                username: admin.username,
+                password: admin.password,
+            }
+        });
+
+    } catch (error) {
+        console.error("API Hatası: ", error);
+        return res.status(500).json({ message: "Sunucu hatası, lütfen daha sonra tekrar deneyin" });
+    }
+};
+
 const changePassword = async (req, res) => {
     const { userId, newPassword } = req.body;
 
@@ -154,4 +190,4 @@ const deleteUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, changePassword, deleteUser };
+module.exports = { registerUser, loginUser, loginAdmin, changePassword, deleteUser };

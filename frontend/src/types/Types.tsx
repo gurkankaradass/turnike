@@ -8,6 +8,11 @@ export interface UserType {
     balance?: number
 }
 
+export interface AdminType {
+    username: string,
+    password: string
+}
+
 export interface EventType {
     id: number;
     name: string;

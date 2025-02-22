@@ -29,7 +29,7 @@ function EventDetail() {
     const [count, setCount] = useState(0)
     const navigate = useNavigate();
 
-    const { currentUser, events } = useSelector((state: RootState) => state.app);
+    const { currentUser, admin, events } = useSelector((state: RootState) => state.app);
 
     const [open, setOpen] = useState(false);
 
@@ -130,14 +130,19 @@ function EventDetail() {
                                                 <hr style={{ height: "125px", margin: "0px 15px" }} />
                                                 <div className='buy'>
                                                     <p className='price'>{event.price} ₺</p>
-                                                    <div className='count-div'>
-                                                        <p>Adet: </p><RemoveCircleIcon onClick={() => {
-                                                            if (count > 0) {
-                                                                setCount(count - 1)
-                                                            }
-                                                        }} sx={{ margin: "0px 5px", cursor: "pointer" }} /> <p style={{ fontSize: "25px" }}>{count}</p> <AddCircleIcon onClick={() => setCount(count + 1)} sx={{ margin: "0px 5px", cursor: "pointer" }} />
-                                                    </div>
-                                                    <button onClick={addBasket} style={{ width: "150px" }}>Sepete Ekle</button>
+                                                    {
+                                                        admin ? <div></div> :
+                                                            <div style={{ display: "flex", flexDirection: "column", justifyItems: "center", alignItems: "center" }}>
+                                                                <div className='count-div'>
+                                                                    <p>Adet: </p><RemoveCircleIcon onClick={() => {
+                                                                        if (count > 0) {
+                                                                            setCount(count - 1)
+                                                                        }
+                                                                    }} sx={{ margin: "0px 5px", cursor: "pointer" }} /> <p style={{ fontSize: "25px" }}>{count}</p> <AddCircleIcon onClick={() => setCount(count + 1)} sx={{ margin: "0px 5px", cursor: "pointer" }} />
+                                                                </div>
+                                                                <button onClick={addBasket} style={{ width: "150px" }}>Sepete Ekle</button>
+                                                            </div>
+                                                    }
                                                 </div>
                                             </div>
                                         </DialogContent>

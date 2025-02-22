@@ -1,8 +1,9 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { EventType, UserType } from '../types/Types'
+import { AdminType, EventType, UserType } from '../types/Types'
 
 export interface AppSliceType {
     currentUser: UserType | null,
+    admin: AdminType | null,
     loading: boolean,
     drawer: boolean,
     events: EventType[],
@@ -11,6 +12,7 @@ export interface AppSliceType {
 
 const initialState: AppSliceType = {
     currentUser: null,
+    admin: null,
     loading: false,
     drawer: false,
     events: [],
@@ -29,6 +31,9 @@ export const appSlice = createSlice({
         },
         setCurrentUser: (state: AppSliceType, action: PayloadAction<UserType | null>) => {
             state.currentUser = action.payload;
+        },
+        setAdmin: (state: AppSliceType, action: PayloadAction<AdminType | null>) => {
+            state.admin = action.payload;
         },
         updateBalance: (state: AppSliceType, action: PayloadAction<UserType>) => {
             const user: UserType = {
@@ -52,6 +57,6 @@ export const appSlice = createSlice({
     }
 })
 
-export const { setLoading, setDrawer, setCurrentUser, updateBalance, setEvents, setSearchEvents } = appSlice.actions
+export const { setLoading, setDrawer, setCurrentUser, setAdmin, updateBalance, setEvents, setSearchEvents } = appSlice.actions
 
 export default appSlice.reducer

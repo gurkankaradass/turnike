@@ -16,7 +16,7 @@ import { FaMusic } from "react-icons/fa";
 import { GiDramaMasks } from "react-icons/gi";
 import { PiMicrophoneStageFill } from "react-icons/pi";
 import { useDispatch, useSelector } from 'react-redux';
-import { setCurrentUser, setDrawer, setEvents, setLoading, setSearchEvents } from '../redux/appSlice';
+import { setAdmin, setCurrentUser, setDrawer, setEvents, setLoading, setSearchEvents } from '../redux/appSlice';
 import { toast } from 'react-toastify';
 import { RootState } from '../redux/store';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
@@ -32,7 +32,7 @@ import { setTicket } from '../redux/ticketSlice';
 function Navbar() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const { currentUser } = useSelector((state: RootState) => state.app);
+    const { currentUser, admin } = useSelector((state: RootState) => state.app);
     const { searchEvents } = useSelector((state: RootState) => state.app);
     const { basket } = useSelector((state: RootState) => state.basket);
     const [categories, setCategories] = useState<CategoryType[]>();
@@ -98,6 +98,24 @@ function Navbar() {
             dispatch(setBasket([]))
             localStorage.removeItem("basket")
             dispatch(setTicket([]))
+            handleClose();
+            navigate("/")
+            toast.success("Çıkış Yapıldı");
+        } catch (error) {
+            toast.error("Çıkış Yapılamadı");
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    const logoutAdmin = async () => {
+        try {
+            dispatch(setLoading(true));
+            localStorage.removeItem("admin");
+            dispatch(setAdmin(null))
+            const events: EventType[] = await eventService.getAllEvents();
+            dispatch(setEvents(events));
+            dispatch(setDrawer(false));
             handleClose();
             navigate("/")
             toast.success("Çıkış Yapıldı");
@@ -248,10 +266,40 @@ function Navbar() {
                                                 </Badge>
                                             </Button>
                                         </div>
-                                    </> : <>
-                                        <Button onClick={() => navigate("/login")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Giriş Yap</Button> /
-                                        <Button onClick={() => navigate("/register")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Hesap Oluştur</Button>
-                                    </>
+                                    </> : admin ?
+                                        <>
+                                            <div>
+                                                <Button
+                                                    id="basic-button"
+                                                    aria-controls={open ? 'basic-menu' : undefined}
+                                                    aria-haspopup="true"
+                                                    aria-expanded={open ? 'true' : undefined}
+                                                    onClick={handleClick}
+                                                    color='inherit'
+                                                >
+                                                    <PersonIcon sx={{ marginRight: "5px" }} />
+                                                    <h4>
+                                                        {admin.username}
+                                                    </h4>
+                                                </Button>
+                                                <Menu
+                                                    id="basic-menu"
+                                                    anchorEl={anchorEl}
+                                                    open={open}
+                                                    onClose={handleClose}
+                                                    MenuListProps={{
+                                                        'aria-labelledby': 'basic-button',
+                                                    }}
+                                                >
+                                                    <MenuItem onClick={logoutAdmin} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
+                                                        Çıkış Yap
+                                                    </MenuItem>
+                                                </Menu>
+                                            </div>
+                                        </> : <>
+                                            <Button onClick={() => navigate("/login")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Giriş Yap</Button> /
+                                            <Button onClick={() => navigate("/register")} sx={{ fontWeight: "bold", borderRadius: "25px" }} color='inherit'>Hesap Oluştur</Button>
+                                        </>
                             }
                         </Box>
                     </Toolbar>

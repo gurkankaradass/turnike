@@ -122,7 +122,8 @@ button:hover {
 }
 
 .login-button,
-.register-button {
+.register-button,
+.admin-button {
     border: none;
     color: #000000;
 }
