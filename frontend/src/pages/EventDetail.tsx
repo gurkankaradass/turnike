@@ -78,7 +78,6 @@ function EventDetail() {
             navigate("/login")
             toast.warning("Bilet Alabilmek için Giriş Yapmalısınız")
         }
-
     }
 
     const settings = {

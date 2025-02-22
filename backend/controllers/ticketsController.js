@@ -128,7 +128,6 @@ const getUserTickets = async (req, res) => {
             date: formatDate(ticket.date) // Tarihi uygun formata çevir
         }));
 
-        console.log(tickets)
         res.json(tickets);
     } catch (error) {
         console.error("API Hatası: ", error);

@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const eventsRoutes = require('./routes/events');
 const categoriesRoutes = require('./routes/categories');
+const citiesRoutes = require('./routes/cities');
 const userRoutes = require('./routes/users');
 const ticketRoutes = require('./routes/tickets');
 
@@ -18,6 +19,7 @@ app.get("/", (req, res) => {
 // Event ve Category routerlarını kullan
 app.use("/api/events", eventsRoutes);
 app.use("/api/categories", categoriesRoutes);
+app.use("/api/cities", citiesRoutes);
 app.use('/api/users', userRoutes);
 app.use("/api/tickets", ticketRoutes);
 

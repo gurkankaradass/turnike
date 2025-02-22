@@ -14,7 +14,7 @@ export interface AdminType {
 }
 
 export interface EventType {
-    id: number;
+    id?: number;
     name: string;
     image: string;
     sliderImage?: string;
@@ -39,6 +39,11 @@ export interface TicketType {
 }
 
 export interface CategoryType {
+    id: number,
+    name: string
+}
+
+export interface CityType {
     id: number,
     name: string
 }

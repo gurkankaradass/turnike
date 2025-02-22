@@ -5,6 +5,7 @@ const eventsController = require('../controllers/eventsController');
 // Etkinliklerle ilgili CRUD işlemleri
 router.get("/", eventsController.getAllEvents);
 router.get("/id/:id", eventsController.getEventById);
+router.post("/addEvent", eventsController.addEvent);
 router.get("/category/:category", eventsController.getEventByCategory);
 
 module.exports = router;

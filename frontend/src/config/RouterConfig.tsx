@@ -6,6 +6,7 @@ import EventDetail from '../pages/EventDetail'
 import CategoryPage from '../pages/CategoryPage'
 import MyTicketsPage from '../pages/MyTicketsPage'
 import AccountSettingsPage from '../pages/AccountSettingsPage'
+import AdminPanelPage from '../pages/AdminPanelPage'
 
 function RouterConfig() {
     return (
@@ -17,6 +18,7 @@ function RouterConfig() {
             <Route path='/category/:categoryName' element={<CategoryPage />} />
             <Route path='/tickets' element={<MyTicketsPage />} />
             <Route path='/account' element={<AccountSettingsPage />} />
+            <Route path='/adminPanel' element={<AdminPanelPage />} />
         </Routes>
     )
 }

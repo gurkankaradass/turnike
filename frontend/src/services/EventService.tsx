@@ -19,6 +19,33 @@ class EventServices {
                 .catch((error: any) => reject(error))
         })
     }
+
+    async addEvent(payload: EventType): Promise<any> {
+        try {
+            // Backend'e istek gönder
+            const response: AxiosResponse<any> = await axiosInstance.post(`/api/events/addEvent`, payload);
+
+            // Yanıtın başarılı olup olmadığını kontrol et
+            if (response.status === 200 || response.status === 201) {
+                return {
+                    success: true,
+                    message: response.data.message || "Etkinlik başarıyla kaydedildi.",
+                };
+            }
+
+            // Eğer beklenmeyen bir durum varsa
+            throw new Error("Beklenmedik bir durum oluştu.");
+        } catch (error: any) {
+            // Hata detayını logla
+            console.error("Backend error: ", error);
+
+            // Kullanıcıya gösterilecek hata mesajını ayarla
+            const errorMessage = error.response?.data?.message || "Etkinlik kaydedilemedi. Lütfen tekrar deneyin.";
+
+            // Hata mesajını fırlat
+            throw new Error(errorMessage);
+        }
+    }
 }
 
 export default new EventServices

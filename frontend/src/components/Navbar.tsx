@@ -149,6 +149,11 @@ function Navbar() {
         handleClose();
     }
 
+    const adminPanel = () => {
+        navigate("/adminPanel")
+        handleClose();
+    }
+
     const openDrawer = () => {
         dispatch(setDrawer(true))
     }
@@ -157,7 +162,7 @@ function Navbar() {
         getAllCategories();
     }, [])
     return (
-        <Box sx={{ flexGrow: 1, }}>
+        <Box sx={{ flexGrow: 1, zIndex: "2" }}>
             <AppBar position="fixed" color='default'
                 sx={{ display: "flex", flexDirection: "row", alignItems: "center", height: "100px", zIndex: "1" }}
             >
@@ -291,6 +296,9 @@ function Navbar() {
                                                         'aria-labelledby': 'basic-button',
                                                     }}
                                                 >
+                                                    <MenuItem onClick={adminPanel} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
+                                                        Admin Paneli
+                                                    </MenuItem>
                                                     <MenuItem onClick={logoutAdmin} sx={{ fontWeight: "bold", borderRadius: "25px" }}>
                                                         Çıkış Yap
                                                     </MenuItem>

@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import { setEvents } from "../redux/appSlice";
 import Footer from "../components/Footer";
 
-
 function CategoryPage() {
     const { events } = useSelector((state: RootState) => state.app);
     const dispatch = useDispatch();
