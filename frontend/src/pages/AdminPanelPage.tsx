@@ -7,17 +7,20 @@ import { useFormik } from 'formik';
 import { schemaAddEvent } from '../schema/Schema';
 import { CategoryType, CityType, EventType } from "../types/Types";
 import { toast } from "react-toastify";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/appSlice";
 import EventService from '../services/EventService';
 import CategoryService from '../services/CategoryService';
 import { useEffect, useState } from 'react';
 import CitiesServices from '../services/CitiesServices';
+import { RootState } from '../redux/store';
+import EventCard from '../components/EventCard';
 
 const AdminPanelPage = () => {
     const dispatch = useDispatch();
     const [categories, setCategories] = useState<CategoryType[]>();
     const [cities, setCities] = useState<CityType[]>();
+    const { events } = useSelector((state: RootState) => state.app)
 
     const getAllCategories = async () => {
         try {
@@ -101,10 +104,10 @@ const AdminPanelPage = () => {
         getAllCities();
     }, [])
     return (
-        <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
+        <div className='adminMain'>
             <Navbar />
             <Container>
-                <div className='adminForm-div' style={{ marginTop: "150px" }}>
+                <div className='adminForm-div'>
                     <form className='adminForm' onSubmit={handleSubmit}>
                         <h2 className='adminTitle'>ETKİNLİK OLUŞTUR</h2>
                         <div className='adminInput-div'>
@@ -165,7 +168,6 @@ const AdminPanelPage = () => {
                                     onChange={handleChange}
                                     sx={{ marginBottom: "10px", width: "100%" }}
                                     variant="standard"
-                                    helperText={errors.sliderImage && <span className='error-span'>{errors.sliderImage}</span>}
                                 />
                             </div>
                             <div className='right'>
@@ -235,6 +237,16 @@ const AdminPanelPage = () => {
                             <button onClick={reset} type='reset' className='reset'>Temizle</button>
                         </div>
                     </form>
+                </div>
+                <div className='adminEventTitle'>
+                    <h1>TÜM ETKİNLİKLER</h1>
+                </div>
+                <div className='adminEvents'>
+                    {
+                        events && events.map((event: EventType) => (
+                            <EventCard key={event.id} event={event} />
+                        ))
+                    }
                 </div>
             </Container >
             <Footer />
