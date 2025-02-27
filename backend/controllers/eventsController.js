@@ -134,9 +134,38 @@ const formatDate = (dateString) => {
     return `${day}.${month}.${year}`;
 };
 
+const deleteEvent = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+        const pool = await poolPromise;
+
+        // Etkinlik var mı kontrol et
+        const eventCheck = await pool.request()
+            .input('id', sql.Int, id)
+            .query('SELECT id FROM events WHERE id = @id');
+
+        if (eventCheck.recordset.length === 0) {
+            return res.status(404).json({ message: "Etkinlik bulunamadı." });
+        }
+
+        // Etkinliği sil
+        await pool.request()
+            .input('id', sql.Int, id)
+            .query('DELETE FROM events WHERE id = @id');
+
+        res.status(200).json({ message: "Etkinlik başarıyla silindi." });
+
+    } catch (error) {
+        console.error("Hata:", error);
+        res.status(500).json({ message: "Sunucu hatası, lütfen tekrar deneyin." });
+    }
+}
+
 module.exports = {
     getAllEvents,
     getEventById,
     addEvent,
-    getEventByCategory
+    getEventByCategory,
+    deleteEvent
 };

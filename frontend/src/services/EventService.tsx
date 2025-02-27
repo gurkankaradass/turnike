@@ -46,6 +46,20 @@ class EventServices {
             throw new Error(errorMessage);
         }
     }
+
+    async deleteEvent(eventId: string): Promise<any> {
+        try {
+            const response = await axiosInstance.delete(`/api/events/delete/${eventId}`);
+            return {
+                success: true,
+                message: response.data.message
+            };
+        } catch (error: any) {
+            console.error("Silme işlemi hatası:", error.response);
+            throw error.response?.data?.message || "Etkinlik silinemedi.";
+        }
+    }
+
 }
 
 export default new EventServices

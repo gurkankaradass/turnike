@@ -8,7 +8,7 @@ import { schemaAddEvent } from '../schema/Schema';
 import { CategoryType, CityType, EventType } from "../types/Types";
 import { toast } from "react-toastify";
 import { useDispatch, useSelector } from "react-redux";
-import { setLoading } from "../redux/appSlice";
+import { setEvents, setLoading } from "../redux/appSlice";
 import EventService from '../services/EventService';
 import CategoryService from '../services/CategoryService';
 import { useEffect, useState } from 'react';
@@ -21,6 +21,21 @@ const AdminPanelPage = () => {
     const [categories, setCategories] = useState<CategoryType[]>();
     const [cities, setCities] = useState<CityType[]>();
     const { events } = useSelector((state: RootState) => state.app)
+
+    const getAllEvents = async () => {
+        try {
+            dispatch(setLoading(true));
+            const response: EventType[] = await EventService.getAllEvents();
+            if (response) {
+                dispatch(setEvents(response));
+                console.log(response)
+            }
+        } catch (error) {
+            toast.error("Etkinlikler Getirilemedi")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
 
     const getAllCategories = async () => {
         try {
@@ -100,6 +115,7 @@ const AdminPanelPage = () => {
     }
 
     useEffect(() => {
+        getAllEvents();
         getAllCategories();
         getAllCities();
     }, [])
