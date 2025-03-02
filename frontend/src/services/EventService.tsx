@@ -60,6 +60,19 @@ class EventServices {
         }
     }
 
+    async updateEvent(eventId: string, payload: EventType): Promise<any> {
+        try {
+            const response = await axiosInstance.put(`/api/events/${eventId}`, payload);
+            return {
+                message: response.data.message,
+                success: true
+            };
+        } catch (error: any) {
+            throw error.response?.data?.message || "Etkinlik Güncellenemedi.";
+        }
+    }
+
+
 }
 
 export default new EventServices

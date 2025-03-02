@@ -36,6 +36,8 @@ function EventDetail() {
     const dispatch = useDispatch();
     const [event, setEvent] = useState<EventType | null>()
     const [count, setCount] = useState(0)
+    const [categories, setCategories] = useState<CategoryType[]>();
+    const [cities, setCities] = useState<CityType[]>();
     const navigate = useNavigate();
 
     const { currentUser, admin, events } = useSelector((state: RootState) => state.app);
@@ -89,6 +91,30 @@ function EventDetail() {
         }
     };
 
+    const getAllCategories = async () => {
+        try {
+            dispatch(setLoading(true));
+            const categories: CategoryType[] = await CategoryService.gettAllCategories();
+            setCategories(categories);
+        } catch (error) {
+            toast.error("Kategoriler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
+    const getAllCities = async () => {
+        try {
+            dispatch(setLoading(true));
+            const cities: CityType[] = await CitiesServices.gettAllCities();
+            setCities(cities);
+        } catch (error) {
+            toast.error("Şehirler Getirilirken Hata Oluştu")
+        } finally {
+            dispatch(setLoading(false));
+        }
+    }
+
     const addBasket = () => {
         if (currentUser) {
             try {
@@ -115,6 +141,56 @@ function EventDetail() {
         }
     }
 
+    const submit = async (values: any, action: any) => {
+        try {
+            dispatch(setLoading(true));
+            const payload: EventType = {
+                name: values.name,
+                date: values.date,
+                details: values.details,
+                image: values.image,
+                sliderImage: values.sliderImage,
+                category: values.category,
+                address: values.address,
+                map: values.map,
+                price: values.price,
+                city: values.city,
+            };
+            if (eventId) {
+                const response = await EventService.updateEvent(eventId, payload);
+                if (response && response.success) {
+                    toast.success(response.message);
+                    setOpen1(false)
+                    window.location.reload();
+                } else {
+                    toast.error("Beklenmeyen bir hata oluştu.");
+                }
+            }
+        } catch (error: any) {
+            toast.error(error.message || "Bir hata oluştu.");
+        } finally {
+            dispatch(setLoading(false));
+        }
+    };
+
+    const { values, handleSubmit, handleChange, errors, resetForm } = useFormik({
+        initialValues: {
+            name: event?.name || '',
+            date: event?.date || '',
+            details: event?.details || '',
+            image: event?.image || '',
+            sliderImage: event?.sliderImage || '',
+            category: event?.category || '',
+            address: event?.address || '',
+            map: event?.map || '',
+            price: event?.price || '',
+            city: event?.city || '',
+        },
+        onSubmit: submit,
+        validationSchema: schemaAddEvent,
+        enableReinitialize: true
+    });
+
     const settings = {
         dots: true,
         infinite: true, // Sonsuz kaydırma
@@ -128,6 +204,8 @@ function EventDetail() {
 
     useEffect(() => {
         getEventById(String(eventId));
+        getAllCategories();
+        getAllCities();
     }, [])
     return (
         <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -195,130 +273,139 @@ function EventDetail() {
                                             maxWidth: "550px"
                                         }}
                                         >
-                                            <div className='form-div'>
-                                                <h2 className='title'>ETKİNLİK BİLGİLERİ</h2>
-                                                <div className='adminInput-div'>
-                                                    <div className='left'>
-                                                        <TextField
-                                                            id="name"
-                                                            label="Etkinlik Adı"
-                                                            value={event.name}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.name && <span className='error-span'>{errors.name}</span>}
-                                                        />
-                                                        <FormControl sx={{ margin: "10px 0px" }} fullWidth>
-                                                            <InputLabel sx={{ zIndex: "1" }} id="category-label">Kategori Seç</InputLabel>
-                                                            <Select
-                                                                size='medium'
-                                                                labelId="category-label"
-                                                                id="category"
-                                                                name="category"
-                                                                value={event.category}
-                                                                // onChange={handleChange}
+                                            <div>
+                                                <form className='form-div' onSubmit={handleSubmit}>
+                                                    <h2 className='title'>ETKİNLİK BİLGİLERİ</h2>
+                                                    <div className='adminInput-div'>
+                                                        <div className='left'>
+                                                            <TextField
+                                                                id="name"
+                                                                label="Etkinlik Adı"
+                                                                value={values.name}
+                                                                onChange={handleChange}
                                                                 sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.name && <span className='error-span'>{errors.name}</span>}
+                                                            />
+                                                            <FormControl sx={{ margin: "10px 0px" }} fullWidth>
+                                                                <InputLabel sx={{ zIndex: "1" }} id="category-label">Kategori Seç</InputLabel>
+                                                                <Select
+                                                                    size='medium'
+                                                                    labelId="category-label"
+                                                                    id="category"
+                                                                    name="category"
+                                                                    value={values.category}
+                                                                    onChange={handleChange}
+                                                                    sx={{ marginBottom: "10px", width: "100%" }}
 
-                                                            >
-                                                                <MenuItem key={event.category} value={event.category}>{event.category}</MenuItem>
-                                                            </Select>
-                                                            <FormHelperText>
-                                                                {/* {errors.category && <span style={{ marginLeft: "-13px", marginTop: "-10px" }} className='error-span'>{errors.category}</span>} */}
-                                                            </FormHelperText>
-                                                        </FormControl>
-                                                        <TextField
-                                                            id="details"
-                                                            label="Etkinlik Detayı"
-                                                            value={event.details}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.details && <span className='error-span'>{errors.details}</span>}
-                                                        />
-                                                        <TextField
-                                                            id="image"
-                                                            label="Fotoğraf URL"
-                                                            value={event.image}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.image && <span className='error-span'>{errors.image}</span>}
-                                                        />
-                                                        <TextField
-                                                            id="sliderImage"
-                                                            label="Slider Fotoğrafı (Varsa)"
-                                                            value={event.sliderImage}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        />
-                                                    </div>
-                                                    <div className='right'>
-                                                        <TextField
-                                                            id="date"
-                                                            label="Tarih (YYYY-AA-GG)"
-                                                            value={event.date}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.date && <span className='error-span'>{errors.date}</span>}
-                                                        />
-                                                        <FormControl sx={{ margin: "10px 0px" }} fullWidth>
-                                                            <InputLabel sx={{ zIndex: "1" }} id="city-label">Şehir Seç</InputLabel>
-                                                            <Select
-                                                                size='medium'
-                                                                labelId="city-label"
-                                                                id="city"
-                                                                name='city'
-                                                                value={event.city}
-                                                                // onChange={handleChange}
+                                                                >
+                                                                    {
+                                                                        categories?.map((category) => (
+                                                                            <MenuItem key={category.id} value={category.name}>{category.name}</MenuItem>
+                                                                        ))
+                                                                    }
+                                                                </Select>
+                                                                <FormHelperText>
+                                                                    {errors.category && <span style={{ marginLeft: "-13px", marginTop: "-10px" }} className='error-span'>{errors.category}</span>}
+                                                                </FormHelperText>
+                                                            </FormControl>
+                                                            <TextField
+                                                                id="details"
+                                                                label="Etkinlik Detayı"
+                                                                value={values.details}
+                                                                onChange={handleChange}
                                                                 sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.details && <span className='error-span'>{errors.details}</span>}
+                                                            />
+                                                            <TextField
+                                                                id="image"
+                                                                label="Fotoğraf URL"
+                                                                value={values.image}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.image && <span className='error-span'>{errors.image}</span>}
+                                                            />
+                                                            <TextField
+                                                                id="sliderImage"
+                                                                label="Slider Fotoğrafı (Varsa)"
+                                                                value={values.sliderImage}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                            />
+                                                        </div>
+                                                        <div className='right'>
+                                                            <TextField
+                                                                id="date"
+                                                                label="Tarih (YYYY-AA-GG)"
+                                                                value={values.date}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.date && <span className='error-span'>{errors.date}</span>}
+                                                            />
+                                                            <FormControl sx={{ margin: "10px 0px" }} fullWidth>
+                                                                <InputLabel sx={{ zIndex: "1" }} id="city-label">Şehir Seç</InputLabel>
+                                                                <Select
+                                                                    size='medium'
+                                                                    labelId="city-label"
+                                                                    id="city"
+                                                                    name='city'
+                                                                    value={values.city}
+                                                                    onChange={handleChange}
+                                                                    sx={{ marginBottom: "10px", width: "100%" }}
 
-                                                            >
-
-                                                                <MenuItem key={event.city} value={event.city}>{event.city}</MenuItem>
-                                                            </Select>
-                                                            <FormHelperText>
-                                                                {/* {errors.city && <span style={{ marginLeft: "-13px", marginTop: "-10px" }} className='error-span'>{errors.city}</span>} */}
-                                                            </FormHelperText>
-                                                        </FormControl>
-                                                        <TextField
-                                                            id="address"
-                                                            label="Mekan İsmi"
-                                                            value={event.address}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.address && <span className='error-span'>{errors.address}</span>}
-                                                        />
-                                                        <TextField
-                                                            id="map"
-                                                            label="Harita URL"
-                                                            value={event.map}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.map && <span className='error-span'>{errors.map}</span>}
-                                                        />
-                                                        <TextField
-                                                            id="price"
-                                                            label="Ücret"
-                                                            type='number'
-                                                            value={event.price}
-                                                            // onChange={handleChange}
-                                                            sx={{ marginBottom: "10px", width: "100%" }}
-                                                            variant="standard"
-                                                        // helperText={errors.price && <span className='error-span'>{errors.price}</span>}
-                                                        />
+                                                                >
+                                                                    {
+                                                                        cities?.map((city) => (
+                                                                            <MenuItem key={city.id} value={city.name}>{city.name}</MenuItem>
+                                                                        ))
+                                                                    }
+                                                                </Select>
+                                                                <FormHelperText>
+                                                                    {errors.city && <span style={{ marginLeft: "-13px", marginTop: "-10px" }} className='error-span'>{errors.city}</span>}
+                                                                </FormHelperText>
+                                                            </FormControl>
+                                                            <TextField
+                                                                id="address"
+                                                                label="Mekan İsmi"
+                                                                value={values.address}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.address && <span className='error-span'>{errors.address}</span>}
+                                                            />
+                                                            <TextField
+                                                                id="map"
+                                                                label="Harita URL"
+                                                                value={values.map}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.map && <span className='error-span'>{errors.map}</span>}
+                                                            />
+                                                            <TextField
+                                                                id="price"
+                                                                label="Ücret"
+                                                                type='number'
+                                                                value={values.price}
+                                                                onChange={handleChange}
+                                                                sx={{ marginBottom: "10px", width: "100%" }}
+                                                                variant="standard"
+                                                                helperText={errors.price && <span className='error-span'>{errors.price}</span>}
+                                                            />
+                                                        </div>
                                                     </div>
-                                                </div>
-                                                <div className='button-div' style={{ marginTop: "20px" }}>
-                                                    <button type='submit' className='submit'>Etkinliği Güncelle</button>
-                                                    <button type='reset' className='reset'>Temizle</button>
-                                                </div>
-                                                <div>
-                                                    <button onClick={() => setOpen2(true)} type='button' className='login-button'>Etkinliği Sil</button>
-                                                </div>
+                                                    <div className='button-div' style={{ marginTop: "20px" }}>
+                                                        <button type='submit' className='submit'>Etkinliği Güncelle</button>
+                                                        <button type='reset' className='reset'>Temizle</button>
+                                                    </div>
+                                                    <div>
+                                                        <button onClick={() => setOpen2(true)} type='button' className='login-button'>Etkinliği Sil</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </DialogContent>
                                     </Dialog>
@@ -363,9 +450,7 @@ function EventDetail() {
                                     <p className='detail-text'>{event.details}</p>
                                 </div>
                                 {
-                                    event.map && <div style={{
-                                        // marginTop: "auto"
-                                    }}>
+                                    event.map && <div>
                                         <iframe style={{ borderRadius: "20px", width: "100%", border: "none" }} src={event.map} height={200}></iframe>
                                     </div>
                                 }

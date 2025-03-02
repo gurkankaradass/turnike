@@ -162,10 +162,74 @@ const deleteEvent = async (req, res) => {
     }
 }
 
+const updateEvent = async (req, res) => {
+    const { id: eventId } = req.params;
+    const { name, date, details, image, sliderImage, category, address, map, price, city } = req.body;
+
+
+    if (!name || !date || !details || !image || !category || !address || !map || !price || !city) {
+        return res.status(400).json({ message: "Gerekli alanlar doldurulmalıdır" });
+    }
+
+    try {
+        const pool = await poolPromise;
+
+        // Price'ı formatla
+        let formattedPrice = price;
+
+        // Eğer fiyat tam sayı ise, ",00" ekle
+        if (formattedPrice % 1 === 0) {
+            formattedPrice = `${formattedPrice}.00`;  // Tam sayı ise ".00" ekle
+        }
+
+        // Ondalık formatına yuvarla
+        formattedPrice = parseFloat(formattedPrice).toFixed(2);
+
+        const formattedDate = new Date(date).toISOString().split('T')[0];  // YYYY-MM-DD formatında al
+
+        // Etkinlik ekle
+        await pool.request()
+            .input('id', sql.Int, eventId)
+            .input('name', sql.NVarChar, name)
+            .input('date', sql.Date, formattedDate)
+            .input('details', sql.NVarChar, details)
+            .input('image', sql.NVarChar, image)
+            .input('sliderImage', sql.NVarChar, sliderImage)
+            .input('category', sql.NVarChar, category)
+            .input('address', sql.NVarChar, address)
+            .input('map', sql.NVarChar, map)
+            .input('price', sql.Decimal(10, 2), formattedPrice)
+            .input('city', sql.NVarChar, city)
+            .query(`
+        UPDATE events 
+        SET 
+            name = @name, 
+            date = @date, 
+            details = @details, 
+            image = @image, 
+            sliderImage = @sliderImage, 
+            category_id = (SELECT id FROM categories WHERE name = @category), 
+            address = @address, 
+            map = @map, 
+            price = @price, 
+            city_id = (SELECT id FROM cities WHERE name = @city)
+        WHERE id = @id;
+    `);
+
+
+        res.status(201).json({ message: "Etkinlik başarıyla güncellendi" });
+
+    } catch (error) {
+        console.error("Etkinlik güncelleme hatası:", error);
+        res.status(500).json({ message: "Sunucu hatası, lütfen tekrar deneyin" });
+    }
+}
+
 module.exports = {
     getAllEvents,
     getEventById,
     addEvent,
     getEventByCategory,
-    deleteEvent
+    deleteEvent,
+    updateEvent
 };

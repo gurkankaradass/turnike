@@ -99,83 +99,6 @@
   ],
   "events": [
     {
-      "id": "0",
-      "name": "Serdar Ortaç Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/a9a437cfbee8445aa25ff200e8445876.png",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Türk pop müziğinin sevilen ismi Serdar Ortaç, sevenleriyle buluşuyor. 90'lardan bu yana efsane şarkıları ile unutulmaz bir akşam sizleri bekliyor.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "1",
-      "name": "İrem Derici Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/irem-derici-2024918145156246e01c789dd4af19d3a85d98aa59629.jpg",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Türk pop müziğinin sevilen ismi İrem Derici, sevenleriyle buluşuyor.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "2",
-      "name": "Soner Sarıkabadayı Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/soner-sarikabadayi-jj-2024871534295d2afc9eda06413d946218577f2d2012.jpg",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Türk pop müziğinin sevilen ismi Soner Sarıkabadayı, sevenleriyle buluşuyor.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "3",
-      "name": "Yıldız Tilbe Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/yildiz-tilbe-konseri-20248271642448220788a281d47c589ba46a0b4de66f9.jpg",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Türk pop müziğinin sevilen ismi Yıldız Tilbe, sevenleriyle buluşuyor. 90'lardan bu yana efsane şarkıları ile unutulmaz bir akşam sizleri bekliyor.",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "4",
-      "name": "Cem Adrian Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/cem-adrian-2024523147436ca4b0f037ce41b79de3ab56dfc4ee88.png",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Müzikte sınırları, tarzları, kuralları dışlayan, kendini sadece “özgür bir müzisyen” olarak tanımlayan Cem Adrian, sevenleriyle buluşmaya devam ediyor.",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "5",
-      "name": "Hakan Altun Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/hakan-altun-konseri-20248271255206126359d903946d68b60ff8b86814b73.jpg",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Pop ve arabesk müziğin usta ismi Hakan Altun, duygusal şarkıları ve etkileyici sahne performanslarıyla hayranlarıyla buluşmaya hazırlanıyor!",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
-      "price": 150
-    },
-    {
-      "id": "6",
-      "name": "Emir Can İğrek Konseri",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/emir-can-igrek-jj-202491017533703c7406827144befb119353c914bbcb7.jpg",
-      "category": "concert",
-      "date": "28 Temmuz 2025",
-      "details": "Türk pop müziğinin sevilen ismi Emir Can İğrek, sevenleriyle buluşuyor.",
-      "address": "Kalamış Paysage Restaurant",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12048.943943346401!2d29.030387732725494!3d40.97631314358558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab87dcdc0d231%3A0x4b21db200bfa4289!2sKalam%C4%B1%C5%9F%20Paysage%20Restaurant!5e0!3m2!1str!2str!4v1729975152807!5m2!1str!2str",
-      "price": 150
-    },
-    {
       "id": "7",
       "name": "Seksendört Konseri",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/seksendort-202413202561062a0f24729462f9539725a7746000a.jpg",
@@ -320,129 +243,6 @@
       "price": 150
     },
     {
-      "id": "20",
-      "name": "Gökhan Ünver - Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/gokhan-unver-stand-up-202331515557.jpg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Sahneye adım attıktan sonra reklamcılığı bırakan Gökhan Ünver; sosyal medya, kültür çatışmaları, evliliğin zor yanları, ebeveynlik gibi A’dan Z’ye bütün esprilerini açık yüreklilikle sahneye taşıyor.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "21",
-      "name": "İlker Gümüşoluk - Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/ilker-gumusoluk-tek-kisilik-gosteri-2023315145318.jpg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "İlker Gümüşoluk, tek kişilik gösterisiyle izleyicisiyle buluşmaya devam ediyor.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "22",
-      "name": "Özgür Turhan - Yenisi Stand Up",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/ozgur-turhan-hagb-2024961822399f1224657f5c47f3ad7b7ae9e8401a26.jpg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Özgür Turhan yeni gösterisi “Yenisi” ile sezona başlıyor.",
-      "address": "Atatürk Kültür Merkezi - Türk Telekom Opera Salonu",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4797794662595!2d28.987796899999996!3d41.036636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab76534821173%3A0x4921da7bada2608!2zQXRhdMO8cmsgS8O8bHTDvHIgTWVya2V6aQ!5e0!3m2!1str!2str!4v1729977198432!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "23",
-      "name": "Yunus Emre Gündüz Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/yunus-emre-gunduz-stand-up-2024812141341c50c6c4bfbbe43c680b9786a0fee7dc9.jpeg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Youtube'da yayınladığı 'Kemikleşmiş Travma' gösterisi ile yüzbinlerce izlenmeye ulaşan Yunus Emre Gündüz bir yandan da sosyal medyada çizdiği karikatür ve Youtube'da ve Instagram'da yayınladığı animasyonlarıyla, yine Youtube'da yayınladığı podcastleri ile adından söz ettirmeyi başarmıştır.",
-      "address": "Atatürk Kültür Merkezi - Türk Telekom Opera Salonu",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4797794662595!2d28.987796899999996!3d41.036636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab76534821173%3A0x4921da7bada2608!2zQXRhdMO8cmsgS8O8bHTDvHIgTWVya2V6aQ!5e0!3m2!1str!2str!4v1729977198432!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "24",
-      "name": "Fırat Esmer Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/firat-esmer-stand-up-20248291842515869d38776094cc9b013e3b104bddec3.jpg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Fırat Esmer Karadeniz'in sisli dağlarında demlediği hikayesini bir Meddah gibi anlatıyor.Yıllardır Tiyatro metin yazarlığı ve yönetmenliği yapan Esmer,kendi hikayesiyle seyirci karşısına çıkıyor.",
-      "address": "Bostancı Gösteri Merkezi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "25",
-      "name": "Haydaa Mehmet Mayda - Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/stand-up-haydaa-mehmet-mayda-tiyatro-kiraz-20249301838269494d440802645ba943eb75f6611af46.jpg",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Bu gösteride kimler yok ki! Brad Pitt yok. Michael Jackson yok. Tüm bunların yerine çılgın tespit ve anlatımlarıyla sizi güldürürken düşündüren, bazen sadece güldüren bir gösteri. Aile, ilişkiler, din ve sosyolojik tespitleriyle sizin karnınıza ve beyninize ağrılar salmaya geliyor. Düşünme organınızdan başka bir organınızla ilgilenmiyoruz. İyi seyirler.",
-      "address": "Bostancı Gösteri Merkezi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "26",
-      "name": "Sefa Doğanay Stand Up Show",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/sefa-doganay-show-202493170528a467346a0c451dbbee9c9785984890.jpg",
-      "sliderImage": "https://ifyazilim.nyc3.cdn.digitaloceanspaces.com/EtkIO/PublicDepo/EtkinlikAfis/2024/12/sefa-doganay-242365.png",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Yıllardır biriktirdiği hikayeleri sandıktan çıkarıp hayranlarıyla gösterilerinde paylaşan sevilen komedyen Doğanay, kapalı gişe oynadığı final oyunlarında da yoğun ilgi ile karşılaştı.",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "27",
-      "name": "Emrah Kaman - Stand Up Gösterisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/emrah-kaman-stand-up-2024101810251640d1e8debb24f14b56dae4fbf3f6297.png",
-      "category": "standup",
-      "date": "28 Temmuz 2025",
-      "details": "Emrah Kaman yeniden “yüksek gelirim” isimli tek kişilik gösterisiyle karşınızda… Ama bu kez daha sıcak, daha samimi, daha biz bize… Tıpkı yaz gibi…Gerek yaşadıkları, gerek günlük hayata dair tespitleriyle Emrah, hatalarıyla, zaaflarıyla, günahlarıyla dalga geçiyor…Yüksek Gelirim Biz Bize sınırlı sayıda seyirci kapasitesiyle mizahseverlerin karşısına çıkıyor… ",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "28",
-      "name": "Mercaniye Çok Yaşa Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/mercaniye-cok-yasa-2024828131220cdcbf0b6ec8f4a74ad66a22170ad6c19.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "Kökünü gelenekten, gücünü gelecekten alan Tiyatro Hayali’nin yeni hayali “Mercaniye Çok Yaşa”, neşeli oyunbazlığı; izahsız mizahı; şarkılarındaki dönem tınıları; sirto’su, longa’sı, sirtaki’si, marşlarıyla ve ibretlik karakterleriyle yine bir zaman tüneline davet ediyor seyircisini.",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "29",
-      "name": "1923 Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/1923-muzikali-202481316492757867ddca09b4607b9f232ed45c1ff2c.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "Cumhuriyetimizin 100. yılında, günümüzden tarihe uzanan büyüleyici bir müzikal yolculuk...",
-      "address": "Zorlu PSM - Turkcell Sahnesi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.070707575211!2d29.01272008568358!3d41.06744704190139!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab645fb9fd1a5%3A0x272558825cc8e0dd!2sZorlu%20Performans%20Sanatlar%C4%B1%20Merkezi!5e0!3m2!1str!2str!4v1729960471189!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "30",
-      "name": "Amadeus Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/d273f76c8d7643ada1eeae7f3f474bee.jpg",
-      "sliderImage": "https://ippasso.mediatriple.net/eventgroup/26102023152210-amadeus_26102023.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "Peter Shaffer tarafından kaleme alınan, dünya müzik tarihinin unutulmaz bestecileri Wolfgang Amadeus Mozart ile Antonio Salieri’nin eşsiz hikayesi AMADEUS sahnede!",
-      "address": "Atatürk Kültür Merkezi - Türk Telekom Opera Salonu",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4797794662595!2d28.987796899999996!3d41.036636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab76534821173%3A0x4921da7bada2608!2zQXRhdMO8cmsgS8O8bHTDvHIgTWVya2V6aQ!5e0!3m2!1str!2str!4v1729977198432!5m2!1str!2str",
-      "price": 200
-    },
-    {
       "id": "31",
       "name": "Cimri Tiyatro Oyunu",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/cimri-20235291064.jpeg",
@@ -451,28 +251,6 @@
       "details": "Semaver Kumpanya, Moliere'in ünlü eseri “Cimri” oyununu, Tansu Biçer’in yorumu ve Serkan Keskin’in çok konuşulan “Harpagon” performansıyla 7 sezondur kapalı gişe sahneliyor.",
       "address": "Atatürk Kültür Merkezi - Türk Telekom Opera Salonu",
       "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3009.4797794662595!2d28.987796899999996!3d41.036636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab76534821173%3A0x4921da7bada2608!2zQXRhdMO8cmsgS8O8bHTDvHIgTWVya2V6aQ!5e0!3m2!1str!2str!4v1729977198432!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "32",
-      "name": "Doğu Ekspresinde Cinayet Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/dogu-ekspresinde-cinayet-2024101892432dd09927dbc5c419bb60b338aa0c87583.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "1933 yılında Agatha Christie’nin İstanbul Pera Palas’ta kaleme aldığı, o yıldan günümüze kadar onlarca dile çevrilen, sinema filmi uyarlamaları yapılan kült eseri  Doğu Ekspresinde Cinayet sizlerle buluşuyor. Christie'nin dünyaca ünlü dedektifi Hercule Poirot, ete kemiğe Atilla Şendil'in oyunculuğuyla bürünüyor.",
-      "address": "Bostancı Gösteri Merkezi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "33",
-      "name": "Kürk Mantolu Madonna Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/kurk-mantolu-madonna-20246291432409f6af6c2f6ea4af282439b42c8f84406.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "Sabahattin Ali’nin, aslında kendisinin yaşadığı bir aşk hikayesi olarak da söylenen, romanı Kürk Mantolu Madonna, 1943 yılında, yazarın ilk ve son aşk romanı olarak yerini almıştır. Taner Barlas’ın, Ağustos 2023 yılında uyarladığı ve yönetmenliğini yaptığı bu eser, edebiyatın dışında, artık tiyatro seyircisiyle de buluşuyor ve sahnelerdeki yerini alıyor.",
-      "address": "Congresium Ankara",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12241.353333334013!2d32.79263083204623!3d39.91144414629887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d348b2233787bd%3A0x1c0067968e989a38!2sCongresium%20Kongre%20ve%20Sergi%20Merkezi!5e0!3m2!1str!2str!4v1729974999695!5m2!1str!2str",
       "price": 200
     },
     {
@@ -487,28 +265,6 @@
       "price": 200
     },
     {
-      "id": "35",
-      "name": "Kel Diva Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/kel-diva-2024191541385578647f3f104068a10f9604699fcd21.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "Bir İngiliz burjuva ailesinin, İngiliz koltuklarla döşenmiş oturma odası. Bir İngiliz akşamı.",
-      "address": "Zorlu PSM - Turkcell Platinum Sahnesi - İstanbul",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12032.316334932297!2d29.007082232784196!3d41.06726394338302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71573562cf9%3A0x66115d32ed7e92bf!2sTurkcell%20platinum%20sahnesi!5e0!3m2!1str!2str!4v1729978285134!5m2!1str!2str",
-      "price": 200
-    },
-    {
-      "id": "36",
-      "name": "Aşık Shakespeare Tiyatro Oyunu",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/asik-shakespeare-2023122513594311a475e19b6b4316912b3541c56fe947.jpg",
-      "category": "theatre",
-      "date": "28 Temmuz 2025",
-      "details": "En İyi Film dahil 7 dalda Oscar kazanan kült film Aşık Shakespeare (Shakespeare in Love) Türkiye’de ilk defa tiyatro sahnesinde!",
-      "address": "Bostancı Gösteri Merkezi",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12052.510510829441!2d29.091999232712904!3d40.95678284362969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cac6f9bda17c79%3A0x75920a34acd86f14!2sBostanc%C4%B1%20G%C3%B6steri%20Merkezi!5e0!3m2!1str!2str!4v1729977384217!5m2!1str!2str",
-      "price": 200
-    },
-    {
       "id": "37",
       "name": "Alevli Günler Tiyatro Oyunu",
       "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/alevli-gunler-20231024172253b5710e217a344f09be2fc896584cea18.jpg",
@@ -518,18 +274,6 @@
       "address": "Zorlu PSM - Turkcell Sahnesi",
       "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12032.316334932297!2d29.007082232784196!3d41.06726394338302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab71573562cf9%3A0x66115d32ed7e92bf!2sTurkcell%20platinum%20sahnesi!5e0!3m2!1str!2str!4v1729978483006!5m2!1str!2str",
       "price": 200
-    },
-    {
-      "id": "38",
-      "name": "Joker",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/joker-2019918165550.jpg",
-      "sliderImage": "https://kocaeligundem.com/sites/1287/uploads/2024/10/04/joker-filmi-kac-dakika-kocaeligundem.jpg",
-      "category": "cinema",
-      "date": "28 Temmuz 2025",
-      "details": "Kalabalık içinde bile her an yalnız Arthur Fleck bağ kurma arayışındadır. Yine de, Gotham şehrinin isli sokaklarında yürürken; bölünme ve hoşnutsuzluğun düşmanca bir yer hâline getirdiği şehrin, üzeri grafitilerle dolu toplu taşıtlarına binerken, Arthur yüzünde iki maskeyle dolaşır. Bunlardan birincisi gündüz işi için yüzüne çizdiği palyaço suratıdır. Diğeri ise asla silip çıkaramayacağı bir maskedir: Bu, çevresindeki dünyanın bir parçası gibi hissetmek için ortaya koyduğu boş çabayı yansıtan bir maskedir; hayatı tekrar tekrar yerle bir edilmiş, yanlış anlaşılmış bir adamı gizleme çabasıdır. Babasız büyüyen Arthur’ın annesi kırılgan bir kadındır ve belki de Arthur’ın en iyi arkadaşıdır. Annesi onu “Mutlu/Happy” takma adıyla çağırır; bu lakap Arthur’ın yüzüne içindeki yürek acısını gizleyen bir gülümseme yayar. Fakat, sokakta ergenlerin zorbalığına, metroda takım elbiselilerin sataşmalarına ya da işteki diğer palyaçoların şakalarına maruz kaldığında, topluma aykırı bu adam çevresindeki herkesle gitgide daha da uyumsuz hâle gelir.",
-      "address": "Paribu Cineverse Forum Kayseri",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
-      "price": 165
     },
     {
       "id": "39",
@@ -660,50 +404,6 @@
       "category": "cinema",
       "date": "28 Temmuz 2025",
       "details": "Una, bir sır saklarken ve duygularını tam olarak ifade edemediğinde acısıyla boğuşmaktadır. Çevresindeki zorlu olaylar karşısında cesurca manevralar yaparak yoluna devam eder. Bu onun ilk acı deneyimidir ve kahkahanın ağlamaya dönüştüğünde üzüntü ve güzelliğin bir arada var olduğunu yavaş yavaş fark eder. Ve kötü olmadan iyinin var olamayacağını.",
-      "address": "Paribu Cineverse Forum Kayseri",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
-      "price": 165
-    },
-    {
-      "id": "51",
-      "name": "Hayat",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/hayat-2023116112758c538d000908439d919b9723b7a02015.jpg",
-      "category": "cinema",
-      "date": "28 Temmuz 2025",
-      "details": "Genç bir kadın olan Hicran, babasının zoruyla nişanlanmak zorunda kalınca çareyi kaçmakta bulur. Hicran'ın zaten onunla evlenmeyi istemediğini düşünen Rıza, başlarda bu durumu önemsemez. Ancak zaman geçtikçe Hicran tarafından istenmemek zoruna gitmeye başlar ve onunla yüzleşmeye karar verir. Rıza, sadece bir kere gördüğü nişanlısını bulmak için İstanbul'a gider.",
-      "address": "Paribu Cineverse Forum Kayseri",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
-      "price": 165
-    },
-    {
-      "id": "52",
-      "name": "Mutfak",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/mutfak-20241016143712038df8ee9a71459395f4fe15ef89fe85.jpg",
-      "category": "cinema",
-      "date": "28 Temmuz 2025",
-      "details": "La cocina, Manhattan’daki The Grill’de öğle yemeği telaşı tam da zirvedeyken kasadan para kaybolduğu anlaşılır. Kayıtsız aşçıların hepsi zan altındayken Pedro baş şüphelidir. Hayalperest ve haşarı Pedro, Amerikalı garson Julia’ya aşıktır. Mekânın sahibi Rashid, Pedro’ya “yasal olabilmesi” için evraklarında yardımcı olacağına söz vermiştir. Ancak Julia hakkında ortaya çıkanlar herkesi şoke edecek, Pedro da bunun üzerine kentin bu en işlek mutfağının ocağını sonsuza dek söndürecektir. Arnold Wesker’ın aynı adlı tiyatro oyunundan uyarlanan “yemek pornosu karşıtı” Mutfak, lokantaların işlemesini ve midelerimizin dolmasını sağlayan o görünmeyen insanlara trajikomik bir övgü niteliğinde. Prömiyeri Berlin Film Festivali’nde yapılan Mutfak, Gueros ve Museo / Müze’nin yanı sıra Narcos: Mexico dizisini de yöneten Alonzo Ruizpalacios’un son filmi.",
-      "address": "Paribu Cineverse Forum Kayseri",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
-      "price": 165
-    },
-    {
-      "id": "53",
-      "name": "Tereddüt Çizgisi",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/tereddut-cizgisi-20244181028129c88738aea98409f9d5abcc996ea6341.jpg ",
-      "category": "cinema",
-      "date": "28 Temmuz 2025",
-      "details": "Tereddüt Çizgisi, Avukat Canan’ın masum olduğuna inandığı ve uzun süredir savunduğu bir cinayet zanlısının hüküm duruşması gününde kendi vicdanıyla yüzleşmek zorunda kalmasının hikâyesini anlatıyor.",
-      "address": "Paribu Cineverse Forum Kayseri",
-      "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
-      "price": 165
-    },
-    {
-      "id": "54",
-      "name": "The Crow: Ölümsüz",
-      "image": "https://b6s54eznn8xq.merlincdn.net/Uploads/Films/olumsuz-202481912336099c813d20b24a2c8c2db9e45bec0e09.jpg",
-      "category": "cinema",
-      "date": "28 Temmuz 2025",
-      "details": "Genç aşıklar Eric ve Shelly, vahşi bir cinayete kurban gider. Gerçek aşkını kurtarmak için kendini feda etme şansı verildiğinde Eric, yanlışları düzeltmek için yaşayanlar ve ölülerin dünyaları arasında gidip geleceği kanlı bir intikam yolculuğuna çıkar.",
       "address": "Paribu Cineverse Forum Kayseri",
       "map": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3112.757828543431!2d35.49449547576352!3d38.72336865695407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152b1213a6b7e5cf%3A0xdbe6744146ffaa16!2sParibu%20Cineverse%20Forum%20Kayseri!5e0!3m2!1str!2str!4v1733427747161!5m2!1str!2str",
       "price": 165
