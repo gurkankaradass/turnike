@@ -190,4 +190,31 @@ const deleteUser = async (req, res) => {
     }
 };
 
-module.exports = { registerUser, loginUser, loginAdmin, changePassword, deleteUser };
+const updateBalance = async (req, res) => {
+    try {
+        const { userId, newBalance } = req.body;
+        const pool = await poolPromise;
+
+        const currentBalanceResult = await pool
+            .request()
+            .input("userId", sql.Int, userId)
+            .query("SELECT balance FROM users WHERE id = @userId");
+
+        const current = currentBalanceResult.recordset[0]?.balance || 0;
+        const updatedBalance = Number(current) + Number(newBalance);
+
+        await pool
+            .request()
+            .input("userId", sql.Int, userId)
+            .input("updatedBalance", sql.Decimal(10, 2), updatedBalance)
+            .query("UPDATE users SET balance = @updatedBalance WHERE id = @userId");
+
+        res.status(200).json({ message: "Bakiye Güncellendi", updatedBalance: updatedBalance });
+    } catch (error) {
+        console.error("Hata:", error);
+        res.status(500).json({ message: "Bakiye güncellenirken hata oluştu" });
+    }
+};
+
+
+module.exports = { registerUser, loginUser, loginAdmin, changePassword, deleteUser, updateBalance };

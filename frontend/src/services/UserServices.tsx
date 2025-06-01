@@ -64,6 +64,18 @@ class UserService {
         }
     }
 
+    async updateBalance(userId: string, newBalance: number): Promise<any> {
+        try {
+            const response = await axiosInstance.post("/api/users/updateBalance", { userId, newBalance });
+            return {
+                message: response.data.message,
+                success: true,
+                updatedBalance: response.data.updatedBalance
+            };
+        } catch (error: any) {
+            throw error.response?.data?.message || "Bakiye Yüklenemedi.";
+        }
+    }
 }
 
 

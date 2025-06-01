@@ -37,3 +37,11 @@ export const schemaAddEvent = yup.object().shape({
     price: yup.string().required("Ücret Boş Geçilemez"),
     city: yup.string().required("Şehir Boş Geçilemez"),
 });
+
+export const schemaAddBalance = yup.object().shape({
+    cardName: yup.string().required("İsim Boş Geçilemez"),
+    cardSurname: yup.string().required("Soyisim Boş Geçilemez"),
+    cardNo: yup.string().required("Kart Numarası Boş Geçilemez").matches(/^\d{16}$/, "Kart numarası 16 haneli olmalıdır"),
+    cvv: yup.string().required("CVV Boş Geçilemez").matches(/^\d{3}$/, "CVV 3 haneli olmalıdır"),
+    newBalance: yup.string().required("Tutar Boş Geçilemez")
+});
