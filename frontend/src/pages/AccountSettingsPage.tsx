@@ -80,7 +80,7 @@ const AccountSettingsPage = () => {
         const response = await UserServices.updateBalance(currentUser?.id, values1.newBalance);
         if (response) {
           toast.success(response.message);
-          resetForm1();
+          reset1();
           const updatedUser = { ...currentUser, balance: response.updatedBalance };
           localStorage.setItem("currentUser", JSON.stringify(updatedUser)); // Local storage güncelleme
           dispatch(setCurrentUser(updatedUser))
