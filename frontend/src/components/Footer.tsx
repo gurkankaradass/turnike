@@ -476,8 +476,8 @@ function Footer() {
                     <div className="communication-div">
                         <ul>
                             <h3>İLETİŞİM</h3>
-                            <li><EmailIcon sx={{ marginRight: "10px" }} /><p>gurkan.karadas@outlook.com.tr</p></li>
-                            <li><LocalPhoneIcon sx={{ marginRight: "10px" }} /><p>+905060646981</p></li>
+                            <li><EmailIcon sx={{ marginRight: "10px" }} /><p>gurkan@hotmail.com</p></li>
+                            <li><LocalPhoneIcon sx={{ marginRight: "10px" }} /><p>+905555555555</p></li>
                         </ul>
                     </div>
                 </div>

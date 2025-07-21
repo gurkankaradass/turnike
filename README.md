@@ -1,7 +1,7 @@
 🎟️ Turnike – Etkinlik Biletleme Sistemi
 
 Turnike, kullanıcıların farklı kategorilerdeki etkinlikleri görüntüleyip, bilet satın alabildiği bir biletleme uygulamasıdır.  
-Kullanıcılar, hesaplarında tanımlı bakiye ile etkinliklere bilet alabilir ve geçmiş biletlerini "Biletlerim" sayfasında görüntüleyebilir.
+Kullanıcılar, hesaplarında tanımlı bakiye ile etkinliklere bilet alabilir ve mevcut biletlerini "Biletlerim" sayfasında görüntüleyebilir.
 
 ---
 
@@ -12,7 +12,7 @@ Kullanıcılar, hesaplarında tanımlı bakiye ile etkinliklere bilet alabilir v
 - 💳 Bakiye ile bilet satın alma işlemi  
 - 🎫 "Biletlerim" alanında satın alınan biletleri görüntüleme  
 - 🧑‍💼 Kullanıcı kayıt ve giriş işlemleri  
-- 📦 Admin paneli üzerinden etkinlik yönetimi (isteğe bağlı)
+- 📦 Admin paneli üzerinden etkinlik yönetimi
 
 ---
 
@@ -20,44 +20,13 @@ Kullanıcılar, hesaplarında tanımlı bakiye ile etkinliklere bilet alabilir v
 
 Frontend:
 - React.js
-- CSS / Tailwind (veya kendi stil yapın)
+- CSS / Tailwind
 - Axios (API istekleri için)
 
 Backend:
 - Node.js
 - Express.js
 - MSSQL (Microsoft SQL Server)  
-- Sequelize veya native SQL queries
-
----
-
-⚙️ Kurulum
-
-1. Veritabanı
-
-MSSQL'de 'turnike_db' adlı bir veritabanı oluşturun.
-Gerekli tabloları oluşturmak için init.sql dosyasını çalıştırın. (varsa)
-
-2. Backend (API)
-
-cd backend
-npm install
-npm start
-
-3. Frontend (React)
-
-cd frontend
-npm install
-npm start
-
----
-
-🔐 Giriş Bilgileri (Demo için)
-
-Kullanıcı E-posta: demo@turnike.com
-Şifre: demo123
-
-(Yukarıdaki bilgiler örnektir.)
 
 ---
 
@@ -66,12 +35,20 @@ Kullanıcı E-posta: demo@turnike.com
 ✅ Tamamlandı  
 🛠️ Yeni özellikler eklenebilir:  
 - Favori etkinlikler  
-- Admin etkinlik istatistikleri  
-- E-posta bildirimi
+- Bilet iptal etme
 
 ---
 
 ✍️ Geliştirici
 
 Gürkan Karadaş  
-LinkedIn: https://linkedin.com/in/senin-profilin  
+LinkedIn: https://www.linkedin.com/in/gurkankaradass/ 
+
+![Ana Sayfa](/screenshots/1.png) </br>
+![Kategori Sayfası](/screenshots/2.png) </br>
+![Etkinlik Detay Sayfası](/screenshots/3.png) </br>
+![Hesap Oluşturma ve Giriş Sayfaları](/screenshots/4.jpg) </br>
+![Hesabım Sayfası](/screenshots/5.png) </br>
+![Arama Çubuğu ve Sepete Bilet Ekleme](/screenshots/6.jpg) </br>
+![Sepet ve Biletlerim Sayfası](/screenshots/7.jpg) </br>
+![Admin Paneli](/screenshots/8.jpg) </br>
